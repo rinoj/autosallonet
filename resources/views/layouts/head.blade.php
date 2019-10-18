@@ -1,0 +1,1 @@
+head.blade.php

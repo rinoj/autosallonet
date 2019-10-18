@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Auto Sallonet',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>Panel',
+    'logo' => '<b>Auto</b>Sallonet',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>A</b>S',
 
     /*
     |--------------------------------------------------------------------------
@@ -139,6 +139,35 @@ return [
             'url'  => 'admin/users',
             'icon' => 'fa fa-users',
             'can'  => 'manage-users'
+        ],
+        [
+            'text' => 'Sallonet',
+            'url'  => 'admin/sallonet',
+            'icon' => 'fa fa-building',
+            'can'  => 'manage-users'
+        ],
+        [
+            'text' => 'Veturat',
+            'url'  => 'admin/veturat',
+            'icon' => 'fa fa-car',
+            'can'  => 'manage-users'
+        ],
+        [
+            'text'    => 'Markat & Modelet',
+            'icon'    => 'fa fa-bars',
+            'can'     => 'manage-roles-permissions',
+            'submenu' => [
+                [
+                    'text' => 'Markat',
+                    'url'  => 'admin/markat',
+                    'can'  => 'manage-roles-permissions'
+                ],
+                [
+                    'text' => 'Modelet',
+                    'url'  => 'admin/modelet',
+                    'can'  => 'manage-roles-permissions'
+                ],
+            ],
         ],
         [
             'text'    => 'Roles & Permissions',

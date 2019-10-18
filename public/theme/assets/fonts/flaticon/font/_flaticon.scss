@@ -1,0 +1,81 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 10/01/2019 09:08
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-phone-call:before { content: "\f100"; }
+.flaticon-gearbox:before { content: "\f101"; }
+.flaticon-wrench:before { content: "\f102"; }
+.flaticon-car:before { content: "\f103"; }
+.flaticon-speedometer:before { content: "\f104"; }
+.flaticon-car-1:before { content: "\f105"; }
+.flaticon-gearshift:before { content: "\f106"; }
+.flaticon-car-door:before { content: "\f107"; }
+.flaticon-paint-roller:before { content: "\f108"; }
+.flaticon-plunger:before { content: "\f109"; }
+.flaticon-car-2:before { content: "\f10a"; }
+.flaticon-car-3:before { content: "\f10b"; }
+.flaticon-car-4:before { content: "\f10c"; }
+.flaticon-money:before { content: "\f10d"; }
+.flaticon-car-repair:before { content: "\f10e"; }
+.flaticon-car-5:before { content: "\f10f"; }
+.flaticon-car-6:before { content: "\f110"; }
+.flaticon-investment:before { content: "\f111"; }
+.flaticon-car-7:before { content: "\f112"; }
+.flaticon-loan:before { content: "\f113"; }
+.flaticon-car-repair-check-list:before { content: "\f114"; }
+    
+    $font-Flaticon-phone-call: "\f100";
+    $font-Flaticon-gearbox: "\f101";
+    $font-Flaticon-wrench: "\f102";
+    $font-Flaticon-car: "\f103";
+    $font-Flaticon-speedometer: "\f104";
+    $font-Flaticon-car-1: "\f105";
+    $font-Flaticon-gearshift: "\f106";
+    $font-Flaticon-car-door: "\f107";
+    $font-Flaticon-paint-roller: "\f108";
+    $font-Flaticon-plunger: "\f109";
+    $font-Flaticon-car-2: "\f10a";
+    $font-Flaticon-car-3: "\f10b";
+    $font-Flaticon-car-4: "\f10c";
+    $font-Flaticon-money: "\f10d";
+    $font-Flaticon-car-repair: "\f10e";
+    $font-Flaticon-car-5: "\f10f";
+    $font-Flaticon-car-6: "\f110";
+    $font-Flaticon-investment: "\f111";
+    $font-Flaticon-car-7: "\f112";
+    $font-Flaticon-loan: "\f113";
+    $font-Flaticon-car-repair-check-list: "\f114";

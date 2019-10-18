@@ -1,0 +1,121 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+/* COLOR CSS 2*/
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+/* COLOR CSS 1*/
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+a,
+.text-primary,
+.text-primary_h:hover,
+.text-primary_b:before,
+.text-primary_a:after,
+.list > li > a:hover,
+.pager li > a:hover,
+.pager li > a:hover .icon,
+.pagination_primary > li:first-child > a:hover,
+.pagination_primary > li:first-child > a:hover .icon,
+.pagination_primary > li:last-child > a:hover,
+.pagination_primary > li:last-child > a:hover .icon,
+.search-close:hover,
+.breadcrumb > li > a:hover,
+.widget-list__link:hover,
+.b-goods-f:not(.b-goods-f_row) .b-goods-f__price-numb,
+.footer a:hover,
+.footer__btn-up:hover .ic,
+.b-goods-f__label_dark,
+.b-team__soc-link:hover,
+.btn-link:hover,
+.entry-media__link:hover,
+.list-mark-4 li:before,
+.list-mark-3 li:before,
+.accordion-trigger[aria-expanded="true"] .ic,
+.b-goods-f_mod-a:hover .b-goods-f__list-item .ic,
+.b-goods-vip:hover,
+.b-isotope-filter > li.current a,
+.b-isotope-filter > li:hover a,
+.b-team__phone:hover,
+.btn-default:hover,
+.b-post-full .entry-meta__link:hover,
+.form-sidebar__btn:hover,
+.main-slider__link:hover,
+.top-bar__link:hover,
+.navbar-nav .nav-link:hover {color: #9e8a2b;}
+
+
+.bg-primary,
+.bg-primary_h:hover,
+.bg-primary_b:before,
+.bg-primary_a:after,
+.pagination_primary > .active > a,
+.pagination_primary > .active > span,
+.pagination_primary > .active > a,
+.pagination_primary > .active > span,
+.pagination_primary > li > a:hover,
+.pagination_primary > li > a:focus,
+.dropcap_primary:first-letter,
+.tooltip-1 .tooltip-inner,
+.btn-primary,
+.forms__label-check:after,
+.forms__label-radio-2:before,
+.panel-default > .panel-heading,
+.b-services-nav__link.active,
+.b-goods-f_row .b-goods-f__price-numb,
+.page-item.active .page-link,
+.page-item .page-link:hover,
+.noUi-connect,
+.b-steps-list__number:after,
+.slick-dots li.slick-active button,
+.slick-dots li:hover button,
+.list-tags__link:hover,
+.comment-btn:hover,
+.main-slider__link:before,
+.b-team:hover .b-team__inner {background-color: #9e8a2b;}
+
+
+.border_prim,
+.border_prim_h:hover,
+.progress_border_primary,
+.btn-primary,
+.forms__label-radio-2:before,
+.page-item.active .page-link,
+.page-item .page-link:hover,
+.noUi-handle,
+.slick-dots li.slick-active button,
+.slick-dots li:hover button,
+.btn-default:hover {border-color: #9e8a2b;}
+
+.border-t_prim,
+.border-t_prim_h:hover,
+.tooltip-1.top .tooltip-arrow,
+.tooltip-1.top-left .tooltip-arrow,
+.tooltip-1.top-right .tooltip-arrow,
+.widget-title:after,
+.nav-link.active:after,
+#page-preloader .spinner:before {border-top-color: #9e8a2b;}
+
+.border-r_prim,
+.border-r_prim_h:hover,
+.tooltip-1.right .tooltip-arrow {border-right-color: #9e8a2b;}
+
+.border-l_prim,
+.border-l_prim_h:hover,
+.tooltip-1.left .tooltip-arrow,
+.border-left_primary:before,
+.widget-title:after,
+.nav-link.active:after,
+.b-advantages:after {border-left-color: #9e8a2b;}
+
+.border-b_prim,
+.border-b_prim_h:hover,
+.tooltip-1.bottom .tooltip-arrow,
+.tooltip-1.bottom-left .tooltip-arrow,
+.tooltip-1.bottom-right .tooltip-arrow,
+.table_primary > thead > tr > th,
+.collapse.in,
+.btn-link:hover,
+.b-advantages:after,
+.b-dealers-nav__link.active {border-bottom-color: #9e8a2b;}
+

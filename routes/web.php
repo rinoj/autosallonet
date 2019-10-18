@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('pages.home');
-});
+    return view('index');
+})->name('index');
+
+
+Route::get('/test', function () {
+    return view('pages.vetura');
+})->name('test');
 
 Auth::routes();
 
@@ -34,3 +39,5 @@ Route::get('game', function () {
 Route::resource('admin/users', 'UserController');
 Route::resource('admin/roles', 'RoleController');
 Route::resource('admin/permissions', 'PermissionController');
+
+Route::get('admin/markat', 'MarkaController@admin');
