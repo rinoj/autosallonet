@@ -11,4 +11,8 @@ class Salloni extends Model
     public function veturat(){
         return $this->hasMany('App\Vetura');
     }
+
+    public function user(){
+    	return $this->belongsTo('App\User');
+    }
 }

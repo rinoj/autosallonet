@@ -11,7 +11,7 @@ class SalloniSeeder extends Seeder
      */
     public function run()
     {
-
+        //markat
     	DB::table('marka')->insert([
             'emri' => 'Volkswagen',
         ]);
@@ -60,11 +60,23 @@ class SalloniSeeder extends Seeder
             'emri' => 'Range Rover',
         ]);
 
+        //=====================================================================================
 
+        //modeli
 
         DB::table('modeli')->insert([
             'emri' => 'Golf 5',
             'marka_id' => 1,
+        ]);
+
+        //=====================================================================================
+
+        //sallonet
+        DB::table('salloni')->insert([
+            'emri' => 'Auto Sherreti',
+            'telefoni' => '+383000000',
+            'adresa' => 'Ferizaj',
+            'user_id' => 1
         ]);
     }
 }

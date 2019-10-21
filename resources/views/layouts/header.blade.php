@@ -29,12 +29,12 @@
                             <div class="col-lg d-none d-lg-block">
                                 <nav class="navbar navbar-expand-md justify-content-end" id="nav">
                                     <ul class="yamm main-menu navbar-nav">
-                                        <li class="nav-item active"><a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a></li>
+                                        <li class="nav-item active"><a class="nav-link" href="{{route('index')}}">Ballina<span class="sr-only">(current)</span></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Sallonet</a></li>
                                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown2" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventory</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2"><a class="dropdown-item" href="inventory-list.html">Inventory list</a><a class="dropdown-item" href="inventory-grid.html">Inventory grid</a><a class="dropdown-item" href="dealers.html">Dealers list</a><a class="dropdown-item" href="dealers-info.html">Dealers info</a></div>
                                         </li>
 
-                                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 
                                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown1" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1"><a class="dropdown-item" href="typography.html">Typography</a></div>
@@ -42,7 +42,7 @@
                                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown4" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="blog-main.html">Blog main</a><a class="dropdown-item" href="blog-post.html">Blog post</a></div>
                                         </li>
-                                        <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="contacts.html">Kontakto</a></li>
                                     </ul>
                                 </nav>
                             </div>
