@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\VeturaController;
+use App\Vetura;
 use Illuminate\Http\Request;
-
-class VeturaControllerController extends Controller
+class VeturaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +14,11 @@ class VeturaControllerController extends Controller
     public function index()
     {
         //
+    }
+
+    public function admin(){
+        $veturat = Vetura::all();
+        return view('admin.veturat.index')->withVeturat($veturat);
     }
 
     /**

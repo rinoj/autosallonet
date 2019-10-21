@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Salloni;
 
 class SalloniController extends Controller
 {
@@ -13,7 +14,13 @@ class SalloniController extends Controller
      */
     public function index()
     {
-        //
+        
+    }
+
+    public function admin(){
+        $sallonet = Salloni::all();
+        return view('admin.salloni.index')
+                ->withSallonet($sallonet);
     }
 
     /**

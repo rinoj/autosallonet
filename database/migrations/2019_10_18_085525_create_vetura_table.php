@@ -18,10 +18,12 @@ class CreateVeturaTable extends Migration
             $table->integer('km');
             $table->integer('year');
             $table->string('mileage');
+            $table->string('transmisioni');
             $table->string('fuel');
             $table->string('seats');
             $table->integer('marka_id');
             $table->integer('modeli_id');
+            $table->integer('salloni_id');
             $table->timestamps();
         });
     }

@@ -41,3 +41,5 @@ Route::resource('admin/roles', 'RoleController');
 Route::resource('admin/permissions', 'PermissionController');
 
 Route::get('admin/markat', 'MarkaController@admin');
+Route::get('admin/sallonet', 'SalloniController@admin');
+Route::get('admin/veturat', 'VeturaController@admin');
