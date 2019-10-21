@@ -60,6 +60,10 @@ class SalloniSeeder extends Seeder
             'emri' => 'Range Rover',
         ]);
 
+        DB::table('marka')->insert([
+            'emri' => 'Opel',
+        ]);
+
         //=====================================================================================
 
         //modeli
@@ -77,6 +81,50 @@ class SalloniSeeder extends Seeder
             'telefoni' => '+383000000',
             'adresa' => 'Ferizaj',
             'user_id' => 1
+        ]);
+
+
+        //=====================================================================================
+
+        //veturat
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 6300,
+            'km' => 115000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5800,
+            'km' => 215000,
+            'viti' => '2008',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
         ]);
     }
 }

@@ -13,7 +13,8 @@ class VeturaController extends Controller
      */
     public function index()
     {
-        //
+        $veturat = Vetura::all();
+        return view('pages.veturat')->withVeturat($veturat);
     }
 
     public function admin(){

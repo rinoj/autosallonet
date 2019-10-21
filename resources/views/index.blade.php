@@ -51,7 +51,7 @@
                                                 <div class="b-find__main">
                                                     <div class="b-find__inner">
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">01</span> Select Make</div>
+                                                            <div class="b-find__label"><span class="b-find__number">01</span> Zgjedh Markën</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Audi</option>
@@ -61,7 +61,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">02</span> Select a Model</div>
+                                                            <div class="b-find__label"><span class="b-find__number">02</span> Zgjedh Modelin</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Model 1</option>
@@ -71,7 +71,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">03</span> Price Range</div>
+                                                            <div class="b-find__label"><span class="b-find__number">03</span> Çmimi</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Max $5000</option>
@@ -82,7 +82,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button class="b-find__btn btn btn-primary">Search</button>
+                                                <button class="b-find__btn btn btn-primary">Kërko</button>
                                             </div>
                                             <div class="b-find__checkbox-group"><span class="b-find__checkbox-item">
                             <input class="forms__check" id="newCars" type="checkbox" checked="checked"/>
@@ -128,7 +128,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button class="b-find__btn btn btn-primary">Search</button>
+                                                <button class="b-find__btn btn btn-primary">Kërko</button>
                                             </div>
                                             <div class="b-find__checkbox-group"><span class="b-find__checkbox-item">
                             <input class="forms__check" id="newCars2" type="checkbox" checked="checked"/>
@@ -194,8 +194,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6">
-                            <div class="ui-title-slogan">Helps you to find your next car easily</div>
-                            <h2 class="ui-title">Welcome to<span class="text-primary"> Revus</span></h2>
+                            <div class="ui-title-slogan">Kjo platformë ju mundëson të gjeni veturën tuaj të preferuar</div>
+                            <h2 class="ui-title">Mirë se vini në <span class="text-primary"> AutoSallonet.com</span></h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed eiusmod tempor incididu et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderits volupta velit dolore fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
                             <p>Non proident sunt ind culpa qudesa officia deserunt mollit anim est laborum. Sed per unde omnis iste natus error sit voluptatem accusantium doloremque laudantium tom eaque ipsa quae ab illo inventore veritatis architecto.</p>
                         </div>
@@ -389,7 +389,7 @@
                     </div>
                     <div class="container">
                         <div class="row">
-                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="#"><i class="ic icon-list"></i> View All Cars Listings</a></div>
+                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="#"><i class="ic icon-list"></i> Shiko të gjitha veturat</a></div>
                         </div>
                     </div>
                 </div>
@@ -657,37 +657,7 @@
                     </ul>
                 </div>
             </section>
-            <!-- end .b-isotope-->
-            <section class="b-steps section-default parallax">
-                <div class="b-steps__inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="ui-title-slogan">Helps you to find perfect car</div>
-                                <h2 class="ui-title">How Revus<span class="text-primary"> Works</span></h2>
-                                <ul class="b-steps-list list-unstyled row">
-                                    <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">01</span>
-                                        <div class="b-steps-list__title">Search Our Inventory</div>
-                                        <div class="b-steps-list__info">Magna aliqua enim aduas dui veniam quis nostrud exercitation ullam laboris aut aliquip ex consequat.</div>
-                                    </li>
-                                    <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">02</span>
-                                        <div class="b-steps-list__title">Choose The Car You Like</div>
-                                        <div class="b-steps-list__info">Magna aliqua enim aduas dui veniam quis nostrud exercitation ullam laboris aut aliquip ex consequat.</div>
-                                    </li>
-                                    <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">03</span>
-                                        <div class="b-steps-list__title">Apply For Auto Finance</div>
-                                        <div class="b-steps-list__info">Magna aliqua enim aduas dui veniam quis nostrud exercitation ullam laboris aut aliquip ex consequat.</div>
-                                    </li>
-                                    <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">04</span>
-                                        <div class="b-steps-list__title">Get Approved & Drive</div>
-                                        <div class="b-steps-list__info">Magna aliqua enim aduas dui veniam quis nostrud exercitation ullam laboris aut aliquip ex consequat.</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+         
             <!-- end .b-steps-->
             <section class="b-bnr-2 section-default">
                 <div class="b-bnr-2__figure"><img class="b-bnr-2__img img-fluid" src="{{url('theme/assets/media/content/b-bnr/1.png')}}" alt="auto" /></div>
@@ -820,145 +790,8 @@
                 </div>
             </section>
             <!-- end .b-team-->
-            <section class="section-reviews section-default parallax area-bg area-bg_dark">
-                <div class="area-bg__inner">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="text-center">
-                                    <div class="ui-title-slogan">Helps you to find perfect car</div>
-                                    <h2 class="ui-title">Customer Reviews</h2><span class="section-reviews__decor">“</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="b-reviews-slider js-slider" data-slick="{&quot;slidesToShow&quot;: 3,  &quot;slidesToScroll&quot;: 3, &quot;centerMode&quot;: true, &quot;arrows&quot;: false, &quot;dots&quot;: true, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2, &quot;slidesToScroll&quot;: 2, &quot;centerMode&quot;: false}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1, &quot;slidesToScroll&quot;: 1, &quot;centerMode&quot;: false}}]}">
-                                    <div class="b-reviews">
-                                        <blockquote class="b-reviews__blockquote">
-                                            <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua. Ut enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit.</p>
-                                            </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Alexa Cathy</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="{{url('theme/assets/media/content/b-reviews/face-1.jpg')}}" alt="foto"/></span></cite>
-                                        </blockquote>
-                                    </div>
-                                    <div class="b-reviews">
-                                        <blockquote class="b-reviews__blockquote">
-                                            <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua uat enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit. Slyly babbled much partook this much in in thus the sauc.</p>
-                                            </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Tina Olivia</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="{{url('theme/assets/media/content/b-reviews/face-2.jpg')}}" alt="foto"/></span></cite>
-                                        </blockquote>
-                                    </div>
-                                    <div class="b-reviews">
-                                        <blockquote class="b-reviews__blockquote">
-                                            <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua. Ut enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit.</p>
-                                            </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Alexa Cathy</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="{{url('theme/assets/media/content/b-reviews/face-3.jpg')}}" alt="foto"/></span></cite>
-                                        </blockquote>
-                                    </div>
-                                    <div class="b-reviews">
-                                        <blockquote class="b-reviews__blockquote">
-                                            <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua. Ut enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit.</p>
-                                            </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Alexa Cathy</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="{{url('theme/assets/media/content/b-reviews/face-1.jpg')}}" alt="foto"/></span></cite>
-                                        </blockquote>
-                                    </div>
-                                    <div class="b-reviews">
-                                        <blockquote class="b-reviews__blockquote">
-                                            <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua uat enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit. Slyly babbled much partook this much in in thus the sauc.</p>
-                                            </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Tina Olivia</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="{{url('theme/assets/media/content/b-reviews/face-2.jpg')}}" alt="foto"/></span></cite>
-                                        </blockquote>
-                                    </div>
-                                    <div class="b-reviews">
-                                        <blockquote class="b-reviews__blockquote">
-                                            <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua. Ut enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit.</p>
-                                            </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Alexa Cathy</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="{{url('theme/assets/media/content/b-reviews/face-3.jpg')}}" alt="foto"/></span></cite>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- end .b-reviews-->
-            <section class="section-news section-default">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="text-center">
-                                <div class="ui-title-slogan">Helps you to find perfect car</div>
-                                <h2 class="ui-title">News &<span class="text-primary"> Articles</span></h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="b-post-group-2">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <section class="b-post b-post-1 clearfix">
-                                    <div class="entry-media">
-                                        <a href="#"><img class="img-fluid" src="{{url('theme/assets/media/content/b-posts/360x280/1.jpg')}}" alt="Foto" /></a>
-                                    </div>
-                                    <div class="entry-main">
-                                        <div class="entry-header">
-                                            <div class="entry-meta"><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">25 DEC 2018</a></span><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">BY ADMIN</a></span></div>
-                                            <h2 class="entry-title">Top 10 most Fuel-Efficient cars on the roads</h2>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Edipisicing eiusmod tempor incididunt labore dolore magna aliqa ust enim ad minim veniams quis nostrud citation ullam co laboris nisi ut aliquip.</p>
-                                        </div>
-                                        <div class="entry-footer"><a class="entry-link btn-link" href="#">READ article</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
-                                    </div>
-                                </section>
-                                <!-- end .post-->
-                            </div>
-                            <div class="col-md-4">
-                                <section class="b-post b-post-1 clearfix">
-                                    <div class="entry-media">
-                                        <a href="#"><img class="img-fluid" src="{{url('theme/assets/media/content/b-posts/360x280/2.jpg')}}" alt="Foto" /></a>
-                                    </div>
-                                    <div class="entry-main">
-                                        <div class="entry-header">
-                                            <div class="entry-meta"><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">25 DEC 2018</a></span><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">BY ADMIN</a></span></div>
-                                            <h2 class="entry-title">How to increase Auto Sales: A Dealers’ Guide</h2>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Edipisicing eiusmod tempor incididunt labore dolore magna aliqa ust enim ad minim veniams quis nostrud citation ullam co laboris nisi ut aliquip.</p>
-                                        </div>
-                                        <div class="entry-footer"><a class="entry-link btn-link" href="#">READ article</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
-                                    </div>
-                                </section>
-                                <!-- end .post-->
-                            </div>
-                            <div class="col-md-4">
-                                <section class="b-post b-post-1 clearfix">
-                                    <div class="entry-media">
-                                        <a href="#"><img class="img-fluid" src="{{url('theme/assets/media/content/b-posts/360x280/3.jpg')}}" alt="Foto" /></a>
-                                    </div>
-                                    <div class="entry-main">
-                                        <div class="entry-header">
-                                            <div class="entry-meta"><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">25 DEC 2018</a></span><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">BY ADMIN</a></span></div>
-                                            <h2 class="entry-title">We have vehicle with safety checks and licensed</h2>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Edipisicing eiusmod tempor incididunt labore dolore magna aliqa ust enim ad minim veniams quis nostrud citation ullam co laboris nisi ut aliquip.</p>
-                                        </div>
-                                        <div class="entry-footer"><a class="entry-link btn-link" href="#">READ article</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
-                                    </div>
-                                </section>
-                                <!-- end .post-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+           
+            
             <section class="b-bnr-3 bg-dark">
                 <div class="container">
                     <div class="row">

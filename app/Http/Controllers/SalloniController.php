@@ -14,7 +14,9 @@ class SalloniController extends Controller
      */
     public function index()
     {
-        
+        $sallonet = Salloni::all();
+        return view('pages.sallonet')
+                ->withSallonet($sallonet);
     }
 
     public function admin(){
