@@ -49,9 +49,10 @@ class VeturaController extends Controller
      * @param  \App\VeturaController  $veturaController
      * @return \Illuminate\Http\Response
      */
-    public function show(VeturaController $veturaController)
+    public function show($id)
     {
-        //
+        $vetura = Vetura::find($id);
+        return view('pages.vetura')->withVetura($vetura);
     }
 
     /**

@@ -1,28 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-
-<div class="section-title-page area-bg area-bg_dark area-bg_op_60">
-          <div class="area-bg__inner">
-            <div class="container">
-              <div class="row">
-                <div class="col offset-lg-3">
-                  <div class="b-title-page__wrap">
-                    <h1 class="b-title-page">Vehicle details</h1>
-                    <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="home.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Vehicle details</li>
-                      </ol>
-                      <!-- end breadcrumb-->
-                    </nav>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end .b-title-page-->
   
             
                   <div class="l-main-content">
@@ -33,23 +11,23 @@
               <div class="row">
               <div class="col-lg-8">
                 <div class="ui-subtitle">new seventh-generation 3 Series sedan</div>
-                <h1 class="ui-title text-uppercase">BMW 3 Series 2019</h1>
+                <h1 class="ui-title text-uppercase">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</h1>
                
               </div>
               <div class="col-lg-4">
                 <div class="b-goods-f-price">
                   <div class="b-goods-f-price__inner">
-                    <div class="b-goods-f-price__msrp">MSRP:<strong> $34,500</strong></div>
-                    <div class="b-goods-f-price__main bg-primary">$30,480</div>
+                    <div class="b-goods-f-price__msrp"><strong></strong></div>
+                    <div class="b-goods-f-price__main bg-primary">€ {{number_format($vetura->cmimi)}}</div>
                   </div>
-                  <div class="b-goods-f-price__note">Included Taxes &amp; Checkup*</div>
+                  <div class="b-goods-f-price__note"></div>
                 </div>
               </div>
             </div>
 
             <div class="row">
               <div class="col-lg-8">
-                <div class="b-goods-f__links"><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-map-marker-alt text-primary"></i>Moscow, RU</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-question text-primary"></i>Request More Info</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-star text-primary"></i>Add To Favourite</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-car-side text-primary"></i>Schedule Test Drive</a><a class="b-goods-f__links-item" href="email:test@test.test"><i class="ic fas fa-envelope text-primary"></i>Email Friend</a></div>
+                <div class="b-goods-f__links"><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-map-marker-alt text-primary"></i>{{$vetura->salloni->adresa}}</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-question text-primary"></i>Request More Info</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-star text-primary"></i>Add To Favourite</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-car-side text-primary"></i>Schedule Test Drive</a><a class="b-goods-f__links-item" href="email:test@test.test"><i class="ic fas fa-envelope text-primary"></i>Email Friend</a></div>
                 <div class="b-goods-f__slider">
                   <div class="ui-slider-main js-slider-for slick-initialized slick-slider">
                   	<div class="slick-list draggable">
@@ -112,38 +90,34 @@
                   </div>
               </div>
                 </div>
-                <h2 class="b-goods-f__title">Vehicle Specifications</h2>
+                <h2 class="b-goods-f__title">Specifikat</h2>
                 <div class="row">
                   <div class="col-md-6">
                     <dl class="b-goods-f__descr row">
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Registration</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">2019</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Brand / Model</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">BMW 3 Series</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Body Style</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">Sedan</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Color</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">Fanta Red</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Fuel Type</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">Gasoline</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Engine</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">255 hp @5000 rpm</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Viti</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->viti}}</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Modeli</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->modeli->emri}}</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Njgyra</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->ngjyra}}</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Lënda Djegëse</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->lenda}}</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Kubikazha</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->kubikazha}}</dd>
                     </dl>
                   </div>
                   <div class="col-md-6">
                     <dl class="b-goods-f__descr row">
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Condition</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">New</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Mileage</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">20,000 mi</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Transmission</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">8-Speed A/T</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Drivetrain</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">All Wheels Drive</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">KM</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{number_format($vetura->km)}} km</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Marshi</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->marshi}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Interior Color</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">Black / Red</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">No. Of Seats</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">5</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">I doganuar</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">Po</dd>
                     </dl>
                   </div>
                 </div>
@@ -191,12 +165,12 @@
                     <div class="b-seller__header">
                       <div class="b-seller__img"><img class="img-scale" src="{{url('theme/assets/media/content/b-seller/1.jpg')}}" alt="foto"/></div>
                       <div class="b-seller__title">
-                        <div class="b-seller__name">Joseph Kane</div>
+                        <div class="b-seller__name">{{$vetura->salloni->emri}}</div>
                         <div class="b-seller__category">Member Since August 2001</div>
                       </div>
                     </div>
                     <div class="b-seller__main"><i class="b-seller__ic fas fa-phone text-primary"></i>
-                      <div class="b-seller__contact"><span class="d-block">Contact Seller</span><a class="b-seller__phone" href="tel:12584037961">1 (258) 403 7961</a></div>
+                      <div class="b-seller__contact"><span class="d-block">Kontakto Sallonin</span><a class="b-seller__phone" href="tel:12584037961">{{$vetura->salloni->telefoni}}</a></div>
                       <ul class="b-seller-soc list-unstyled">
                         <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-twitter"></i></a></li>
                         <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-facebook"></i></a></li>

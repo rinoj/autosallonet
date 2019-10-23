@@ -28,8 +28,10 @@
                     <td>{{$vetura->marka->emri}}</td>
                     <td>{{$vetura->modeli->emri}}</td>
                     <td>{{$vetura->salloni->emri}}</td>
-                    <td>{{$vetura->year}}</td>
-                    <td></td>
+                    <td>{{$vetura->viti}}</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-info">Edito</a>
+                    </td>
                 </tr>
                 @endforeach
     	</tbody>

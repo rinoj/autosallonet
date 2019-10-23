@@ -130,14 +130,21 @@
                 <main class="b-goods-group row">
                   @foreach($veturat as $vetura)
                   <div class="b-goods-f col-12 b-goods-f_row">
-                    <div class="b-goods-f__media"><img class="b-goods-f__img img-scale" src="{{url('theme/assets/media/content/b-goods/300x220/1.jpg')}}" alt="foto"/><span class="b-goods-f__media-inner"><span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span><span class="b-goods-f__label bg-primary">NEW</span></span></div>
+                    <div class="b-goods-f__media">
+                      <a href="{{route('showvetura', $vetura->id)}}">
+                        <img class="b-goods-f__img img-scale" src="{{url('theme/assets/media/content/b-goods/300x220/1.jpg')}}" alt="foto"/>
+                      </a>
+                      <span class="b-goods-f__media-inner">
+                        <span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span><span class="b-goods-f__label bg-primary">NEW</span>
+                      </span>
+                    </div>
                     <div class="b-goods-f__main">
                       <div class="b-goods-f__descrip">
-                        <div class="b-goods-f__title">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</div>
+                        <div class="b-goods-f__title"><a href="{{route('showvetura', $vetura->id)}}">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</a></div>
                         <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
                         <ul class="b-goods-f__list list-unstyled">
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Kilometrazha :</span><span class="b-goods-f__list-info">{{$vetura->km}}km</span></li>
-                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Viti :</span><span class="b-goods-f__list-info">{{$vetura->year}}</span></li>
+                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Viti :</span><span class="b-goods-f__list-info">{{$vetura->viti}}</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Marshi :</span><span class="b-goods-f__list-info">{{$vetura->marshi}}</span></li>
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Body Type :</span><span class="b-goods-f__list-info">sedan</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Lënda Djegëse :</span><span class="b-goods-f__list-info">{{$vetura->lenda}}</span></li>

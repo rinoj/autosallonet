@@ -45,5 +45,5 @@ Route::get('admin/sallonet', 'SalloniController@admin');
 Route::get('admin/veturat', 'VeturaController@admin');
 
 Route::get('veturat', 'VeturaController@index')->name('veturat');
-
+Route::get('vetura/{vetura}', 'VeturaController@show')->name('showvetura');
 Route::get('sallonet', 'SalloniController@index')->name('sallonet');
