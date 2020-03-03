@@ -15,7 +15,7 @@
     <div class='col-lg-12'>
 
 
-    {{ Form::open(array('route' => 'admin.veturat.store')) }}
+    {{ Form::open(array('route' => 'admin.veturat.store', 'enctype' => 'multipart/form-data')) }}
 
     <div class="form-group">
         {{ Form::label('marka', 'Marka') }}
@@ -80,6 +80,14 @@
         {{ Form::label('Cmimi', 'Cmimi') }}
         {{ Form::text('cmimi', '', array('class' => 'form-control')) }}
     </div>
+
+    <div class="form-group">
+        {{ Form::label('Foto', 'Foto') }}
+    	<input type="file" name="filename[]" class="form-control" multiple>
+        
+    </div>
+
+
     {{ Form::submit('Ruaj', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}

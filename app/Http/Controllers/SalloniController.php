@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Salloni;
-
+use App\Vetura;
 class SalloniController extends Controller
 {
     /**
@@ -25,6 +25,14 @@ class SalloniController extends Controller
                 ->withSallonet($sallonet);
     }
 
+
+    public function veturat($id){
+        $salloni = Salloni::find($id);
+        $veturat = Vetura::where('salloni_id', $salloni->id)->orderBy('id', 'desc')->paginate(20);
+        return view('admin.salloni.veturat')
+                ->withSalloni($salloni)
+                ->withVeturat($veturat);
+    }
     /**
      * Show the form for creating a new resource.
      *

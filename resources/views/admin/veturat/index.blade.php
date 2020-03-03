@@ -30,16 +30,20 @@
                     <td>{{$vetura->salloni->emri}}</td>
                     <td>{{$vetura->viti}}</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-info">Edito</a>
+                        <a href="#" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edito</a>
+                        <a href="{{route('admin.veturat.show', $vetura->id)}}" class="btn btn-sm btn-info"><i class="fa fa-images"></i> Fotot</a>
                     </td>
                 </tr>
                 @endforeach
     	</tbody>
     </table>
+    <div class="text-center">
+        {{$veturat->links()}}
+    </div>
 	@endsection
 
 	@section('boxtitleright')
-    <a href="{{ route('admin.veturat.create') }}" class="btn btn-success">Shto Veturen</a>
+    <a href="{{ route('admin.veturat.create') }}" class="btn btn-default"><i class="fa fa-plus"></i> Shto Veturen</a>
 	@endsection
 	@include('layouts.box')
 	</div>

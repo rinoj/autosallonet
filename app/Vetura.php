@@ -19,4 +19,8 @@ class Vetura extends Model
     public function modeli(){
     	return $this->belongsTo('App\Modeli');
     }
+
+    public function images(){
+        return $this->hasMany('App\Image');
+    }
 }

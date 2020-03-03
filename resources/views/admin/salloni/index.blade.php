@@ -31,7 +31,7 @@
                     <td>{{$salloni->adresa}}</td>
                     <td>{{$salloni->user->name}}</td>
                     <td>{{$salloni->veturat->count()}}</td>
-                    <td></td>
+                    <td><a href="{{route('admin.sallonet.veturat', $salloni->id)}}" class="btn btn-info"><i class="fa fa-car"></i> Veturat</a></td>
                 </tr>
                 @endforeach
     	</tbody>

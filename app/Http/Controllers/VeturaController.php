@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Vetura;
 use App\Modeli;
 use App\Marka;
+use App\Image;
 use Illuminate\Http\Request;
 class VeturaController extends Controller
 {
@@ -20,7 +21,7 @@ class VeturaController extends Controller
     }
 
     public function admin(){
-        $veturat = Vetura::all();
+        $veturat = Vetura::paginate(20);
         return view('admin.veturat.index')->withVeturat($veturat);
     }
 
@@ -57,7 +58,9 @@ class VeturaController extends Controller
             'cmimi' => 'required',
             'ngjyra' => 'required',
             'km' => 'required',
-            'kubikazha' => 'required'
+            'kubikazha' => 'required',
+            'filename' => 'required',
+            'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $vetura = new Vetura();
@@ -72,6 +75,26 @@ class VeturaController extends Controller
         $vetura->modeli_id = $request->modeli;
         $vetura->salloni_id = 1;
         $vetura->save();
+
+        if($request->hasfile('filename'))
+        {
+            foreach($request->file('filename') as $img)
+            {
+                $date = Date('d-m-Y');
+                $name = $date.'-'.$img->getClientOriginalName();
+
+                $image = new Image();
+                $image->filename= $name;
+                $image->vetura_id = $vetura->id;
+                $image->save();
+
+                $img->move(public_path().'/images/veturat/', $name);  
+            }
+         }
+
+         
+         
+        
 
         return redirect()->route('admin.veturat')
             ->with('flash_message',
@@ -88,6 +111,12 @@ class VeturaController extends Controller
     {
         $vetura = Vetura::find($id);
         return view('pages.vetura')->withVetura($vetura);
+    }
+
+    public function showadmin($id)
+    {
+        $vetura = Vetura::find($id);
+        return view('admin.veturat.show')->withVetura($vetura);
     }
 
     /**
