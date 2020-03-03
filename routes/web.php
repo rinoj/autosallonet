@@ -40,9 +40,18 @@ Route::resource('admin/users', 'UserController');
 Route::resource('admin/roles', 'RoleController');
 Route::resource('admin/permissions', 'PermissionController');
 
-Route::get('admin/markat', 'MarkaController@admin');
+Route::get('admin/markat', 'MarkaController@admin')->name('admin.markat');
+Route::get('admin/markat/create', 'MarkaController@create')->name('admin.markat.create');
+Route::post('admin/markat/store', 'MarkaController@store')->name('admin.markat.store');
+
+Route::get('admin/modelet', 'ModeliController@index')->name('admin.modeli');
+Route::get('admin/modelet/create', 'ModeliController@create')->name('admin.modeli.create');
+Route::post('admin/modelet/store', 'ModeliController@store')->name('admin.modeli.store');
+
 Route::get('admin/sallonet', 'SalloniController@admin');
-Route::get('admin/veturat', 'VeturaController@admin');
+Route::get('admin/veturat', 'VeturaController@admin')->name('admin.veturat');
+Route::get('admin/veturat/create', 'VeturaController@create')->name('admin.veturat.create');
+Route::post('admin/veturat/store', 'VeturaController@store')->name('admin.veturat.store');
 
 Route::get('veturat', 'VeturaController@index')->name('veturat');
 Route::get('vetura/{vetura}', 'VeturaController@show')->name('showvetura');

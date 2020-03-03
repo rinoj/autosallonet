@@ -12,9 +12,9 @@
                                 <div class="main-slider__title">MAZDA<span class="main-slider__title_lg text-right">CX3<span class="main-slider__title">’19</span></span>
                                 </div>
                                 <div class="text-center">
-                                    <div class="main-slider__price"><span class="main-slider__price_up">$</span>249<span class="main-slider__price_down">/m</span><span class="main-slider__price_info">for 24 months</span></div>
+                                    <div class="main-slider__price"><span class="main-slider__price_up">&euro;</span>249<span class="main-slider__price_down">/m</span><span class="main-slider__price_info">për 24 muaj</span></div>
                                 </div>
-                                <div class="text-right"><a class="main-slider__link" href="blog-post.html">learn more</a></div>
+                                <div class="text-right"><a class="main-slider__link" href="blog-post.html">paguaj me këste</a></div>
                             </div>
                         </div>
                     </div>
@@ -290,7 +290,7 @@
                     </div>
                     <div class="container">
                         <div class="row">
-                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="#"><i class="ic icon-list"></i> Shiko të gjitha veturat</a></div>
+                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="{{route('veturat')}}"><i class="ic icon-list"></i> Shiko të gjitha veturat</a></div>
                         </div>
                     </div>
                 </div>

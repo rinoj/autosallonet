@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Markat')
+@section('title', 'Modeli')
 
 
 @section('content')
@@ -14,17 +14,17 @@
     	<thead>
     		<tr>
     			<th>ID</th>
+    			<th>Modeli</th>
     			<th>Marka</th>
-    			<th>Modelet</th>
                 <th>Action</th>
     		</tr>
     	</thead>
     	<tbody>
-    		@foreach ($markat as $marka)
+    		@foreach ($modelet as $modeli)
                 <tr>
-                	<td>{{$marka->id}}</td>
-                    <td>{{$marka->emri}}</td>
-                    <td>{{$marka->modelet->count()}}</td>
+                	<td>{{$modeli->id}}</td>
+                    <td>{{$modeli->emri}}</td>
+                    <td>{{$modeli->marka->emri}}</td>
                     <td></td>
                 </tr>
                 @endforeach
@@ -33,8 +33,8 @@
 	@endsection
 
 	@section('boxtitleright')
-    <a href="{{ route('admin.markat.create') }}" class="btn btn-success">Shto Marken</a>
-    <a href="{{ route('permissions.index') }}" class="btn btn-default">Shto Model</a></h1>
+    <a href="{{ route('admin.modeli.create') }}" class="btn btn-success">Shto Modelin</a>
+    <a href="{{ route('admin.markat.create') }}" class="btn btn-default">Shto Marken</a></h1>
 	@endsection
 	@include('layouts.box')
 	</div>

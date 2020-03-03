@@ -143,12 +143,12 @@
                         <div class="b-goods-f__title"><a href="{{route('showvetura', $vetura->id)}}">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</a></div>
                         <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
                         <ul class="b-goods-f__list list-unstyled">
-                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Kilometrazha :</span><span class="b-goods-f__list-info">{{$vetura->km}}km</span></li>
+                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">KM :</span><span class="b-goods-f__list-info">{{number_format($vetura->km)}}km</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Viti :</span><span class="b-goods-f__list-info">{{$vetura->viti}}</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Marshi :</span><span class="b-goods-f__list-info">{{$vetura->marshi}}</span></li>
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Body Type :</span><span class="b-goods-f__list-info">sedan</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Lënda Djegëse :</span><span class="b-goods-f__list-info">{{$vetura->lenda}}</span></li>
-                          <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Kubikazha:</span><span class="b-goods-f__list-info">{{$vetura->kubikazha}}</span></li>
+                          <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Kubikazha:</span><span class="b-goods-f__list-info">{{number_format($vetura->kubikazha)}}</span></li>
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Ngjyra :</span><span class="b-goods-f__list-info">{{$vetura->ngjyra}}</span></li>
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">I doganuar</span><span class="b-goods-f__list-info"></span></li>
                         </ul>
@@ -162,12 +162,7 @@
                 </main>
                 <nav aria-label="Page navigation">
                   <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span class="ic fas fa-angle-double-right" aria-hidden="true"></span></a></li>
+                    {{$veturat->links()}}
                   </ul>
                 </nav>
               </div>

@@ -29,7 +29,7 @@ class MarkaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.markat.create');
     }
 
     /**
@@ -40,7 +40,17 @@ class MarkaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'emri'=>'required|max:40',
+        ]);
+        $name = $request['emri'];
+        $marka = new Marka();
+        $marka->emri = $name;
+        $marka->save();
+        
+        return redirect()->route('admin.markat')
+            ->with('flash_message',
+             'Marka '. $marka->emri.' added!');
     }
 
     /**

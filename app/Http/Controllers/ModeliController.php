@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Modeli;
+use App\Marka;
 class ModeliController extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class ModeliController extends Controller
      */
     public function index()
     {
-        //
+         $modelet = Modeli::all();
+        return view('admin.modeli.index')->withModelet($modelet);
     }
 
     /**
@@ -23,7 +25,8 @@ class ModeliController extends Controller
      */
     public function create()
     {
-        //
+        $markat = Marka::all();
+        return view('admin.modeli.create')->withMarkat($markat);
     }
 
     /**
@@ -34,7 +37,18 @@ class ModeliController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'emri'=>'required|max:40',
+        ]);
+        $name = $request['emri'];
+        $modeli = new Modeli();
+        $modeli->emri = $name;
+        $modeli->marka_id = $request->input('marka');
+        $modeli->save();
+        
+        return redirect()->route('admin.modeli')
+            ->with('flash_message',
+             'Modeli '. $modeli->emri.' added!');
     }
 
     /**

@@ -39,7 +39,7 @@
 	@endsection
 
 	@section('boxtitleright')
-    <a href="{{ route('roles.create') }}" class="btn btn-success">Shto Veturen</a>
+    <a href="{{ route('admin.veturat.create') }}" class="btn btn-success">Shto Veturen</a>
 	@endsection
 	@include('layouts.box')
 	</div>

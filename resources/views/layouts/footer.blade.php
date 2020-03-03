@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-sm-5">
                             <div class="footer-section footer-section_info">
-                                <div class="footer-info">Ceipisicing elit sed do eiusmod tempor laboe dolore magna aliqa Ut enim ad minim veniam quis nostrud exercitation ullam co laboris nis aliquip comsecd sed ipsum.</div>
+                                <div class="footer-info">AutoSallonet.com është një platformë ku bizneset e Autosalloneve dhe Rent a Car kanë mundësinë ti shfaqin veturat dhe shërbimet e tyre. Për bashkëpunim, ju lutem kontaktoni në informatat e mëposhtme.</div>
                                 <div class="footer-contacts">
                                     <div class="footer-contacts__item"><i class="ic icon-location-pin"></i>Prishtinë, Kosovë</div>
                                     <div class="footer-contacts__item"><i class="ic icon-envelope"></i><a href="mailto:info@autosallonet.com">info@autosallonet.com</a></div>
@@ -71,7 +71,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="footer-copyright">
-                                Copyrights (c) 2019 Autosallonet - Të gjitha të drejtat e rezervuara.
+                                Copyrights (c) 2020 Autosallonet - Të gjitha të drejtat e rezervuara.
                             </div>
                         </div>
                     </div><span class="footer__btn-up js-scroll-top"><i class="ic fas fa-angle-up"></i><img src="{{url('theme/assets/media/general/go_top.png')}}" alt="go top"></span>
