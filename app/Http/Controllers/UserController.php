@@ -48,7 +48,10 @@ class UserController extends Controller
         ]);
         $user = new User;
         $roles = $request['roles']; //Retreive all roles
-        $user = User::create($request->all());
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
         if (isset($roles)) {        
             $user->roles()->sync($roles);  //If one or more role is selected associate user to roles          
         }        
