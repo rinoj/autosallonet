@@ -132,7 +132,11 @@
                   <div class="b-goods-f col-12 b-goods-f_row">
                     <div class="b-goods-f__media">
                       <a href="{{route('showvetura', $vetura->id)}}">
+                        @if($vetura->images->count() == 0)
                         <img class="b-goods-f__img img-scale" src="{{url('theme/assets/media/content/b-goods/300x220/1.jpg')}}" alt="foto"/>
+                        @else
+                          <img class="b-goods-f__img img-scale" src="{{url('images/veturat/'. $vetura->images->first()['filename'])}}" style="width: 322px; height: 220px;" alt="foto"/>
+                        @endif
                       </a>
                       <span class="b-goods-f__media-inner">
                         <span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span><span class="b-goods-f__label bg-primary">NEW</span>

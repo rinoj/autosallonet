@@ -6,7 +6,7 @@
     Users
 @stop
 @section('boxtitleright')
-    <a href="{{route('users.create')}}" class="btn btn-success">Create User</a>
+    <a href="{{route('users.create')}}" class="btn btn-default"><i class="fa fa-plus"></i> Create User</a>
 @stop
 @section('css')
 @stop

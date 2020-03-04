@@ -2,7 +2,8 @@
     <!-- ++++++++++++-->
     <!-- MAIN SCRIPTS-->
     <!-- ++++++++++++-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
     <!-- Bootstrap-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -31,10 +32,14 @@
     <!-- Main slider-->
     <script src="{{url('theme/assets/plugins/slider-pro/jquery.sliderPro.min.js')}}"></script>
     <!--Sliders-->
-    <script src="{{url('theme/assets/plugins/slick/slick.js')}}"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+
     <!-- User customization-->
 
 
     <script src="{{url('theme/assets/plugins/noUiSlider/wNumb.js')}}"></script>
     <script src="{{url('theme/assets/plugins/noUiSlider/nouislider.min.js')}}"></script>
     <script src="{{url('theme/assets/js/custom.js')}}"></script>
+
+    @yield('homejs')

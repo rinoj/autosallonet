@@ -68,7 +68,7 @@
 					@endforeach
 			    </div>
 
-				<a href="{{route('users.index')}}" class="btn btn-default"><i class="fa fa-arrow-left"></i> Go Back</a>
+				<a href="{{route('users.index')}}" class="btn btn-default"><i class="fa fa-angle-left"></i> Go Back</a>
 				<button class="btn btn-primary " type="submit"><span class="glyphicon glyphicon-ok"></span> Create</button>
 	    {!! Form::close()!!}
 

@@ -39,7 +39,7 @@
 	@endsection
 
 	@section('boxtitleright')
-    <a href="{{ route('roles.create') }}" class="btn btn-success">Shto Sallonin</a>
+    <a href="{{ route('roles.create') }}" class="btn btn-default"><i class="fa fa-plus"></i> Shto Sallonin</a>
 	@endsection
 	@include('layouts.box')
 	</div>

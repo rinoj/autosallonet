@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-  
+
             
-                  <div class="l-main-content">
+      <div class="l-main-content">
         <div class="container">
           <section class="b-goods-f">
               
@@ -27,69 +27,24 @@
 
             <div class="row">
               <div class="col-lg-8">
+
+
                 <div class="b-goods-f__links"><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-map-marker-alt text-primary"></i>{{$vetura->salloni->adresa}}</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-question text-primary"></i>Request More Info</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-star text-primary"></i>Add To Favourite</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-car-side text-primary"></i>Schedule Test Drive</a><a class="b-goods-f__links-item" href="email:test@test.test"><i class="ic fas fa-envelope text-primary"></i>Email Friend</a></div>
-                <div class="b-goods-f__slider">
-                  <div class="ui-slider-main js-slider-for slick-initialized slick-slider">
-                  	<div class="slick-list draggable">
-                  		<div class="slick-track" style="opacity: 1; width: 3750px;">
-                  			<div class="slick-slide" data-slick-index="0" aria-hidden="true" style="width: 730px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms ease 0s;" tabindex="-1"><div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/main/1.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  		<div class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 730px; position: relative; left: -750px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1">
-                  			<div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/main/2.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  		<div class="slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 730px; position: relative; left: -1500px; top: 0px; z-index: 999; opacity: 1;">
-                  			<div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/main/1.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  		<div class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 730px; position: relative; left: -2250px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms ease 0s;" tabindex="-1">
-                  			<div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/main/2.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  		<div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 730px; position: relative; left: -3000px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1">
-                  			<div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/main/1.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  	</div>
+                  <div class="slider slider-for">
+                 @foreach($vetura->images as $image)
+                  <div>
+                    <img style="width: 730px; height: 370px" src="{{url('images/veturat/'. $image->filename)}}"/>
                   </div>
-              </div>
-                  <div class="ui-slider-nav js-slider-nav slick-initialized slick-slider"><div class="slick-list draggable">
-                  	<div class="slick-track" style="opacity: 1; width: 750px; transform: translate3d(-300px, 0px, 0px);">
-                  		<div class="slick-slide slick-active" data-slick-index="0" aria-hidden="false" style="width: 130px;" tabindex="-1">
-                  			<div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/thumb/1.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  		<div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 130px;" tabindex="-1">
-                  			<div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/thumb/2.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  		<div class="slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 130px;">
-                  			<div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/thumb/3.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  		<div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 130px;">
-                  			<div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/thumb/4.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  		<div class="slick-slide slick-active" data-slick-index="4" aria-hidden="false" style="width: 130px;">
-                  			<div>
-                  				<img class="img-scale" src="{{url('theme/assets/media/content/b-goods/main-slider/thumb/5.jpg')}}" alt="foto" style="width: 100%; display: inline-block;">
-                  			</div>
-                  		</div>
-                  	</div>
-                  </div>
-              </div>
+                  @endforeach
                 </div>
+                <div class="slider slider-nav">
+                  @foreach($vetura->images as $image)
+                  <div>
+                    <img style="width: 130px; height: 87px;" src="{{url('images/veturat/'. $image->filename)}}"/>
+                  </div>
+                  @endforeach
+                </div>
+
                 <h2 class="b-goods-f__title">Specifikat</h2>
                 <div class="row">
                   <div class="col-md-6">
@@ -98,7 +53,7 @@
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->viti}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Modeli</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->modeli->emri}}</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Njgyra</dt>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Ngjyra</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->ngjyra}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Lënda Djegëse</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->lenda}}</dd>
@@ -231,4 +186,28 @@
         </div>
       </div>
 
+      @endsection
+
+      @section('homejs')
+ 
+    <script type="text/javascript">
+        $(document).ready(function(){       
+ $('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+});
+    
+        });
+</script>
       @endsection

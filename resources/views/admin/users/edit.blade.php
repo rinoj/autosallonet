@@ -8,7 +8,7 @@
 
 @section('boxtitleright')
 {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id] ]) !!}
-                         <button type="submit" class="btn btn-danger"><i class="fa fa-remove"></i> Delete</button>
+                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
                         {!! Form::close() !!}
 @stop
 @section('content')
