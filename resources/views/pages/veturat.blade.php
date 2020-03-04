@@ -135,7 +135,7 @@
                         @if($vetura->images->count() == 0)
                         <img class="b-goods-f__img img-scale" src="{{url('theme/assets/media/content/b-goods/300x220/1.jpg')}}" alt="foto"/>
                         @else
-                          <img class="b-goods-f__img img-scale" src="{{url('images/veturat/'. $vetura->images->first()['filename'])}}" style="width: 322px; height: 220px;" alt="foto"/>
+                          <img class="b-goods-f__img img-scale" src="{{url('images/veturat/'. $vetura->images->first()['filename'])}}" style="width: 300; height: 220px;" alt="foto"/>
                         @endif
                       </a>
                       <span class="b-goods-f__media-inner">
