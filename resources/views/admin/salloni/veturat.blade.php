@@ -67,7 +67,7 @@
                     <td>{{$vetura->salloni->emri}}</td>
                     <td>{{$vetura->viti}}</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edito</a>
+                        <a href="{{route('admin.veturat.edit', $vetura->id)}}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edito</a>
                         <a href="{{route('admin.veturat.show', $vetura->id)}}" class="btn btn-sm btn-info"><i class="fa fa-images"></i> Fotot</a>
                     </td>
                 </tr>
