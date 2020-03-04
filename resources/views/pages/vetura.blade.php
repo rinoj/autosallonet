@@ -33,14 +33,14 @@
                   <div class="slider slider-for">
                  @foreach($vetura->images as $image)
                   <div>
-                    <img style="width: 730px; height: 370px" src="{{url('images/veturat/'. $image->filename)}}"/>
+                    <img style="max-width: 100%; height: auto; " src="{{url('images/veturat/'. $image->filename)}}"/>
                   </div>
                   @endforeach
                 </div>
                 <div class="slider slider-nav">
                   @foreach($vetura->images as $image)
                   <div>
-                    <img style="width: 130px; height: 87px;" src="{{url('images/veturat/'. $image->filename)}}"/>
+                    <img style="max-width: 100%; height: auto; " src="{{url('images/veturat/'. $image->filename)}}"/>
                   </div>
                   @endforeach
                 </div>
