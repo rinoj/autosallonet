@@ -40,7 +40,7 @@
     @endsection
 
     @section('boxtitle')
-    <a href="{{ route('admin.veturat') }}" class="btn btn-default ">Kthehu</a>
+    <a href="{{ route('admin.veturat') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> Kthehu</a>
     
     @endsection
 
