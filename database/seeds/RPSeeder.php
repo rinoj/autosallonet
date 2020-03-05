@@ -35,6 +35,7 @@ class RPSeeder extends Seeder
         $admin->givePermissionTo('manage-veturat');
         $admin->givePermissionTo('manage-sallonet');
         
+        $autosallon->givePermissionTo('view-admin');
         $autosallon->givePermissionTo('manage-veturat');
         
 
