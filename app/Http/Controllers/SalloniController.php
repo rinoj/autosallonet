@@ -80,7 +80,9 @@ class SalloniController extends Controller
      */
     public function show($id)
     {
-        //
+        $salloni = Salloni::findOrFail($id);
+
+        return view('pages.salloni')->withSalloni($salloni);
     }
 
     /**

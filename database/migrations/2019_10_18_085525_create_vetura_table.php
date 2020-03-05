@@ -18,10 +18,14 @@ class CreateVeturaTable extends Migration
             $table->integer('cmimi');
             $table->integer('km');
             $table->integer('viti');
-            $table->string('ngjyra');
             $table->string('marshi');
             $table->string('lenda');
             $table->integer('kubikazha');
+            $table->boolean('doganuar');
+            $table->string('ngjyra');
+            $table->string('interier');
+            $table->integer('dyer');
+
             $table->integer('marka_id');
             $table->integer('modeli_id');
             $table->integer('salloni_id');

@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Ballina')
+
 @section('content')
 
 <div class="main-slider slider-pro" id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="false" data-slider-buttons="false">

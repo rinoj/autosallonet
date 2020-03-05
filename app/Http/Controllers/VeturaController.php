@@ -7,7 +7,7 @@ use App\Modeli;
 use App\Marka;
 use App\Salloni;
 use Auth;
-use App\Image;
+use Image;
 use Illuminate\Http\Request;
 class VeturaController extends Controller
 {
@@ -107,7 +107,7 @@ class VeturaController extends Controller
                 $date = Date('d-m-Y');
                 $name = $date.'-'.$img->getClientOriginalName();
 
-                $image = new Image();
+                $image = new App\Image();
                 $image->filename= $name;
                 $image->vetura_id = $vetura->id;
                 $image->save();
@@ -133,7 +133,7 @@ class VeturaController extends Controller
                     $date = Date('d-m-Y');
                     $name = $date.'-'.$img->getClientOriginalName();
 
-                    $image = new Image();
+                    $image = new App\Image();
                     $image->filename= $name;
                     $image->vetura_id = $vetura->id;
                     $image->save();
@@ -147,7 +147,7 @@ class VeturaController extends Controller
     }
 
     public function deleteImage($id){
-        $image = Image::find($id);
+        $image = App\Image::find($id);
         $vetura = $image->vetura;
         $user = Auth::user();
         if($vetura->canEdit($user)){

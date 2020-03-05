@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Veturat')
+
 @section('content')
 
         <!-- end .b-title-page-->

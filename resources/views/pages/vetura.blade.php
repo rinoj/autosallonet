@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', $vetura->marka->emri.' '.$vetura->modeli->emri.' - '.$vetura->salloni->emri)
+
 @section('content')
 
             
@@ -29,7 +31,11 @@
               <div class="col-lg-8">
 
 
-                <div class="b-goods-f__links"><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-map-marker-alt text-primary"></i>{{$vetura->salloni->adresa}}</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-question text-primary"></i>Request More Info</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-star text-primary"></i>Add To Favourite</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-car-side text-primary"></i>Schedule Test Drive</a><a class="b-goods-f__links-item" href="email:test@test.test"><i class="ic fas fa-envelope text-primary"></i>Email Friend</a></div>
+                <div class="b-goods-f__links">
+                  <a class="b-goods-f__links-item" href="#"><i class="ic fas fa-map-marker-alt text-primary"></i>{{$vetura->salloni->adresa}}</a>
+                  <a class="b-goods-f__links-item" href="#"><i class="ic fab fa-facebook text-primary"></i>Faqja e AutoSallonit</a>
+                  <a class="b-goods-f__links-item" href="#"><i class="ic fas fa-car-side text-primary"></i>Më shumë vetura nga {{$vetura->salloni->emri}}</a>
+                </div>
                   <div class="slider slider-for">
                  @foreach($vetura->images as $image)
                   <div>
@@ -63,16 +69,16 @@
                   </div>
                   <div class="col-md-6">
                     <dl class="b-goods-f__descr row">
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Condition</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">New</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Dyer</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->dyer}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">KM</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{number_format($vetura->km)}} km</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Marshi</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->marshi}}</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Interior Color</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">Black / Red</dd>
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Interieri</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->interier}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">I doganuar</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">Po</dd>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->doganuar ? 'Po' : 'Jo'}}</dd>
                     </dl>
                   </div>
                 </div>
@@ -121,7 +127,7 @@
                       <div class="b-seller__img"><img class="img-scale" src="{{url('theme/assets/media/content/b-seller/1.jpg')}}" alt="foto"/></div>
                       <div class="b-seller__title">
                         <div class="b-seller__name">{{$vetura->salloni->emri}}</div>
-                        <div class="b-seller__category">Member Since August 2001</div>
+                        <div class="b-seller__category"></div>
                       </div>
                     </div>
                     <div class="b-seller__main"><i class="b-seller__ic fas fa-phone text-primary"></i>
@@ -129,54 +135,22 @@
                       <ul class="b-seller-soc list-unstyled">
                         <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-twitter"></i></a></li>
                         <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-facebook"></i></a></li>
-                        <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-linkedin"></i></a></li>
-                        <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-google-plus-g"></i></a></li>
-                        <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-pinterest"></i></a></li>
                       </ul>
                     </div>
                   </div>
                   <!-- end .b-seller-->
-                  
+
+                            
                   <div class="widget section-sidebar bg-gray widget-selecr-contact">
-                      <h3 class="widget-title bg-dark"><i class="ic icon_mail_alt"></i>Message Seller</h3>
+                    <h3 class="widget-title bg-dark"><i class="ic icon_mail_alt"></i>Komentoni</h3>
                     <div class="widget-content">
                       <div class="widget-inner">
-                        <form>
-                          <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Name"/>
-                          </div>
-                          <div class="form-group">
-                            <textarea class="form-control" placeholder="Message" rows="4"></textarea>
-                          </div>
-                          <button class="btn btn-red btn-lg w-100">Send now</button>
-                        </form>
+                        
+                  <div id="disqus_thread"></div>
                       </div>
                     </div>
                   </div>
-                  <div class="widget section-sidebar bg-gray">
-                    <h3 class="widget-title bg-dark"><i class="ic flaticon-money"></i>Find installment</h3>
-                    <div class="widget-content">
-                      <div class="widget-inner">
-                        <form>
-                          <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Loan Amount*"/>
-                          </div>
-                          <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Down Payment*"/>
-                          </div>
-                          <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Months Period*"/>
-                          </div>
-                          <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Interest Rate*"/>
-                          </div>
-                          <button class="btn btn-border btn-lg w-100">Estimate payment</button>
-                        </form>
-                      </div>
-                    </div>
-                    <!-- end .widget-->
-                    
-                  </div>
+                  
                 </aside>
               </div>
             </div>
@@ -210,4 +184,24 @@ $('.slider-nav').slick({
     
         });
 </script>
+
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-autosallonet-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       @endsection

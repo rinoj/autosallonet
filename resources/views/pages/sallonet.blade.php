@@ -1,5 +1,7 @@
 @extends('layouts.main')
  
+@section('title', 'Sallonet')
+
 @section('content')
 
 <main>
@@ -52,7 +54,7 @@
           <!-- end .b-find-->
           <section class="section-dealers">
             <div class="row">
-              <div class="col-xl">
+              <div class="col-xl-8 offset-xl-2">
                 <div class="section-dealers__main">
                   <div class="section-dealers__header">
                     <div class="row align-items-center">
@@ -88,16 +90,16 @@
                             <div class="b-dealers__contacts"><span class="b-dealers__contacts-item"><i class="ic icon-location-pin"></i>{{$salloni->adresa}}</span><span class="b-dealers__contacts-item"><i class="ic icon-call-in"></i>{{$salloni->telefoni}}</span></div>
                           </div>
                         </div>
-                        <div class="col-md-auto align-self-end"><a class="btn btn-secondary btn-sm" href="#">Detajet</a></div>
+                        <div class="col-md-auto align-self-end">
+                          <a class="btn btn-secondary btn-sm" href="{{route('salloni', $salloni->id)}}">Detajet</a>
+                          <a class="btn btn-secondary btn-sm" href="#">Shiko Veturat</a>
+                        </div>
                       </div>
                     </div>
                     @endforeach
                   </div>
                   <div class="text-center"><a class="section-dealers__btn-more btn btn-primary" href="#">Shiko më shumë sallone</a></div>
                 </div>
-              </div>
-              <div class="col-xl-auto">
-                <div class="b-dealers-map" id="map"></div>
               </div>
             </div>
           </section>

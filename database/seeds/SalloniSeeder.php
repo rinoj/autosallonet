@@ -96,6 +96,9 @@ class SalloniSeeder extends Seeder
             'lenda' => 'Nafte',
             'ngjyra' => 'E zeze',
             'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'dyer' => 4,
             'marka_id' => 1,
             'modeli_id' => 1,
             'salloni_id' => 1
@@ -109,6 +112,9 @@ class SalloniSeeder extends Seeder
             'lenda' => 'Nafte',
             'ngjyra' => 'E zeze',
             'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'dyer' => 4,
             'marka_id' => 1,
             'modeli_id' => 1,
             'salloni_id' => 1
@@ -122,6 +128,9 @@ class SalloniSeeder extends Seeder
             'lenda' => 'Nafte',
             'ngjyra' => 'E zeze',
             'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'dyer' => 4,
             'marka_id' => 1,
             'modeli_id' => 1,
             'salloni_id' => 1
