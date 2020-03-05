@@ -8,7 +8,7 @@
     <h1>Ballina</h1>
 @stop
 @section('boxtitle')
-    10 veturat e fundit
+    5 veturat e fundit
 @stop
 @section('content')
     <div class="row">
@@ -76,14 +76,15 @@
           <th>ID</th>
           <th>Marka</th>
           <th>Modeli</th>
-                <th>Auto Salloni</th>
-                <th>Viti</th>
-                <th>Fotografi</th>
-                <th></th>
+          <th>Auto Salloni</th>
+          <th>Viti</th>
+          <th>Fotografi</th>
+          <th>Data</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($veturat as $vetura)
+        @foreach ($veturat->sortByDesc('id')->take(5) as $vetura)
                 <tr>
                   <td>{{$vetura->id}}</td>
                     <td>{{$vetura->marka->emri}}</td>
@@ -91,9 +92,8 @@
                     <td>{{$vetura->salloni->emri}}</td>
                     <td>{{$vetura->viti}}</td>
                     <td>{{$vetura->images->count()}}</td>
+                    <td>{{$vetura->created_at}}</td>
                     <td>
-                        <a href="{{route('admin.veturat.edit', $vetura->id)}}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edito</a>
-                        <a href="{{route('admin.veturat.show', $vetura->id)}}" class="btn btn-sm btn-info"><i class="fa fa-images"></i> Fotot</a>
                         <a href="{{route('showvetura', $vetura->id)}}" class="btn btn-sm btn-default" target="_blank"><i class="fa fa-link"></i> Shfaq veturen</a>
                     </td>
                 </tr>
