@@ -80,7 +80,16 @@
         {{ Form::label('Cmimi', 'Cmimi') }}
         {{ Form::text('cmimi', '', array('class' => 'form-control')) }}
     </div>
-
+    @if($user->hasRole('admin'))
+    <div class="form-group">
+        {{ Form::label('salloni', 'Zgjedh Sallonin') }}
+         <select id="e1" class="form-control" name="salloni">
+            @foreach($sallonet as $salloni)
+                <option value="{{$salloni->id}}">{{$salloni->emri}}</option>
+            @endforeach
+        </select>
+    </div>
+    @endif
     <div class="form-group">
         {{ Form::label('Foto', 'Foto') }}
     	<input type="file" name="filename[]" class="form-control" multiple>
@@ -101,4 +110,12 @@
     @include('layouts.box')
     </div>
 </div>
+@endsection
+
+@section('js')
+ <script>
+       $("#e1").select2({
+    placeholder: "Select a State"
+});
+    </script>
 @endsection

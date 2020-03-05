@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Vetura;
 use App\Modeli;
 use App\Marka;
+use App\Salloni;
+use Auth;
 use App\Image;
 use Illuminate\Http\Request;
 class VeturaController extends Controller
@@ -21,7 +23,18 @@ class VeturaController extends Controller
     }
 
     public function admin(){
-        $veturat = Vetura::paginate(20);
+        $user = Auth::user();
+        if($user->hasRole('admin')){
+            $veturat = Vetura::paginate(10);
+        }
+        else{
+            if($user->salloni != null){
+                $veturat = Vetura::where('salloni_id', $user->salloni->id)->paginate(10);   
+            }
+            else{
+                return redirect()->route('admin');
+            }
+        }
         return view('admin.veturat.index')->withVeturat($veturat);
     }
 
@@ -32,6 +45,10 @@ class VeturaController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
+        if($user->salloni == null)
+            return redirect()->route('admin');
+        $sallonet = Salloni::all();
         $markat = Marka::all();
         $modelet = Modeli::all();
         $vitet = array(); 
@@ -40,9 +57,11 @@ class VeturaController extends Controller
         }
         rsort($vitet, 2);
         return view('admin.veturat.create')
+                ->withSallonet($sallonet)
                 ->withMarkat($markat)
                 ->withModelet($modelet)
-                ->with('vitet', $vitet);
+                ->with('vitet', $vitet)
+                ->withUser($user);
     }
 
     /**
@@ -53,6 +72,7 @@ class VeturaController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
         $this->validate($request, [
             'viti'=>'required|max:40',
             'cmimi' => 'required',
@@ -73,7 +93,11 @@ class VeturaController extends Controller
         $vetura->lenda = $request->lenda;
         $vetura->marka_id = $request->marka;
         $vetura->modeli_id = $request->modeli;
-        $vetura->salloni_id = 1;
+        if($user->hasRole('admin')){
+            $vetura->salloni_id = $request->salloni;
+        }else{
+            $vetura->salloni_id = $user->salloni->id;
+        }
         $vetura->save();
 
         if($request->hasfile('filename'))
@@ -98,21 +122,25 @@ class VeturaController extends Controller
     }
 
     public function uploadImage($id, Request $request){
+
         $vetura = Vetura::find($id);
-        if($request->hasfile('filename'))
-        {
-            foreach($request->file('filename') as $img)
+        $user = Auth::user();
+        if($vetura->canEdit($user)){
+            if($request->hasfile('filename'))
             {
-                $date = Date('d-m-Y');
-                $name = $date.'-'.$img->getClientOriginalName();
+                foreach($request->file('filename') as $img)
+                {
+                    $date = Date('d-m-Y');
+                    $name = $date.'-'.$img->getClientOriginalName();
 
-                $image = new Image();
-                $image->filename= $name;
-                $image->vetura_id = $vetura->id;
-                $image->save();
+                    $image = new Image();
+                    $image->filename= $name;
+                    $image->vetura_id = $vetura->id;
+                    $image->save();
 
-                $img->move(public_path().'/images/veturat/', $name);  
-                
+                    $img->move(public_path().'/images/veturat/', $name);  
+                    
+                }
             }
         }
         return redirect()->back();
@@ -120,12 +148,15 @@ class VeturaController extends Controller
 
     public function deleteImage($id){
         $image = Image::find($id);
-        $image_path = public_path()."/images/veturat/".$image->filename; 
-        if (file_exists($image_path)) {
-           unlink($image_path);
+        $vetura = $image->vetura;
+        $user = Auth::user();
+        if($vetura->canEdit($user)){
+            $image_path = public_path()."/images/veturat/".$image->filename; 
+            if (file_exists($image_path)) {
+               unlink($image_path);
+            }
+            $image->delete();
         }
-        $image->delete();
-
         return redirect()->back();
     }
 
@@ -143,7 +174,18 @@ class VeturaController extends Controller
 
     public function showadmin($id)
     {
-        $vetura = Vetura::find($id);
+        $user = Auth::user();
+        if($user->salloni == null)
+            return redirect()->route('admin');
+        if($user->hasRole('admin')){
+            $vetura = Vetura::find($id);
+        }
+        else{
+            $vetura = Vetura::find($id);
+            if(!$vetura->canEdit($user)){
+                return redirect()->route('admin');
+            }
+        }
         return view('admin.veturat.show')->withVetura($vetura);
     }
 
@@ -155,20 +197,33 @@ class VeturaController extends Controller
      */
     public function edit($id)
     {
+        $sallonet = Salloni::all();
         $vetura = Vetura::findOrFail($id);
+        $user = Auth::user();
+        if($user->hasRole('admin')){
+            $vetura = Vetura::find($id);
+        }
+        else{
+            $vetura = Vetura::find($id);
+            if(!$vetura->canEdit($user)){
+                return redirect()->route('admin');
+            }
+        }
         $markat = Marka::all();
         $modelet = Modeli::all();
-        $vitet = array(); 
+        $vitet = array();
         for($i = 0; $i <= 50; $i++){
             $vitet[$i] = $i + 1970;
         }
         // dd($vetura);
         rsort($vitet, 2);
         return view('admin.veturat.edit')
+                ->withSallonet($sallonet)
                 ->withMarkat($markat)
                 ->withModelet($modelet)
                 ->with('vitet', $vitet)
-                ->withVetura($vetura);
+                ->withVetura($vetura)
+                ->withUser($user);
     }
 
     /**
@@ -180,6 +235,7 @@ class VeturaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = Auth::user();
         $this->validate($request, [
             'viti'=>'required|max:40',
             'cmimi' => 'required',
@@ -198,7 +254,9 @@ class VeturaController extends Controller
         $vetura->lenda = $request->lenda;
         $vetura->marka_id = $request->marka;
         $vetura->modeli_id = $request->modeli;
-        $vetura->salloni_id = 1;
+        if($user->hasRole('admin')){
+            $vetura->salloni_id = $request->salloni;
+        }
         $vetura->update();
 
 

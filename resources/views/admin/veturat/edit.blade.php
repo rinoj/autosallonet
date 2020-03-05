@@ -80,7 +80,16 @@
         {{ Form::label('Cmimi', 'Cmimi') }}
         {{ Form::text('cmimi', $vetura->cmimi, array('class' => 'form-control')) }}
     </div>
-
+    @if($user->hasRole('admin'))
+    <div class="form-group">
+        {{ Form::label('salloni', 'Zgjedh Sallonin') }}
+         <select id="e1" class="form-control" name="salloni">
+            @foreach($sallonet as $salloni)
+                <option value="{{$salloni->id}}" {{$salloni->id == $vetura->salloni->id ? 'selected' : ''}}>{{$salloni->emri}}</option>
+            @endforeach
+        </select>
+    </div>
+    @endif
     <div class="form-group">
         {{ Form::label('Foto', 'Foto: ') }}<br>
     	<a href="{{route('admin.veturat.show', $vetura->id)}}" class="btn btn-default"><i class="fa fa-upload"></i> Kliko ketu per te ngarkuar/edituar fotot</a>

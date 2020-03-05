@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Salloni;
 use App\Vetura;
+use App\User;
 class SalloniController extends Controller
 {
     /**
@@ -40,7 +41,9 @@ class SalloniController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+
+        return view('admin.salloni.create')->withUsers($users);
     }
 
     /**
@@ -51,7 +54,22 @@ class SalloniController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'emri'=>'required|max:40',
+            'telefoni' => 'required',
+            'adresa' => 'required'
+        ]);
+
+        $salloni = new Salloni();
+        $salloni->emri = $request->emri;
+        $salloni->telefoni = $request->telefoni;
+        $salloni->adresa = $request->adresa;
+        $salloni->user_id = $request->user;
+        $salloni->save();
+
+        return redirect()->route('admin.sallonet')
+            ->with('flash_message',
+             'Salloni '.$salloni->emri. ' eshte shtuar!');
     }
 
     /**
@@ -73,7 +91,9 @@ class SalloniController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::all();
+        $salloni = Salloni::findOrFail($id);
+        return view('admin.salloni.edit')->withUsers($users)->withSalloni($salloni);
     }
 
     /**
@@ -85,7 +105,22 @@ class SalloniController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'emri'=>'required|max:40',
+            'telefoni' => 'required',
+            'adresa' => 'required'
+        ]);
+
+        $salloni = Salloni::findOrFail($id);
+        $salloni->emri = $request->emri;
+        $salloni->telefoni = $request->telefoni;
+        $salloni->adresa = $request->adresa;
+        $salloni->user_id = $request->user;
+        $salloni->update();
+
+        return redirect()->route('admin.sallonet')
+            ->with('flash_message',
+             'Salloni '.$salloni->emri. ' eshte edituar!');
     }
 
     /**

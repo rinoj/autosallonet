@@ -2,7 +2,7 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Ballina')
 
 @section('content_header')
     <h1>Dashboard</h1>

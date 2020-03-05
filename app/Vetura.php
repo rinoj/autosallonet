@@ -23,4 +23,9 @@ class Vetura extends Model
     public function images(){
         return $this->hasMany('App\Image');
     }
+
+    public function canEdit($user)
+    {
+        return $this->salloni->user->id === $user->id;
+    }
 }

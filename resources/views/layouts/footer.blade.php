@@ -31,12 +31,11 @@
                                     <section class="footer-section footer-section_link">
                                         <h3 class="footer-section__title">About Revus</h3>
                                         <ul class="footer-list list-unstyled">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Services</a></li>
-                                            <li><a href="#">About us</a></li>
-                                            <li><a href="#">Inventory</a></li>
-                                            <li><a href="#">Parts Shop</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="{{route('index')}}">Ballina</a></li>
+                                            <li><a href="{{route('veturat')}}">Vetura</a></li>
+                                            <li><a href="{{route('sallonet')}}">Sallonet</a></li>
+                                            <li><a href="#">Rent a Car</a></li>
+                                            <li><a href="#">Kontakto</a></li>
                                         </ul>
                                     </section>
                                 </div>

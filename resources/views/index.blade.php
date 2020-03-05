@@ -120,8 +120,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="ui-title-slogan">Helps you to find your next car easily</div>
-                            <h2 class="ui-title">Featured<span class="text-primary"> Vehicles</span></h2>
+                            <div class="ui-title-slogan">Gjej të preferuarën tënde</div>
+                            <h2 class="ui-title">Shiko më shumë<span class="text-primary"> vetura</span></h2>
                         </div>
                     </div>
                 </div>

@@ -130,7 +130,7 @@ return [
     'menu' => [
         ['header' => 'ADMINISTRATION'],
         [
-            'text' => 'Home',
+            'text' => 'Ballina',
             'url'  => 'admin',
             'icon' => 'fa fa-home',
         ],
@@ -150,7 +150,7 @@ return [
             'text' => 'Veturat',
             'url'  => 'admin/veturat',
             'icon' => 'fa fa-car',
-            'can'  => 'manage-users'
+            'can'  => 'manage-veturat'
         ],
         [
             'text'    => 'Markat & Modelet',

@@ -31,7 +31,10 @@
                     <td>{{$salloni->adresa}}</td>
                     <td>{{$salloni->user->name}}</td>
                     <td>{{$salloni->veturat->count()}}</td>
-                    <td><a href="{{route('admin.sallonet.veturat', $salloni->id)}}" class="btn btn-info"><i class="fa fa-car"></i> Veturat</a></td>
+                    <td>
+                        <a href="{{route('admin.sallonet.veturat', $salloni->id)}}" class="btn btn-info"><i class="fa fa-car"></i> Veturat</a>
+                        <a href="{{route('admin.sallonet.edit', $salloni->id)}}" class="btn btn-success"><i class="fa fa-edit"></i> Edito</a>
+                    </td>
                 </tr>
                 @endforeach
     	</tbody>
@@ -39,7 +42,7 @@
 	@endsection
 
 	@section('boxtitleright')
-    <a href="{{ route('roles.create') }}" class="btn btn-default"><i class="fa fa-plus"></i> Shto Sallonin</a>
+    <a href="{{ route('admin.sallonet.create') }}" class="btn btn-default"><i class="fa fa-plus"></i> Shto Sallonin</a>
 	@endsection
 	@include('layouts.box')
 	</div>

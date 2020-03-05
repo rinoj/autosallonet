@@ -34,6 +34,7 @@
     			<th>Name</th>
     			<th>Email</th>
                 <th>Group(s)</th>
+                <th>Salloni</th>
     			<th>Action</th>
     		</tr>
     	</thead>
@@ -48,6 +49,7 @@
                             <label class="label label-default">{{$role->name}}</label>
                         @endforeach
                     </td>
+                    <td>{{$user->salloni != null ? $user->salloni->emri : 'Nuk ka'}}</td>
     				<td>
     					<a href="{{route('users.edit', $user->id)}}" class="btn btn-info pull-left" style="margin-right: 3px;"><i class="fa fa-edit"></i> Edit User</a>
 
