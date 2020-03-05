@@ -83,6 +83,13 @@ class SalloniSeeder extends Seeder
             'user_id' => 1
         ]);
 
+        DB::table('salloni')->insert([
+            'emri' => 'Auto Alberti',
+            'telefoni' => '+383000000',
+            'adresa' => 'Prishtine',
+            'user_id' => 2
+        ]);
+
 
         //=====================================================================================
 
