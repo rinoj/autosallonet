@@ -5,11 +5,27 @@
 @section('title', 'Ballina')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Ballina</h1>
 @stop
 
 @section('content')
     <div class="row">
+    @hasrole('autosallon')
+      @if($salloni != null)
+        <div class="col-md-4">
+          <div class="info-box">
+            <!-- Apply any bg-* class to to the icon to color it -->
+            <span class="info-box-icon bg-default"><i class="fa fa-building"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">{{$salloni->adresa}}</span>
+              <span class="info-box-number">{{$salloni->emri}}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+      </div>
+      @endif
+    @endhasrole
+    @hasrole('admin')
     <div class="col-md-4">
         <div class="info-box">
           <!-- Apply any bg-* class to to the icon to color it -->
@@ -33,7 +49,7 @@
           <!-- /.info-box-content -->
         </div>
     </div>
-
+    @endhasrole
     <div class="col-md-4">
         <div class="info-box">
           <!-- Apply any bg-* class to to the icon to color it -->

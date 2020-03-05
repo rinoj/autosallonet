@@ -7,7 +7,9 @@
                                     <ul class="top-bar__list list-unstyled col">
                                         <li class="top-bar__item"><a class="top-bar__link" href="mailto:support@domain.com">info@autosallonet.com</a></li>
                                         <li class="top-bar__item">AutoSallonet.com</li>
-                                    </ul><a class="btn btn-primary btn-sm col-auto" href="#"><i class="ic icon-list"></i> Add Listings</a>
+                                    </ul>
+                                    <a class="btn btn-primary btn-sm col-auto" href="https://www.facebook.com/autosallonet/" target="_blank"><i class="ic fab fa-facebook"></i> AutoSallonet</a>
+
                                 </div>
                             </div>
                         </div>

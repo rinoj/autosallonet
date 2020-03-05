@@ -56,24 +56,15 @@ Route::group(['middleware' => ['permission:manage-veturat']], function () {
 	Route::post('admin/veturat/store', 'VeturaController@store')->name('admin.veturat.store');
 });
 
-Route::group(['middleware' => ['permission:manage-users']], function () {
-	
-});
-
-Route::group(['middleware' => ['permission:manage-users']], function () {
-	
-});
-
-Route::group(['middleware' => ['role:admin']], function () {
-	
+Route::group(['middleware' => ['permission:manage-sallonet']], function () {
 	Route::get('admin/sallonet', 'SalloniController@admin')->name('admin.sallonet');
 	Route::get('admin/sallonet/create', 'SalloniController@create')->name('admin.sallonet.create');
 	Route::post('admin/sallonet/create', 'SalloniController@store')->name('admin.sallonet.store');
 	Route::get('admin/sallonet/edit/{id}', 'SalloniController@edit')->name('admin.sallonet.edit');
 	Route::post('admin/sallonet/edit/{id}', 'SalloniController@update')->name('admin.sallonet.update');
 	Route::get('admin/sallonet/{id}', 'SalloniController@veturat')->name('admin.sallonet.veturat');
-
 });
+
 
 Route::get('veturat', 'VeturaController@index')->name('veturat');
 Route::get('vetura/{vetura}', 'VeturaController@show')->name('showvetura');

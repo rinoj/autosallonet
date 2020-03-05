@@ -20,6 +20,7 @@ class RPSeeder extends Seeder
         app(Permission::class)->create(['name' => 'manage-markat-modelet', 'guard_name' => 'web']);
         app(Permission::class)->create(['name' => 'manage-users', 'guard_name' => 'web']);
         app(Permission::class)->create(['name' => 'manage-veturat', 'guard_name' => 'web']);
+        app(Permission::class)->create(['name' => 'manage-sallonet', 'guard_name' => 'web']);
 
 
         $admin = app(Role::class)->create(['name' => 'admin', 'guard_name' => 'web']);
@@ -32,6 +33,7 @@ class RPSeeder extends Seeder
         $admin->givePermissionTo('manage-markat-modelet');
         $admin->givePermissionTo('manage-users');
         $admin->givePermissionTo('manage-veturat');
+        $admin->givePermissionTo('manage-sallonet');
         
         $autosallon->givePermissionTo('manage-veturat');
         

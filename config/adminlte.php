@@ -128,7 +128,7 @@ return [
     */
 
     'menu' => [
-        ['header' => 'ADMINISTRATION'],
+        ['header' => 'PANELI I ADMINIT'],
         [
             'text' => 'Ballina',
             'url'  => 'admin',
@@ -144,7 +144,7 @@ return [
             'text' => 'Sallonet',
             'url'  => 'admin/sallonet',
             'icon' => 'fa fa-building',
-            'can'  => 'manage-users'
+            'can'  => 'manage-sallonet'
         ],
         [
             'text' => 'Veturat',
