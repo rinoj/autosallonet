@@ -67,12 +67,16 @@
         {{ Form::label('ngjyra', 'Ngjyra') }}
         {{ Form::text('ngjyra', $vetura->ngjyra, array('class' => 'form-control')) }}
     </div>
+    <div class="form-group">
+        {{ Form::label('interier', 'Interieri') }}
+        {{ Form::text('interier', $vetura->interier, array('class' => 'form-control')) }}
+    </div>
 
     <div class="form-group">
         {{ Form::label('Marshi', 'Marshi') }}
         <select class="form-control" name="marshi">
-        	<option value="automatik" {{$vetura->marshi == 'automatik' ? 'selected' : ''}}>Automatik</option>
-        	<option value="manual" {{$vetura->marshi == 'manual' ? 'selected' : ''}}>Manual</option>
+            <option value="automatik" {{$vetura->marshi == 'automatik' ? 'selected' : ''}}>Automatik</option>
+            <option value="manual" {{$vetura->marshi == 'manual' ? 'selected' : ''}}>Manual</option>
         </select>
     </div>
 
@@ -80,6 +84,22 @@
         {{ Form::label('Cmimi', 'Cmimi') }}
         {{ Form::text('cmimi', $vetura->cmimi, array('class' => 'form-control')) }}
     </div>
+
+     <div class="form-group">
+        {{ Form::label('dyer', 'Dyer') }}
+        {{ Form::text('dyer', $vetura->dyer, array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('doganuar', 'I doganuar') }}
+         <select id="e1" class="form-control" name="doganuar">
+                <option value="1" {{$vetura->doganuar == 1 ? 'selected' : ''}}>Po</option>
+                <option value="0" {{$vetura->doganuar == 0 ? 'selected' : ''}}>Jo</option>
+        </select>
+    </div>
+    
+
+   
     @if($user->hasRole('admin'))
     <div class="form-group">
         {{ Form::label('salloni', 'Zgjedh Sallonin') }}

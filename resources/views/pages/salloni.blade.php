@@ -13,7 +13,7 @@
               <div class="col-xl-auto">
                 <div class="b-dealers-info__inner">
                   <div class="row">
-                    <div class="col"><a class="b-dealers-info__top-link btn btn-secondary btn-sm" href="#"><i class="ic arrow_left text-primary"></i> Kthehu te Sallonet</a></div>
+                    <div class="col"><a class="b-dealers-info__top-link btn btn-secondary btn-sm" href="{{route('sallonet')}}"><i class="ic arrow_left text-primary"></i> Kthehu te Sallonet</a></div>
                   </div>
                   <div class="b-dealers-info__header">
                     <div class="row justify-content-between">

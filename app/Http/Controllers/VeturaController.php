@@ -7,7 +7,7 @@ use App\Modeli;
 use App\Marka;
 use App\Salloni;
 use Auth;
-use Image;
+use App\Image;
 use Illuminate\Http\Request;
 class VeturaController extends Controller
 {
@@ -91,6 +91,10 @@ class VeturaController extends Controller
         $vetura->viti = $request->viti;
         $vetura->marshi = $request->marshi;
         $vetura->lenda = $request->lenda;
+        $vetura->interier = $request->interier;
+        $vetura->doganuar = $request->doganuar;
+        $vetura->dyer = $request->dyer;
+
         $vetura->marka_id = $request->marka;
         $vetura->modeli_id = $request->modeli;
         if($user->hasRole('admin')){
@@ -107,7 +111,7 @@ class VeturaController extends Controller
                 $date = Date('d-m-Y');
                 $name = $date.'-'.$img->getClientOriginalName();
 
-                $image = new App\Image();
+                $image = new Image();
                 $image->filename= $name;
                 $image->vetura_id = $vetura->id;
                 $image->save();
@@ -133,7 +137,7 @@ class VeturaController extends Controller
                     $date = Date('d-m-Y');
                     $name = $date.'-'.$img->getClientOriginalName();
 
-                    $image = new App\Image();
+                    $image = new Image();
                     $image->filename= $name;
                     $image->vetura_id = $vetura->id;
                     $image->save();
@@ -147,7 +151,7 @@ class VeturaController extends Controller
     }
 
     public function deleteImage($id){
-        $image = App\Image::find($id);
+        $image = Image::find($id);
         $vetura = $image->vetura;
         $user = Auth::user();
         if($vetura->canEdit($user)){
@@ -251,6 +255,11 @@ class VeturaController extends Controller
         $vetura->kubikazha = $request->kubikazha;
         $vetura->viti = $request->viti;
         $vetura->marshi = $request->marshi;
+        
+        $vetura->interier = $request->interier;
+        $vetura->doganuar = $request->doganuar;
+        $vetura->dyer = $request->dyer;
+
         $vetura->lenda = $request->lenda;
         $vetura->marka_id = $request->marka;
         $vetura->modeli_id = $request->modeli;

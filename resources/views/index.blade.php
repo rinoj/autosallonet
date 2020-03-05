@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Ballina')
+@section('title', 'AutoSallonet.com')
 
 @section('content')
 

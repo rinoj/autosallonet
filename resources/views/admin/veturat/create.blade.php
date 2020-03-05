@@ -69,6 +69,11 @@
     </div>
 
     <div class="form-group">
+        {{ Form::label('interier', 'Interieri') }}
+        {{ Form::text('interier', '', array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
         {{ Form::label('Marshi', 'Marshi') }}
         <select class="form-control" name="marshi">
         	<option value="automatik">Automatik</option>
@@ -80,6 +85,20 @@
         {{ Form::label('Cmimi', 'Cmimi') }}
         {{ Form::text('cmimi', '', array('class' => 'form-control')) }}
     </div>
+
+     <div class="form-group">
+        {{ Form::label('dyer', 'Dyer') }}
+        {{ Form::text('dyer', '', array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('doganuar', 'I doganuar') }}
+         <select id="e1" class="form-control" name="doganuar">
+                <option value="1">Po</option>
+                <option value="0">Jo</option>
+        </select>
+    </div>
+
     @if($user->hasRole('admin'))
     <div class="form-group">
         {{ Form::label('salloni', 'Zgjedh Sallonin') }}
