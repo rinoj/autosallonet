@@ -7,7 +7,9 @@
 @section('content_header')
     <h1>Ballina</h1>
 @stop
-
+@section('boxtitle')
+    10 veturat e fundit
+@stop
 @section('content')
     <div class="row">
     @hasrole('autosallon')
@@ -62,6 +64,48 @@
         </div>
     </div>
 </div>
+
+
+    @hasrole('admin')
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+  @section('boxcontent')
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Marka</th>
+          <th>Modeli</th>
+                <th>Auto Salloni</th>
+                <th>Viti</th>
+                <th>Fotografi</th>
+                <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($veturat as $vetura)
+                <tr>
+                  <td>{{$vetura->id}}</td>
+                    <td>{{$vetura->marka->emri}}</td>
+                    <td>{{$vetura->modeli->emri}}</td>
+                    <td>{{$vetura->salloni->emri}}</td>
+                    <td>{{$vetura->viti}}</td>
+                    <td>{{$vetura->images->count()}}</td>
+                    <td>
+                        <a href="{{route('admin.veturat.edit', $vetura->id)}}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edito</a>
+                        <a href="{{route('admin.veturat.show', $vetura->id)}}" class="btn btn-sm btn-info"><i class="fa fa-images"></i> Fotot</a>
+                        <a href="{{route('showvetura', $vetura->id)}}" class="btn btn-sm btn-default" target="_blank"><i class="fa fa-link"></i> Shfaq veturen</a>
+                    </td>
+                </tr>
+                @endforeach
+      </tbody>
+    </table>
+  @endsection
+
+  @include('layouts.box')
+  </div>
+</div>
+@endhasrole
 @stop
 
 @section('css')
