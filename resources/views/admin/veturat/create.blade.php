@@ -57,8 +57,8 @@
     <div class="form-group">
         {{ Form::label('lenda', 'Lenda Djegese') }}
         <select class="form-control" name="lenda">
-        	<option value="diesel">Diesel</option>
-        	<option value="benzin">Benzin</option>
+        	<option value="Diesel">Diesel</option>
+        	<option value="Benzin">Benzin</option>
         	<option value="Elektrik">Elektrik</option>
         </select>
     </div>
@@ -76,8 +76,8 @@
     <div class="form-group">
         {{ Form::label('Marshi', 'Marshi') }}
         <select class="form-control" name="marshi">
-        	<option value="automatik">Automatik</option>
-        	<option value="manual">Manual</option>
+        	<option value="Automatik">Automatik</option>
+        	<option value="Manual">Manual</option>
         </select>
     </div>
 

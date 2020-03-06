@@ -16,6 +16,7 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "5.8.*",
+        "mohammad-fouladgar/eloquent-builder": "^2.2",
         "spatie/laravel-permission": "^3.0",
         "yajra/laravel-disqus": "^1.1"
     },

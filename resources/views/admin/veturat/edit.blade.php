@@ -57,9 +57,9 @@
     <div class="form-group">
         {{ Form::label('lenda', 'Lenda Djegese') }}
         <select class="form-control" name="lenda">
-        	<option value="diesel" {{$vetura->lenda == 'diesel' ? 'selected' : ''}}>Diesel</option>
-        	<option value="benzin" {{$vetura->lenda == 'benzin' ? 'selected' : ''}}>Benzin</option>
-        	<option value="elektrik" {{$vetura->lenda == 'elektrik' ? 'selected' : ''}}>Elektrik</option>
+        	<option value="Diesel" {{$vetura->lenda == 'Diesel' ? 'selected' : ''}}>Diesel</option>
+        	<option value="Benzin" {{$vetura->lenda == 'Benzin' ? 'selected' : ''}}>Benzin</option>
+        	<option value="Elektrik" {{$vetura->lenda == 'Elektrik' ? 'selected' : ''}}>Elektrik</option>
         </select>
     </div>
 
@@ -75,8 +75,8 @@
     <div class="form-group">
         {{ Form::label('Marshi', 'Marshi') }}
         <select class="form-control" name="marshi">
-            <option value="automatik" {{$vetura->marshi == 'automatik' ? 'selected' : ''}}>Automatik</option>
-            <option value="manual" {{$vetura->marshi == 'manual' ? 'selected' : ''}}>Manual</option>
+            <option value="Automatik" {{$vetura->marshi == 'Automatik' ? 'selected' : ''}}>Automatik</option>
+            <option value="Manual" {{$vetura->marshi == 'Manual' ? 'selected' : ''}}>Manual</option>
         </select>
     </div>
 

@@ -16,7 +16,6 @@
     <script src="{{url('theme/assets/plugins/headers/header.js')}}"></script>
     <!-- Mail scripts-->
     <script src="{{url('theme/assets/plugins/jqBootstrapValidation.js')}}"></script>
-    <script src="{{url('theme/assets/plugins/contact_me.js')}}"></script>
     <!-- Video player-->
     <script src="{{url('theme/assets/plugins/flowplayer/flowplayer.min.js')}}"></script>
     <!-- Filter and sorting images-->

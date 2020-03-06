@@ -19,91 +19,58 @@
                     <h3 class="widget-title bg-dark"><i class="ic flaticon-car-4"></i>Kërko veturën</h3>
                     <div class="widget-content">
                       <div class="widget-inner">
-                        <form class="b-filter bg-light">
+
+                        <form class="b-filter bg-light" action="{{ route('search') }}">
                           <div class="b-filter__main">
                             <div class="b-filter__row">
-                              <select class="selectpicker" data-width="100%" title="Zgjedh Markën" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                <option>Select 1</option>
-                                <option>Select 2</option>
-                                <option>Select 3</option>
-                                <option>Select 4</option>
+                              <select class="selectpicker" data-width="100%" title="Zgjedh Markën" multiple="multiple" data-max-options="1" data-style="ui-select" name="marka">
+                                @foreach($markat as $marka)
+                                  <option {{request()->get('marka') == $marka->emri ? 'selected' : ''}}>{{$marka->emri}}</option>
+                                @endforeach
                               </select>
                             </div>
+
                             <div class="b-filter__row">
-                              <select class="selectpicker" data-width="100%" title="Zgjedh Modelin" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                <option>Select 1</option>
-                                <option>Select 2</option>
-                                <option>Select 3</option>
-                                <option>Select 4</option>
+                              <select class="selectpicker" data-width="100%" title="Zgjedh Modelin" multiple="multiple" data-max-options="1" data-style="ui-select" name="modeli">
+                               @foreach($modelet as $modeli)
+                                <option {{request()->get('modeli') == $modeli->emri ? 'selected' : ''}}>{{$modeli->emri}}</option>
+                                @endforeach
                               </select>
                             </div>
+
+                             <div class="b-filter__row">
+                              <select class="selectpicker" data-width="100%" title="Zgjedh Marshin" multiple="multiple" data-max-options="1" data-style="ui-select" name="marshi">
+                                <option {{request()->get('marshi') == 'Automatik' ? 'selected' : ''}}>Automatik</option>
+                                <option {{request()->get('marshi') == 'Manual' ? 'selected' : ''}}>Manual</option>
+                              </select>
+                            </div>
+
                             <div class="b-filter__row">
-                              <select class="selectpicker" data-width="100%" title="Vehicle Type" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                <option>Select 1</option>
-                                <option>Select 2</option>
-                                <option>Select 3</option>
-                                <option>Select 4</option>
+                              <select class="selectpicker" data-width="100%" title="Zgjedh Lënden Djegëse" multiple="multiple" data-max-options="1" data-style="ui-select" name="lenda">
+                                <option {{request()->get('lenda') == 'Benzin' ? 'selected' : ''}}>Benzin</option>
+                                <option {{request()->get('lenda') == 'Diesel' ? 'selected' : ''}}>Diesel</option>
+                                <option {{request()->get('lenda') == 'Elektrik' ? 'selected' : ''}}>Elektrik</option>
                               </select>
                             </div>
-                            <div class="b-filter__row">
-                              <select class="selectpicker" data-width="100%" title="Condition" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                <option>Select 1</option>
-                                <option>Select 2</option>
-                                <option>Select 3</option>
-                                <option>Select 4</option>
-                              </select>
-                            </div>
-                            <div class="b-filter__row row">
-                              <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                <select class="selectpicker" data-width="100%" title="Viti Prej" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                  <option>Select 1</option>
-                                  <option>Select 2</option>
-                                  <option>Select 3</option>
-                                  <option>Select 4</option>
-                                </select>
-                              </div>
-                              <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                <select class="selectpicker" data-width="100%" title="Viti Deri" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                  <option>Select 1</option>
-                                  <option>Select 2</option>
-                                  <option>Select 3</option>
-                                  <option>Select 4</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="b-filter__row">
-                              <select class="selectpicker" data-width="100%" title="Marshi" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                <option>Select 1</option>
-                                <option>Select 2</option>
-                                <option>Select 3</option>
-                                <option>Select 4</option>
-                              </select>
-                            </div>
-                            <div class="b-filter__row">
-                              <select class="selectpicker" data-width="100%" title="Lënda Djegëse" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                <option>Select 1</option>
-                                <option>Select 2</option>
-                                <option>Select 3</option>
-                                <option>Select 4</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="b-filter-slider ui-filter-slider">
+
+                          
+                            <div class="b-filter-slider ui-filter-slider">
                             <div class="b-filter-slider__title">Çmimi</div>
                             <div class="b-filter-slider__main">
                               <div id="filterPrice"></div>
                               <div class="b-filter__row row">
                                 <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                  <input class="ui-select" id="input-with-keypress-0"/>
+                                  <input class="ui-select" id="input-with-keypress-0" name="cmimiprej" />
                                 </div>
                                 <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                  <input class="ui-select" id="input-with-keypress-1"/>
+                                  <input class="ui-select" id="input-with-keypress-1" name="cmimideri" />
                                 </div>
                               </div>
                             </div>
                           </div>
+
                           <button class="b-filter__reset btn btn-default w-100" type="button">Reset Filters</button>
-                          <button class="btn btn-primary w-100">Kërko</button>
+                          <button class="btn btn-primary w-100" type="submit">Kërko</button>
                         </form>
                       </div>
                     </div>

@@ -9,6 +9,7 @@ use App\Salloni;
 use Auth;
 use App\Image;
 use Illuminate\Http\Request;
+use EloquentBuilder;
 class VeturaController extends Controller
 {
     /**
@@ -16,12 +17,31 @@ class VeturaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $veturat = Vetura::paginate(10);
-        return view('pages.veturat')->withVeturat($veturat);
-    }
+    public function index(Request $request)
+    {   
+        $vitet = array(); 
+        for($i = 0; $i <= 20; $i++){
+            $vitet[$i] = $i + 2000;
+        }
+        rsort($vitet, 2);
+        $markat = Marka::all();
+        $modelet = Modeli::all();
 
+        $veturat = EloquentBuilder::to(
+                    Vetura::class,
+                    $request->all()
+                 )->paginate(10);
+
+        return view('pages.veturat')
+                ->withVeturat($veturat)
+                ->withMarkat($markat)
+                ->withModelet($modelet)
+                ->withVitet($vitet);
+    }
+    public function search(Request $request){
+
+        dd($request);
+    }
     public function admin(){
         $user = Auth::user();
         if($user->hasRole('admin')){

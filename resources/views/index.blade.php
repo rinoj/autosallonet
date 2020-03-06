@@ -51,7 +51,7 @@
                                 </ul>
                                 <div class="b-find-content tab-content" id="findTabContent">
                                     <div class="tab-pane fade show active" id="content-allCar">
-                                        <form class="b-find__form">
+                                        <form class="b-find__form" action="/test">
                                             <div class="b-find__row">
                                                 <div class="b-find__main">
                                                     <div class="b-find__inner">

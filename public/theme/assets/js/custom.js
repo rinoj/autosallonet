@@ -305,14 +305,12 @@ function CharsStart() {
       var inputs = [input0, input1];
 
       noUiSlider.create(keypressSlider, {
-          start: [2000, 45000],
+          start: [parseInt(2000), 45000],
           connect: true,
           step: 100,
           // tooltips: true,
           format: wNumb({
             decimals: 0,
-            prefix: '$ ',
-            thousand: ','
           }),
           // tooltips: [true, wNumb({decimals: 1})],
           range: {
