@@ -4,6 +4,7 @@
 @include('meta::manager', [
     'title'         => $vetura->marka->emri.' '.$vetura->modeli->emri.' - '.$vetura->salloni->emri,
     'description'   => 'Gjej veturën tënde të preferuar.',
+    'image'         => url('images/veturat/'. $vetura->images[0]->filename)
 ])
 @endsection
 

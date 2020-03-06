@@ -29,6 +29,7 @@ class CreateVeturaTable extends Migration
             $table->integer('marka_id');
             $table->integer('modeli_id');
             $table->integer('salloni_id');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

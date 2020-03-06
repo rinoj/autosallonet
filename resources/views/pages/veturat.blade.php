@@ -138,7 +138,7 @@
                   @foreach($veturat as $vetura)
                   <div class="b-goods-f col-12 b-goods-f_row">
                     <div class="b-goods-f__media">
-                      <a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->id])}}">
+                      <a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->slug])}}">
                         @if($vetura->images->count() == 0)
                         <img class="b-goods-f__img img-scale" src="{{url('theme/assets/media/content/b-goods/300x220/1.jpg')}}" alt="foto"/>
                         @else
@@ -151,7 +151,7 @@
                     </div>
                     <div class="b-goods-f__main">
                       <div class="b-goods-f__descrip">
-                        <div class="b-goods-f__title"><a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->id])}}">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</a></div>
+                        <div class="b-goods-f__title"><a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->slug])}}">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</a></div>
                         <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
                         <ul class="b-goods-f__list list-unstyled">
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">KM :</span><span class="b-goods-f__list-info">{{number_format($vetura->km)}}km</span></li>

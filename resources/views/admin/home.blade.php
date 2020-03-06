@@ -95,7 +95,7 @@
                     <td>{{$vetura->images->count()}}</td>
                     <td>{{$vetura->created_at}}</td>
                     <td>
-                        <a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->id])}}" class="btn btn-sm btn-default" target="_blank"><i class="fa fa-link"></i> Shfaq veturen</a>
+                        <a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->slug])}}" class="btn btn-sm btn-default" target="_blank"><i class="fa fa-link"></i> Shfaq veturen</a>
                     </td>
                 </tr>
                 @endforeach

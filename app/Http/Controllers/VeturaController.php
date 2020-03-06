@@ -82,6 +82,12 @@ class VeturaController extends Controller
             'filename' => 'required',
             'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+        $veturalast = Vetura::orderBy('id', 'desc')->first();
+        $veturalastid = (int)($veturalast->id + 1);
+        $modeli = Modeli::find($request->modeli);
+        $marka = Marka::find($request->marka);
+        $str = strtolower($veturalastid.' '.$marka->emri.' '.$modeli->emri. ' '.$request->viti);
+
 
         $vetura = new Vetura();
         $vetura->km = $request->km;
@@ -94,7 +100,7 @@ class VeturaController extends Controller
         $vetura->interier = $request->interier;
         $vetura->doganuar = $request->doganuar;
         $vetura->dyer = $request->dyer;
-
+        $vetura->slug = preg_replace('/\s+/', '-', $str);
         $vetura->marka_id = $request->marka;
         $vetura->modeli_id = $request->modeli;
         if($user->hasRole('admin')){
@@ -170,9 +176,9 @@ class VeturaController extends Controller
      * @param  \App\VeturaController  $veturaController
      * @return \Illuminate\Http\Response
      */
-    public function show($autosalloni, $id)
+    public function show($autosalloni, $slug)
     {
-        $vetura = Vetura::find($id);
+        $vetura = Vetura::where('slug',$slug)->firstOrFail();
         return view('pages.vetura')->withVetura($vetura);
     }
 
@@ -247,6 +253,12 @@ class VeturaController extends Controller
             'km' => 'required',
             'kubikazha' => 'required',
         ]);
+        $veturalast = Vetura::orderBy('id', 'desc')->first();
+        $veturalastid = (int)($veturalast->id + 1);
+        $modeli = Modeli::find($request->modeli);
+        $marka = Marka::find($request->marka);
+        $str = strtolower($id.' '.$marka->emri.' '.$modeli->emri. ' '.$request->viti);
+
 
         $vetura = Vetura::findOrFail($id);
         $vetura->km = $request->km;
@@ -259,6 +271,7 @@ class VeturaController extends Controller
         $vetura->interier = $request->interier;
         $vetura->doganuar = $request->doganuar;
         $vetura->dyer = $request->dyer;
+        $vetura->slug = preg_replace('/\s+/', '-', $str);
 
         $vetura->lenda = $request->lenda;
         $vetura->marka_id = $request->marka;

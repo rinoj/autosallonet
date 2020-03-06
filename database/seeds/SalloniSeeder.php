@@ -107,6 +107,7 @@ class SalloniSeeder extends Seeder
             'kubikazha' => 1996,
             'doganuar' => true,
             'interier' => 'I zi',
+            'slug' => 'golf-5-2008',
             'dyer' => 4,
             'marka_id' => 1,
             'modeli_id' => 1,
@@ -124,6 +125,7 @@ class SalloniSeeder extends Seeder
             'doganuar' => true,
             'interier' => 'I zi',
             'dyer' => 4,
+            'slug' => 'golf-5-2010',
             'marka_id' => 1,
             'modeli_id' => 1,
             'salloni_id' => 1
@@ -140,6 +142,7 @@ class SalloniSeeder extends Seeder
             'doganuar' => true,
             'interier' => 'I zi',
             'dyer' => 4,
+            'slug' => 'golf-5-2018',
             'marka_id' => 1,
             'modeli_id' => 1,
             'salloni_id' => 1
