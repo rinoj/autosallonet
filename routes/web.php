@@ -67,6 +67,6 @@ Route::group(['middleware' => ['permission:manage-sallonet']], function () {
 
 
 Route::get('veturat', 'VeturaController@index')->name('veturat');
-Route::get('vetura/{vetura}', 'VeturaController@show')->name('showvetura');
+Route::get('{autosalloni}/{vetura}', 'VeturaController@show')->name('showvetura');
 Route::get('sallonet', 'SalloniController@index')->name('sallonet');
-Route::get('salloni/{id}', 'SalloniController@show')->name('salloni');
+Route::get('{autosalloni}', 'SalloniController@show')->name('salloni');

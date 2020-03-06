@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
-@section('title', 'AutoSallonet.com')
+@section('head')
+@include('meta::manager', [
+    'title'         => 'AutoSallonet.com',
+    'description'   => 'Gjej veturën tënde të preferuar.',
+])
+@endsection
 
 @section('content')
 

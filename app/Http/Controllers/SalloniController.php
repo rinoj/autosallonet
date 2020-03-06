@@ -57,7 +57,8 @@ class SalloniController extends Controller
         $this->validate($request, [
             'emri'=>'required|max:40',
             'telefoni' => 'required',
-            'adresa' => 'required'
+            'adresa' => 'required',
+            'slug' => 'required|unique:salloni'
         ]);
 
         $salloni = new Salloni();
@@ -65,6 +66,9 @@ class SalloniController extends Controller
         $salloni->telefoni = $request->telefoni;
         $salloni->adresa = $request->adresa;
         $salloni->user_id = $request->user;
+        $salloni->facebook = $request->facebook;
+        $salloni->slug = $request->slug;
+        $salloni->metadescription = $request->metadescription;
         $salloni->save();
 
         return redirect()->route('admin.sallonet')
@@ -78,9 +82,9 @@ class SalloniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($autosalloni)
     {
-        $salloni = Salloni::findOrFail($id);
+        $salloni = Salloni::where('slug', $autosalloni)->firstOrFail();
 
         return view('pages.salloni')->withSalloni($salloni);
     }
@@ -110,7 +114,8 @@ class SalloniController extends Controller
         $this->validate($request, [
             'emri'=>'required|max:40',
             'telefoni' => 'required',
-            'adresa' => 'required'
+            'adresa' => 'required',
+            'slug' => 'required|unique:salloni,slug,'.$id,
         ]);
 
         $salloni = Salloni::findOrFail($id);
@@ -118,6 +123,9 @@ class SalloniController extends Controller
         $salloni->telefoni = $request->telefoni;
         $salloni->adresa = $request->adresa;
         $salloni->user_id = $request->user;
+        $salloni->facebook = $request->facebook;
+        $salloni->slug = $request->slug;
+        $salloni->metadescription = $request->metadescription;
         $salloni->update();
 
         return redirect()->route('admin.sallonet')

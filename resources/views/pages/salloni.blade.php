@@ -1,6 +1,11 @@
 @extends('layouts.main')
- 
-@section('title', $salloni->emri)
+
+@section('head')
+@include('meta::manager', [
+    'title'         => $salloni->emri,
+    'description'   => $salloni->metadescription,
+])
+@endsection
 
 @section('content')
 <main>

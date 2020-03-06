@@ -33,6 +33,20 @@
         {{ Form::text('adresa', '', array('class' => 'form-control')) }}
     </div>
 
+    <div class="form-group">
+        {{ Form::label('slug', 'Slug') }}
+        {{ Form::text('slug', null, array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('facebook', 'Faqja e Facebook') }}
+        {{ Form::text('facebook', null, array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('meta', 'Meta Description') }}
+        {{ Form::textarea('metadescription', null, array('class' => 'form-control', 'rows' => 3, 'style' => 'resize:none')) }}
+    </div>
 
     <div class="form-group">
         {{ Form::label('user', 'Zgjedh pronarin') }}

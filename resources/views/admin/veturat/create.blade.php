@@ -19,7 +19,7 @@
 
     <div class="form-group">
         {{ Form::label('marka', 'Marka') }}
-        <select class="form-control" name="marka">
+        <select class="form-control e1" name="marka">
         	@foreach($markat as $marka)
         	<option value="{{$marka->id}}">{{$marka->emri}}</option>
         	@endforeach
@@ -28,7 +28,7 @@
     
     <div class="form-group">
         {{ Form::label('name', 'Modeli') }}
-        <select class="form-control" name="modeli">
+        <select class="form-control e1" name="modeli">
         	@foreach($modelet as $modeli)
         	<option value="{{$modeli->id}}">{{$modeli->emri}}</option>
         	@endforeach
@@ -93,7 +93,7 @@
 
     <div class="form-group">
         {{ Form::label('doganuar', 'I doganuar') }}
-         <select id="e1" class="form-control" name="doganuar">
+         <select class="form-control" name="doganuar">
                 <option value="1">Po</option>
                 <option value="0">Jo</option>
         </select>
@@ -102,7 +102,7 @@
     @if($user->hasRole('admin'))
     <div class="form-group">
         {{ Form::label('salloni', 'Zgjedh Sallonin') }}
-         <select id="e1" class="form-control" name="salloni">
+         <select     class="form-control e1" name="salloni">
             @foreach($sallonet as $salloni)
                 <option value="{{$salloni->id}}">{{$salloni->emri}}</option>
             @endforeach
@@ -133,7 +133,7 @@
 
 @section('js')
  <script>
-       $("#e1").select2({
+       $(".e1").select2({
     placeholder: "Select a State"
 });
     </script>

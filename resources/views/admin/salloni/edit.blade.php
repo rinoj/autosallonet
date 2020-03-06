@@ -33,6 +33,20 @@
         {{ Form::text('adresa', $salloni->adresa, array('class' => 'form-control')) }}
     </div>
 
+    <div class="form-group">
+        {{ Form::label('slug', 'Slug') }}
+        {{ Form::text('slug', $salloni->slug, array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('facebook', 'Faqja e Facebook') }}
+        {{ Form::text('facebook', $salloni->facebook, array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('meta', 'Meta Description') }}
+        {{ Form::textarea('metadescription', $salloni->metadescription, array('class' => 'form-control', 'rows' => 3, 'style' => 'resize:none')) }}
+    </div>
 
     <div class="form-group">
         {{ Form::label('user', 'Zgjedh pronarin') }}

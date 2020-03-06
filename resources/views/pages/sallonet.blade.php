@@ -1,6 +1,12 @@
 @extends('layouts.main')
- 
-@section('title', 'Sallonet')
+
+
+@section('head')
+@include('meta::manager', [
+    'title'         => 'Sallonet',
+    'description'   => 'Lista e Auto Salloneve.',
+])
+@endsection
 
 @section('content')
 
@@ -91,7 +97,7 @@
                           </div>
                         </div>
                         <div class="col-md-auto align-self-end">
-                          <a class="btn btn-secondary btn-sm" href="{{route('salloni', $salloni->id)}}">Detajet</a>
+                          <a class="btn btn-secondary btn-sm" href="{{route('salloni', $salloni->slug)}}">Detajet</a>
                           <a class="btn btn-secondary btn-sm" href="#">Shiko Veturat</a>
                         </div>
                       </div>

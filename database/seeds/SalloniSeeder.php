@@ -80,6 +80,7 @@ class SalloniSeeder extends Seeder
             'emri' => 'Auto Sherreti',
             'telefoni' => '+383000000',
             'adresa' => 'Ferizaj',
+            'slug' => 'auto-sherreti',
             'user_id' => 1
         ]);
 
@@ -87,6 +88,7 @@ class SalloniSeeder extends Seeder
             'emri' => 'Auto Alberti',
             'telefoni' => '+383000000',
             'adresa' => 'Prishtine',
+            'slug' => 'auto-alberti',
             'user_id' => 2
         ]);
 

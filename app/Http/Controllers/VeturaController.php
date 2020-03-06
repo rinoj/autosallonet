@@ -170,7 +170,7 @@ class VeturaController extends Controller
      * @param  \App\VeturaController  $veturaController
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($autosalloni, $id)
     {
         $vetura = Vetura::find($id);
         return view('pages.vetura')->withVetura($vetura);

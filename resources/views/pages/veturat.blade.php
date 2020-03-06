@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
-@section('title', 'Veturat')
+@section('head')
+@include('meta::manager', [
+    'title'         => 'Veturat',
+    'description'   => 'Gjej veturën tëndë të preferuar.',
+])
+@endsection
 
 @section('content')
 
@@ -133,7 +138,7 @@
                   @foreach($veturat as $vetura)
                   <div class="b-goods-f col-12 b-goods-f_row">
                     <div class="b-goods-f__media">
-                      <a href="{{route('showvetura', $vetura->id)}}">
+                      <a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->id])}}">
                         @if($vetura->images->count() == 0)
                         <img class="b-goods-f__img img-scale" src="{{url('theme/assets/media/content/b-goods/300x220/1.jpg')}}" alt="foto"/>
                         @else
@@ -146,13 +151,13 @@
                     </div>
                     <div class="b-goods-f__main">
                       <div class="b-goods-f__descrip">
-                        <div class="b-goods-f__title"><a href="{{route('showvetura', $vetura->id)}}">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</a></div>
+                        <div class="b-goods-f__title"><a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->id])}}">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</a></div>
                         <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
                         <ul class="b-goods-f__list list-unstyled">
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">KM :</span><span class="b-goods-f__list-info">{{number_format($vetura->km)}}km</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Viti :</span><span class="b-goods-f__list-info">{{$vetura->viti}}</span></li>
-                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Marshi :</span><span class="b-goods-f__list-info">{{$vetura->marshi}}</span></li>
-                          <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Body Type :</span><span class="b-goods-f__list-info">sedan</span></li>
+                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Marshi :</span><span class="b-goods-f__list-info">{{$vetura->marshi  }}</span></li>
+                          <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Dyer : </span><span class="b-goods-f__list-info">{{$vetura->dyer}}</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Lënda Djegëse :</span><span class="b-goods-f__list-info">{{$vetura->lenda}}</span></li>
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Kubikazha:</span><span class="b-goods-f__list-info">{{number_format($vetura->kubikazha)}}</span></li>
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Ngjyra :</span><span class="b-goods-f__list-info">{{$vetura->ngjyra}}</span></li>
@@ -160,7 +165,7 @@
                         </ul>
                       </div>
                       <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="{{url('theme/assets/media/content/b-goods/auto-check.png')}}" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col">Çmimi:&nbsp;</span><span class="b-goods-f__price-numb">€{{number_format($vetura->cmimi)}}</span></span></span>
-                        <div class="b-goods-f__imprest"> </div><span class="b-goods-f__compare">Compare<i class="ic fas fa-columns"></i></span>
+                        <div class="b-goods-f__imprest"> </div>
                       </div>
                     </div>
                   </div>

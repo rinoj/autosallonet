@@ -18,6 +18,9 @@ class CreateSalloniTable extends Migration
             $table->string('emri');
             $table->string('telefoni');
             $table->string('adresa');
+            $table->string('slug')->unique();
+            $table->string('facebook')->nullable();
+            $table->string('metadescription')->nullable();
             $table->string('user_id');
             $table->timestamps();
         });

@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
-@section('title', $vetura->marka->emri.' '.$vetura->modeli->emri.' - '.$vetura->salloni->emri)
+@section('head')
+@include('meta::manager', [
+    'title'         => $vetura->marka->emri.' '.$vetura->modeli->emri.' - '.$vetura->salloni->emri,
+    'description'   => 'Gjej veturën tënde të preferuar.',
+])
+@endsection
 
 @section('content')
 

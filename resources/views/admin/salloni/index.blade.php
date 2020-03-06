@@ -10,35 +10,37 @@
 <div class="row">
 	<div class="col-md-10 col-md-offset-1">
 	@section('boxcontent')
-    <table class="table table-bordered">
-    	<thead>
-    		<tr>
-    			<th>ID</th>
-    			<th>Emri</th>
-    			<th>Telefoni</th>
-                <th>Adresa</th>
-                <th>Emri i Pronarit</th>
-                <th>NR. i veturave</th>
-                <th></th>
-    		</tr>
-    	</thead>
-    	<tbody>
-    		@foreach ($sallonet as $salloni)
-                <tr>
-                	<td>{{$salloni->id}}</td>
-                    <td>{{$salloni->emri}}</td>
-                    <td>{{$salloni->telefoni}}</td>
-                    <td>{{$salloni->adresa}}</td>
-                    <td>{{$salloni->user->name}}</td>
-                    <td>{{$salloni->veturat->count()}}</td>
-                    <td>
-                        <a href="{{route('admin.sallonet.veturat', $salloni->id)}}" class="btn btn-info"><i class="fa fa-car"></i> Veturat</a>
-                        <a href="{{route('admin.sallonet.edit', $salloni->id)}}" class="btn btn-success"><i class="fa fa-edit"></i> Edito</a>
-                    </td>
-                </tr>
-                @endforeach
-    	</tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+        	<thead>
+        		<tr>
+        			<th>ID</th>
+        			<th>Emri</th>
+        			<th>Telefoni</th>
+                    <th>Adresa</th>
+                    <th>Emri i Pronarit</th>
+                    <th>NR. i veturave</th>
+                    <th></th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		@foreach ($sallonet as $salloni)
+                    <tr>
+                    	<td>{{$salloni->id}}</td>
+                        <td>{{$salloni->emri}}</td>
+                        <td>{{$salloni->telefoni}}</td>
+                        <td>{{$salloni->adresa}}</td>
+                        <td>{{$salloni->user->name}}</td>
+                        <td>{{$salloni->veturat->count()}}</td>
+                        <td>
+                            <a href="{{route('admin.sallonet.edit', $salloni->id)}}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edito</a>
+                            <a href="{{route('admin.sallonet.veturat', $salloni->id)}}" class="btn btn-sm btn-info"><i class="fa fa-car"></i> Veturat</a>
+                        </td>
+                    </tr>
+                    @endforeach
+        	</tbody>
+        </table>
+    </div>
 	@endsection
 
 	@section('boxtitleright')

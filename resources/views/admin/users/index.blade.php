@@ -27,38 +27,40 @@
 <div class="row">
 	<div class="col-md-12">
 	@section('boxcontent')
-    <table class="table table-bordered">
-    	<thead>
-    		<tr>
-    			<th style="width: 10px">ID</th>
-    			<th>Name</th>
-    			<th>Email</th>
-                <th>Group(s)</th>
-                <th>Salloni</th>
-    			<th>Action</th>
-    		</tr>
-    	</thead>
-    	<tbody>
-    		@foreach($users as $user)
-    			<tr>
-    				<td>{{$user->id}}</td>
-    				<td>{{$user->name}}</td>
-    				<td>{{$user->email}}</td>
-                    <td>
-                        @foreach($user->roles as $role)
-                            <label class="label label-default">{{$role->name}}</label>
-                        @endforeach
-                    </td>
-                    <td>{{$user->salloni != null ? $user->salloni->emri : 'Nuk ka'}}</td>
-    				<td>
-    					<a href="{{route('users.edit', $user->id)}}" class="btn btn-info pull-left" style="margin-right: 3px;"><i class="fa fa-edit"></i> Edit User</a>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+        	<thead>
+        		<tr>
+        			<th style="width: 10px">ID</th>
+        			<th>Emri</th>
+        			<th>Email</th>
+                    <th>Grupi</th>
+                    <th>Salloni</th>
+        			<th>Action</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		@foreach($users as $user)
+        			<tr>
+        				<td>{{$user->id}}</td>
+        				<td>{{$user->name}}</td>
+        				<td>{{$user->email}}</td>
+                        <td>
+                            @foreach($user->roles as $role)
+                                <label class="label label-default">{{$role->name}}</label>
+                            @endforeach
+                        </td>
+                        <td>{{$user->salloni != null ? $user->salloni->emri : 'Nuk ka'}}</td>
+        				<td>
+        					<a href="{{route('users.edit', $user->id)}}" class="btn btn-sm btn-info pull-left" style="margin-right: 3px;"><i class="fa fa-edit"></i> Edit User</a>
 
-                         
-    				</td>
-    			</tr>
-    		@endforeach
-    	</tbody>
-    </table>
+                             
+        				</td>
+        			</tr>
+        		@endforeach
+        	</tbody>
+        </table>
+    </div>
 	@endsection
 
 	@section('boxfooter')
