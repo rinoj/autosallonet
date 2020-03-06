@@ -70,6 +70,7 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
   @section('boxcontent')
+    <div class="table-responsive">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -100,6 +101,7 @@
                 @endforeach
       </tbody>
     </table>
+  </div>
   @endsection
 
   @include('layouts.box')
