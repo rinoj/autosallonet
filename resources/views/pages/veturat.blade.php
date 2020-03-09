@@ -20,7 +20,7 @@
                     <div class="widget-content">
                       <div class="widget-inner">
 
-                        <form class="b-filter bg-light" action="{{ route('search') }}">
+                        <form class="b-filter bg-light" action="{{ route('search') }}" id="orderform">
                           <div class="b-filter__main">
                             <div class="b-filter__row">
                               <select class="selectpicker" data-width="100%" title="Zgjedh Markën" multiple="multiple" data-max-options="1" data-style="ui-select" name="marka">
@@ -69,7 +69,21 @@
                             </div>
                           </div>
 
-                          <button class="b-filter__reset btn btn-default w-100" type="button">Reset Filters</button>
+                          <div class="b-filter__row">
+                              <select class="selectpicker" data-width="100%" title="I doganuar" multiple="multiple" data-max-options="1" data-style="ui-select" name="doganuar">
+                                <option value="1" {{request()->get('doganuar') == 'true' ? 'selected' : ''}}>Po</option>
+                                <option value="0" {{request()->get('lenda') == 'true' ? 'selected' : ''}}>Jo</option>
+                              </select>
+                            </div>
+
+                          <div class="b-filter__row" style="display:none">
+                             <select class="selectpicker" data-width="100%" title="Rendit sipas çmimit" multiple="multiple" data-max-options="1" data-style="ui-select" name="order" id="orderselect">
+                              <option value="asc">Rendit sipas çmimit më të ulët</option>
+                              <option value="desc">Rendit sipas çmimit më të lartë</option>
+                            </select>
+                          </div>
+
+                          <button class="b-filter__reset btn btn-default w-100" type="button">Reseto Filterat</button>
                           <button class="btn btn-primary w-100" type="submit">Kërko</button>
                         </form>
                       </div>
@@ -85,18 +99,23 @@
                   <!-- end .b-brands-->
                 </aside>
               </div>
+
               <div class="col-lg-9">
                 <div class="b-filter-goods">
                   <div class="row justify-content-between align-items-center">
                     <div class="b-filter-goods__wrap col-auto">
                       <div class="b-filter-goods__select">
-                        <select class="selectpicker" data-width="100%" title="Newest First" multiple="multiple" data-max-options="1" data-style="ui-select">
-                          <option>A-Z</option>
-                          <option>Z-A</option>
+
+              <form class="b-filter bg-light">
+                        <select onChange="document.getElementById('orderselect').selectedIndex = this.value;document.getElementById('orderform').submit();" class="selectpicker" data-width="100%" title="Rendit sipas çmimit" multiple="multiple" data-max-options="1" data-style="ui-select" name="order">
+                          <option value="0"  {{request()->get('order') == 'asc' ? 'selected' : ''}}>Rendit sipas çmimit më të ulët</option>
+                          <option value="1"  {{request()->get('order') == 'desc' ? 'selected' : ''}}>Rendit sipas çmimit më të lartë</option>
                         </select>
+
+              </form>
                       </div>
                     </div>
-                    <div class="b-filter-goods__info col-auto">Showing results<strong> 1 to 10</strong> of total<strong> 145</strong></div>
+                    <div class="b-filter-goods__info col-auto">Duke shfaqur veturat {{$veturat->total()}}<strong> {{$veturat->count()*$veturat->currentPage()-9}} deri {{$veturat->count()*$veturat->currentPage()}} </strong> nga totali i<strong> {{$veturat->total()}}</strong></div>
                     <div class="btns-switch col-auto"><i class="btns-switch__item js-view-list active ic fa fa-th-list"></i><i class="btns-switch__item js-view-th ic fa fa-th"></i></div>
                   </div>
                 </div>
@@ -140,7 +159,7 @@
                 </main>
                 <nav aria-label="Page navigation">
                   <ul class="pagination justify-content-center">
-                    {{$veturat->links()}}
+                    {{$veturat->appends(Request::except('page'))->links()}}
                   </ul>
                 </nav>
               </div>
@@ -148,4 +167,13 @@
           </div>
         </div>
 
+@endsection
+
+@section('js')
+
+<script type="text/javascript">
+  selectFunc(){
+    alert('test');
+  }
+</script>
 @endsection

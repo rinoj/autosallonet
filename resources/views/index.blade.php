@@ -51,37 +51,40 @@
                                 </ul>
                                 <div class="b-find-content tab-content" id="findTabContent">
                                     <div class="tab-pane fade show active" id="content-allCar">
-                                        <form class="b-find__form" action="/test">
+                                        <form class="b-find__form"  action="{{ route('search') }}">
                                             <div class="b-find__row">
                                                 <div class="b-find__main">
                                                     <div class="b-find__inner">
                                                         <div class="b-find__item">
                                                             <div class="b-find__label"><span class="b-find__number">01</span> Zgjedh Markën</div>
                                                             <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Audi</option>
-                                                                    <option>BMV</option>
-                                                                    <option>Opel</option>
+                                                                <select class="selectpicker" id="markaselect" data-width="100%" data-style="ui-select" name="marka">
+                                                                    <option value="" selected disabled>Zgjidh Markën</option>
+                                                                    @foreach($markat as $marka)
+                                                                      <option value="{{$marka->emri}}">{{$marka->emri}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
                                                             <div class="b-find__label"><span class="b-find__number">02</span> Zgjedh Modelin</div>
                                                             <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Model 1</option>
-                                                                    <option>Model 2</option>
-                                                                    <option>Model 3</option>
+                                                                <select class="selectpicker modeliselect"  data-width="100%" data-style="ui-select" name="modeli" id="modeliselect" disabled>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
                                                             <div class="b-find__label"><span class="b-find__number">03</span> Çmimi</div>
                                                             <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Max $5000</option>
-                                                                    <option>Max $15000</option>
-                                                                    <option>Max $25000</option>
+                                                                <select class="selectpicker" data-width="100%" data-style="ui-select" name="cmimideri" title="Çmimi deri në">
+                                                                    <option></option>
+                                                                    <option value="5000">Deri në 5,000 &euro;</option>
+                                                                    <option value="7500">Deri në 7,500 &euro;</option>
+                                                                    <option value="10000">Deri në 10,000 &euro;</option>
+                                                                    <option value="12500">Deri në 12,500 &euro;</option>
+                                                                    <option value="15000">Deri në 15,000 &euro;</option>
+                                                                    <option value="20000">Deri në 20,000 &euro;</option>
+                                                                    <option value="100000">Deri në 100,000 &euro;</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -731,4 +734,36 @@
             </div>
             <!-- end .b-gallery-->
 
+            @endsection
+
+            @section('homejs')
+            <script type="text/javascript">
+            $('#markaselect').on('change', '', function (e) {
+                var id = $(this).children("option:selected").val();
+                getModelet(id);
+            });
+             function getModelet(id) {
+                    $.ajax({
+                        type:'get',
+                        url:'/modelet/'+id,
+                        success:function(success) {
+                            var length = success.length;
+                            var select = $(".modeliselect");
+                            document.getElementById("modeliselect").innerHTML = "";
+                            // select.empty();
+                            // $(".modeliselect").html('<option value="">Zgjedh Marken</option').selectpicker('refresh'); 
+                                select.prop("disabled", false);
+                            for(var x = 0; x < length; x++){
+                                var option = document.createElement('option');
+                                option.value = success[x].emri;
+                                option.text = success[x].emri;
+                                document.getElementById('modeliselect').options.add(option);
+                                console.log(document.getElementById('modeliselect').options);
+                                select.selectpicker('refresh');
+                            }
+                                
+                        }
+                    })
+                }
+            </script>
             @endsection

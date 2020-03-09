@@ -115,6 +115,295 @@ class SalloniSeeder extends Seeder
         ]);
 
         DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-go789lf-5-2008',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-vw-5-2008',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-gol897f-5-2008',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-2245008',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-2087908',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-gol879f-5-2098708',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-2012008',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-2021008',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-200258',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-200788',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-223008',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-202048',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-20008',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-2908',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-2058',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-5-2028',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
+            'cmimi' => 5400,
+            'km' => 192000,
+            'viti' => '2010',
+            'marshi' => 1,
+            'lenda' => 'Nafte',
+            'ngjyra' => 'E zeze',
+            'kubikazha' => 1996,
+            'doganuar' => true,
+            'interier' => 'I zi',
+            'slug' => '1-golf-6-2028',
+            'dyer' => 4,
+            'marka_id' => 1,
+            'modeli_id' => 1,
+            'salloni_id' => 1
+        ]);
+
+        DB::table('vetura')->insert([
             'cmimi' => 6300,
             'km' => 115000,
             'viti' => '2010',

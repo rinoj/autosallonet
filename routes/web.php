@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', 'PageController@index')->name('index');
 
 Auth::routes();
+
+Route::get('/modelet/{id}', 'ModeliController@getModelet');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

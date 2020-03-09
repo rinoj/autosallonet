@@ -62,6 +62,8 @@ class ModeliController extends Controller
         //
     }
 
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -94,5 +96,13 @@ class ModeliController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getModelet($id){
+        $marka = Marka::where('emri', $id)->firstOrFail();
+
+        $modelet = Modeli::where('marka_id', $marka->id)->get();
+
+        return response()->json($modelet);
     }
 }

@@ -3,12 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Salloni;
 use App\Vetura;
-use App\User;
+use App\Modeli;
+use App\Marka;
+use App\Salloni;
 use Auth;
+use App\Image;
+use App\User;
+use EloquentBuilder;
 class PageController extends Controller
 {
+    public function index(Request $request)
+    {
+        $markat = Marka::all();
+        $modelet = Modeli::all();
+
+        $veturat = EloquentBuilder::to(
+                    Vetura::class,
+                    $request->all()
+                 )->paginate(10);
+        
+        return view('index')
+                ->withVeturat($veturat)
+                ->withMarkat($markat)
+                ->withModelet($modelet);
+    }
+
     public function admin(){
     	$user = Auth::user();
     	if($user->hasRole('admin')){
