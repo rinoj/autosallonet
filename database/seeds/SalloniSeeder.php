@@ -73,6 +73,81 @@ class SalloniSeeder extends Seeder
             'marka_id' => 1,
         ]);
 
+        DB::table('modeli')->insert([
+            'emri' => 'Golf 6',
+            'marka_id' => 1,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'Golf 7',
+            'marka_id' => 1,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'Passat',
+            'marka_id' => 1,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'A3',
+            'marka_id' => 2,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'A4',
+            'marka_id' => 2,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'A5',
+            'marka_id' => 2,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'A6',
+            'marka_id' => 2,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'A7',
+            'marka_id' => 2,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => '530',
+            'marka_id' => 3,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => '530',
+            'marka_id' => 3,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => '520',
+            'marka_id' => 3,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => '525',
+            'marka_id' => 3,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'X5',
+            'marka_id' => 3,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'X3',
+            'marka_id' => 3,
+        ]);
+
+        DB::table('modeli')->insert([
+            'emri' => 'X6',
+            'marka_id' => 3,
+        ]);
+
         //=====================================================================================
 
         //sallonet
