@@ -70,6 +70,7 @@
                                                             <div class="b-find__label"><span class="b-find__number">02</span> Zgjedh Modelin</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker modeliselect"  data-width="100%" data-style="ui-select" name="modeli" id="modeliselect" disabled>
+                                                                    <option value="" selected disabled>Zgjidh Markën</option>
                                                                 </select>
                                                             </div>
                                                         </div>
