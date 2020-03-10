@@ -98,7 +98,10 @@
         </select>
     </div>
     
-
+    <div class="form-group">
+        {{ Form::label('pershkrimi', 'Pershkrimi') }}
+        {{ Form::textarea('pershkrimi', '', array('class' => 'form-control' , 'placeholder' => 'Shkruj një përshkrim për gjendjen apo opsionet e veturës')) }}
+    </div>
    
     @if($user->hasRole('admin'))
     <div class="form-group">

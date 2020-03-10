@@ -89,31 +89,15 @@
                   </div>
                 </div>
                 <ul class="nav nav-tabs nav-vehicle-detail-tabs" id="myTab" role="tablist">
-                  <li class="nav-item"><a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a></li>
-                  <li class="nav-item"><a class="nav-link" id="features-tab" data-toggle="tab" href="#features" role="tab" aria-controls="features" aria-selected="false">Features & Options</a></li>
-                  <li class="nav-item"><a class="nav-link" id="location-tab" data-toggle="tab" href="#location" role="tab" aria-controls="location" aria-selected="false">Vehicle Location</a></li>
-                  <li class="nav-item"><a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Owner Reviews</a></li>
+                  <li class="nav-item"><a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Përshkrim</a></li>
+                  <li class="nav-item"><a class="nav-link" id="features-tab" data-toggle="tab" href="#features1" role="tab" aria-controls="features" aria-selected="false">Opsionet</a></li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-                    <p>Edipisicing eiusmod tempor incididunt labore sed dolore magna aliqa enim ipsum ad minim veniams quis nostrud citation ullam laboris nisi ut aliquip laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p><strong>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</strong> nisi ut aliquip ex ea commodo cons equat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exe pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed umt perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                    <h3 class="b-goods-f__title-inner">General Information</h3>
-                    <ul class="list list-mark-2">
-                      <li>Enim ipsum ad minim veniams quis nostrud citation ullam laboris nisi</li>
-                      <li>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore</li>
-                      <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-                      <li>Laboris nisi ut aliquip ex ea comodo consequat duis aute irure dolor in</li>
-                      <li>Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</li>
-                    </ul>
+                    <p>{{$vetura->description}}</p>
                   </div>
                   <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
-                    <p>Edipisicing eiusmod tempor incididunt labore sed dolore magna aliqa enim ipsum ad minim veniams quis nostrud citation ullam laboris nisi ut aliquip laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-                  <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo cons equat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exe pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed umt perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                  </div>
-                  <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                    <h3 class="b-goods-f__title-inner">General Information</h3>
                     <ul class="list list-mark-2">
                       <li>Enim ipsum ad minim veniams quis nostrud citation ullam laboris nisi</li>
                       <li>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore</li>
@@ -165,7 +149,49 @@
           
         </div>
       </div>
-
+            <section class="section-carousel">
+               
+                <div class="section-carousel__inner bg-dark">
+                    <div class="js-slider" data-slick="{&quot;slidesToShow&quot;: 5,  &quot;slidesToScroll&quot;: 5, &quot;infinite&quot;: true, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1800, &quot;settings&quot;: {&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 4}}, {&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}, {&quot;breakpoint&quot;: 1040, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2, &quot;slidesToScroll&quot;: 1}}, {&quot;breakpoint&quot;: 767, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1, &quot;slidesToScroll&quot;: 1}}]}">
+                        
+                        <!-- end .b-goods-->
+                        @foreach($veturat as $vetura)
+                         <div class="b-goods-f b-goods-f_mod-a">
+                            <div class="b-goods-f__media"> 
+                                @if($vetura->images->count() == 0)
+                                  <a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->slug])}}"><img class="b-goods-f__img img-scale" src="{{url('theme/assets/media/content/b-goods/375x300/2.jpg')}}" alt="foto" /></a>
+                                @else
+                                  <a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->slug])}}"><img class="b-goods-f__img img-scale" style="width: 375px; height: 300px !important" src="{{url('images/veturat/'. $vetura->images->first()['filename'])}}" alt="foto" /></a>
+                                @endif
+                                
+                            </div>
+                            <div class="b-goods-f__main">
+                                <div class="b-goods-f__descrip">
+                                    <div class="b-goods-f__title"><a href="#"><span>{{$vetura->emri()}}</span></a></div>
+                                    <div class="b-goods-f__info"></div>
+                                    <ul class="b-goods-f__list list-unstyled">
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> {{$vetura->km}}km</li>
+                                        <li class="b-goods-f__list-item"><i class="ic fa fa-eur" style="margin-top:5px"></i> {{$vetura->cmimi}}</li>
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> {{$vetura->marshi}}</li>
+                                    </ul>
+                                </div>
+                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                       
+                      
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="{{route('veturat')}}"><i class="ic icon-list"></i> Shiko të gjitha veturat</a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end .b-carousel-->
       @endsection
 
       @section('homejs')

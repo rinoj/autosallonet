@@ -30,17 +30,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $markat = Marka::all();
-        $modelet = Modeli::all();
-
-        $veturat = EloquentBuilder::to(
-                    Vetura::class,
-                    $request->all()
-                 )->paginate(10);
-        
-        return view('index')
-                ->withVeturat($veturat)
-                ->withMarkat($markat)
-                ->withModelet($modelet);
+        return redirect()->route('index');
     }
 }

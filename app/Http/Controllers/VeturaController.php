@@ -120,6 +120,7 @@ class VeturaController extends Controller
         $vetura->interier = $request->interier;
         $vetura->doganuar = $request->doganuar;
         $vetura->dyer = $request->dyer;
+        $vetura->description = $request->pershkrimi;
         $vetura->slug = preg_replace('/\s+/', '-', $str);
         $vetura->marka_id = $request->marka;
         $vetura->modeli_id = $request->modeli;
@@ -197,9 +198,11 @@ class VeturaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($autosalloni, $slug)
-    {
+    {   
+        $vehs = Vetura::take(10)->get();
+        $veturat = $vehs->random(5);
         $vetura = Vetura::where('slug',$slug)->firstOrFail();
-        return view('pages.vetura')->withVetura($vetura);
+        return view('pages.vetura')->withVetura($vetura)->withVeturat($veturat);
     }
 
     public function showadmin($id)
@@ -291,6 +294,7 @@ class VeturaController extends Controller
         $vetura->interier = $request->interier;
         $vetura->doganuar = $request->doganuar;
         $vetura->dyer = $request->dyer;
+        $vetura->description = $request->pershkrimi;
         $vetura->slug = preg_replace('/\s+/', '-', $str);
 
         $vetura->lenda = $request->lenda;

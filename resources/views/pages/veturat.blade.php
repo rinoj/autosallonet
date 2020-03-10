@@ -23,7 +23,7 @@
                         <form class="b-filter bg-light" action="{{ route('search') }}" id="orderform">
                           <div class="b-filter__main">
                             <div class="b-filter__row">
-                              <select class="selectpicker" data-width="100%" title="Zgjedh Markën" multiple="multiple" data-max-options="1" data-style="ui-select" name="marka">
+                              <select class="selectpicker" data-width="100%" title="Zgjedh Markën" multiple="multiple" data-max-options="1" data-style="ui-select" name="marka" id="markaselect">
                                 @foreach($markat as $marka)
                                   <option {{request()->get('marka') == $marka->emri ? 'selected' : ''}}>{{$marka->emri}}</option>
                                 @endforeach
@@ -31,10 +31,8 @@
                             </div>
 
                             <div class="b-filter__row">
-                              <select class="selectpicker" data-width="100%" title="Zgjedh Modelin" multiple="multiple" data-max-options="1" data-style="ui-select" name="modeli">
-                               @foreach($modelet as $modeli)
-                                <option {{request()->get('modeli') == $modeli->emri ? 'selected' : ''}}>{{$modeli->emri}}</option>
-                                @endforeach
+                              <select class="selectpicker modeliselect" id="modeliselect" data-width="100%" title="Zgjedh Modelin" multiple="multiple" data-max-options="1" data-style="ui-select" name="modeli" disabled>
+                               <option value="" selected disabled> Zgjedh Markën </option>
                               </select>
                             </div>
 
@@ -138,7 +136,7 @@
                     <div class="b-goods-f__main">
                       <div class="b-goods-f__descrip">
                         <div class="b-goods-f__title"><a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->slug])}}">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</a></div>
-                        <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
+                        <div class="b-goods-f__info"> </div>
                         <ul class="b-goods-f__list list-unstyled">
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">KM :</span><span class="b-goods-f__list-info">{{number_format($vetura->km)}}km</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Viti :</span><span class="b-goods-f__list-info">{{$vetura->viti}}</span></li>
@@ -169,11 +167,43 @@
 
 @endsection
 
-@section('js')
+@section('homejs')
+            <script type="text/javascript">
 
-<script type="text/javascript">
-  selectFunc(){
-    alert('test');
-  }
-</script>
-@endsection
+
+            var markaselect = $('#markaselect option:selected').val();
+
+            if(markaselect != null){
+              getModelet(markaselect);
+            }
+
+
+            $('#markaselect').on('change', '', function (e) {
+                var id = $(this).children("option:selected").val();
+                getModelet(id);
+            });
+             function getModelet(id) {
+                    $.ajax({
+                        type:'get',
+                        url:'/modelet/'+id,
+                        success:function(success) {
+                            var length = success.length;
+                            var select = $(".modeliselect");
+                            document.getElementById("modeliselect").innerHTML = "";
+                            // select.empty();
+                            // $(".modeliselect").html('<option value="">Zgjedh Marken</option').selectpicker('refresh'); 
+                                select.prop("disabled", false);
+                            for(var x = 0; x < length; x++){
+                                var option = document.createElement('option');
+                                option.value = success[x].emri;
+                                option.text = success[x].emri;
+                                document.getElementById('modeliselect').options.add(option);
+                                console.log(document.getElementById('modeliselect').options);
+                                select.selectpicker('refresh');
+                            }
+                                
+                        }
+                    })
+                }
+            </script>
+            @endsection

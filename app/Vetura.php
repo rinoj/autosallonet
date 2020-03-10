@@ -28,4 +28,8 @@ class Vetura extends Model
     {
         return $this->salloni->user->id === $user->id;
     }
+
+    public function emri(){
+        return $this->marka->emri. ' '.$this->modeli->emri;
+    }
 }

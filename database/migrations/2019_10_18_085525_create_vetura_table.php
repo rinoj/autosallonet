@@ -25,6 +25,7 @@ class CreateVeturaTable extends Migration
             $table->string('ngjyra');
             $table->string('interier');
             $table->integer('dyer');
+            $table->longText('description')->nullable();
 
             $table->integer('marka_id');
             $table->integer('modeli_id');

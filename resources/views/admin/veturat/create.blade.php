@@ -46,12 +46,12 @@
 
     <div class="form-group">
         {{ Form::label('km', 'Kilometrazha') }}
-        {{ Form::text('km', '', array('class' => 'form-control')) }}
+        {{ Form::text('km', '', array('class' => 'form-control', 'placeholder' => 'Shembull: 167000, pa presje dhjetore')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('kubikazha', 'Madhesia e Motorrit') }}
-        {{ Form::text('kubikazha', '', array('class' => 'form-control')) }}
+        {{ Form::text('kubikazha', '', array('class' => 'form-control', 'placeholder' => 'Shembull: 1995cm')) }}
     </div>
 
     <div class="form-group">
@@ -65,12 +65,12 @@
 
     <div class="form-group">
         {{ Form::label('ngjyra', 'Ngjyra') }}
-        {{ Form::text('ngjyra', '', array('class' => 'form-control')) }}
+        {{ Form::text('ngjyra', '', array('class' => 'form-control' , 'placeholder' => 'Shembull: E zezë')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('interier', 'Interieri') }}
-        {{ Form::text('interier', '', array('class' => 'form-control')) }}
+        {{ Form::text('interier', '', array('class' => 'form-control', 'placeholder' => 'Shembull: Lëkurë e zezë')) }}
     </div>
 
     <div class="form-group">
@@ -83,12 +83,12 @@
 
     <div class="form-group">
         {{ Form::label('Cmimi', 'Cmimi') }}
-        {{ Form::text('cmimi', '', array('class' => 'form-control')) }}
+        {{ Form::text('cmimi', '', array('class' => 'form-control', 'placeholder' => 'Shembull: 5500, pa presje dhjetore')) }}
     </div>
 
      <div class="form-group">
         {{ Form::label('dyer', 'Dyer') }}
-        {{ Form::text('dyer', '', array('class' => 'form-control')) }}
+        {{ Form::text('dyer', '', array('class' => 'form-control', 'placeholder' => 'Shembull: 4 dyer ose vetem numrin e dyerve')) }}
     </div>
 
     <div class="form-group">
@@ -97,6 +97,11 @@
                 <option value="1">Po</option>
                 <option value="0">Jo</option>
         </select>
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('pershkrimi', 'Pershkrimi') }}
+        {{ Form::textarea('pershkrimi', '', array('class' => 'form-control' , 'placeholder' => 'Shkruj një përshkrim për gjendjen apo opsionet e veturës')) }}
     </div>
 
     @if($user->hasRole('admin'))
