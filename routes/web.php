@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['permission:view-admin']], function () {
     Route::get('admin', 'PageController@admin')->name('admin');
-    
+
 	Route::get('admin/veturat/show/{id}', 'VeturaController@showadmin')->name('admin.veturat.show');
 	Route::get('admin/veturat/edit/{id}', 'VeturaController@edit')->name('admin.veturat.edit');
 	Route::post('admin/veturat/edit/{id}', 'VeturaController@update')->name('admin.veturat.update');
@@ -78,6 +78,7 @@ Route::group(['middleware' => ['permission:manage-sallonet']], function () {
 	Route::get('admin/sallonet/edit/{id}', 'SalloniController@edit')->name('admin.sallonet.edit');
 	Route::post('admin/sallonet/edit/{id}', 'SalloniController@update')->name('admin.sallonet.update');
 	Route::get('admin/sallonet/{id}', 'SalloniController@veturat')->name('admin.sallonet.veturat');
+	Route::get('admin/rent/{id}', 'SalloniController@rent')->name('admin.sallonet.rent');
 });
 
 

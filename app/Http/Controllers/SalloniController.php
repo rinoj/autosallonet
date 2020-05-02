@@ -29,7 +29,15 @@ class SalloniController extends Controller
 
     public function veturat($id){
         $salloni = Salloni::find($id);
-        $veturat = Vetura::where('salloni_id', $salloni->id)->orderBy('id', 'desc')->paginate(20);
+        $veturat = Vetura::where('salloni_id', $salloni->id)->where('rent', false)->orderBy('id', 'desc')->paginate(20);
+        return view('admin.salloni.veturat')
+                ->withSalloni($salloni)
+                ->withVeturat($veturat);
+    }
+
+    public function rent($id){
+        $salloni = Salloni::find($id);
+        $veturat = Vetura::where('salloni_id', $salloni->id)->where('rent', true)->orderBy('id', 'desc')->paginate(20);
         return view('admin.salloni.veturat')
                 ->withSalloni($salloni)
                 ->withVeturat($veturat);

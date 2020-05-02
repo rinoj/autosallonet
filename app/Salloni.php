@@ -15,4 +15,12 @@ class Salloni extends Model
     public function user(){
     	return $this->belongsTo('App\User');
     }
+
+    public function getVeturat(){
+    	return $this->veturat()->where('rent', false)->get();
+    }
+
+    public function getRent(){
+    	return $this->veturat()->where('rent', true)->get();
+    }
 }

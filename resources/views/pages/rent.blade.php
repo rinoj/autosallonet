@@ -146,7 +146,7 @@
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">I doganuar</span><span class="b-goods-f__list-info"></span></li>
                         </ul>
                       </div>
-                      <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="assets/media/content/b-goods/auto-check.png" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col"></span><span class="b-goods-f__price-numb">€{{number_format($vetura->cmimi)}} në ditë</span></span></span>
+                      <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="assets/media/content/b-goods/auto-check.png" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col"></span><span class="b-goods-f__price-numb">{{$vetura->salloni->emri}}</span></span></span>
                         
                       </div>
                     </div>

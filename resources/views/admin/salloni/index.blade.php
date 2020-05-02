@@ -20,7 +20,8 @@
         			<th>Telefoni</th>
                     <th>Adresa</th>
                     <th>Emri i Pronarit</th>
-                    <th>NR. i veturave</th>
+                    <th>Vetura</th>
+                    <th>Rent</th>
                     <th></th>
         		</tr>
         	</thead>
@@ -33,10 +34,16 @@
                         <td>{{$salloni->telefoni}}</td>
                         <td>{{$salloni->adresa}}</td>
                         <td><a href="{{url('admin/users', $salloni->user->id)}}/edit" class="btn btn-default btn-sm"><i class="fa fa-edit"></i> {{$salloni->user->name}}</a></td>
-                        <td>{{$salloni->veturat->count()}}</td>
+                        <td>{{$salloni->getVeturat()->count()}}</td>
+                        <td>{{$salloni->getRent()->count()}}</td>
                         <td>
                             <a href="{{route('admin.sallonet.edit', $salloni->id)}}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edito</a>
-                            <a href="{{route('admin.sallonet.veturat', $salloni->id)}}" class="btn btn-sm btn-info"><i class="fa fa-car"></i> Veturat</a>
+                            @if($salloni->lloji == 'Sallon' || $salloni->lloji == 'Sallonrent')
+                            <a href="{{route('admin.sallonet.veturat', $salloni->id)}}" class="btn btn-sm btn-default"><i class="fa fa-car"></i> Veturat</a>
+                            @endif
+                            @if($salloni->lloji == 'Rent' || $salloni->lloji == 'Sallonrent')
+                            <a href="{{route('admin.sallonet.rent', $salloni->id)}}" class="btn btn-sm btn-default"><i class="fa fa-car"></i> Rent</a>
+                            @endif
                         </td>
                     </tr>
                     @endforeach

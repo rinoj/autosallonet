@@ -149,10 +149,11 @@ class VeturaController extends Controller
                 $img->move(public_path().'/images/veturat/', $name);  
             }
         }
-
+        if($request->rent == 'rent')
+            return redirect()->route('admin.rent')->with('flash_message', 'Vetura'. $vetura->marka->emri .' '.$vetura->modeli->emri.' është shtuar!');
         return redirect()->route('admin.veturat')
             ->with('flash_message',
-             'Vetura'. $vetura->marka->emri .' '.$vetura->modeli->emri.' added!');
+             'Vetura'. $vetura->marka->emri .' '.$vetura->modeli->emri.' është shtuar!');
     }
 
     public function uploadImage($id, Request $request){
