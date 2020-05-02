@@ -98,7 +98,7 @@
                         </div>
                         <div class="col-md-auto align-self-end">
                           <a class="btn btn-secondary btn-sm" href="{{route('salloni', $salloni->slug)}}">Detajet</a>
-                          <a class="btn btn-secondary btn-sm" href="#">Shiko Veturat</a>
+                          <a class="btn btn-secondary btn-sm" href="{{route('sallonishowveturat', $salloni->slug)}}">Shiko Veturat</a>
                         </div>
                       </div>
                     </div>

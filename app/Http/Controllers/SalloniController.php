@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Salloni;
 use App\Vetura;
 use App\User;
+use App\Marka;
+use App\Modeli;
+use EloquentBuilder;
 class SalloniController extends Controller
 {
     /**
@@ -97,6 +100,29 @@ class SalloniController extends Controller
 
         return view('pages.salloni')->withSalloni($salloni);
     }
+
+    public function showveturat($autosalloni, Request $request)
+    {
+        $vitet = array(); 
+        for($i = 0; $i <= 20; $i++){
+            $vitet[$i] = $i + 2000;
+        }
+        rsort($vitet, 2);
+
+        $modelet = Modeli::all();
+        $markat = Marka::all();
+        $salloni = Salloni::where('slug', $autosalloni)->firstOrFail();
+        $veturat = EloquentBuilder::to(
+                    Vetura::class,
+                    $request->all()
+                 )->where('salloni_id', $salloni->id)->where('rent',false)->paginate(10);
+        return view('pages.veturat')->withSalloni($salloni)
+                ->withVeturat($veturat)
+                ->withMarkat($markat)
+                ->withModelet($modelet)
+                ->withVitet($vitet);
+    }
+
 
     /**
      * Show the form for editing the specified resource.
