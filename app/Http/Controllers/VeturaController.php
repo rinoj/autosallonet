@@ -123,7 +123,10 @@ class VeturaController extends Controller
         $vetura->slug = preg_replace('/\s+/', '-', $str);
         $vetura->marka_id = $request->marka;
         $vetura->modeli_id = $request->modeli;
-        $vetura->rent = $request->rent;
+        if($request->rent == 'rent')
+            $vetura->rent = true;
+        else
+            $vetura->rent = false;
         if($user->hasRole('admin')){
             $vetura->salloni_id = $request->salloni;
         }else{
