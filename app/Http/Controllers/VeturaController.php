@@ -91,7 +91,8 @@ class VeturaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+
         $user = Auth::user();
         $this->validate($request, [
             'viti'=>'required|max:40',
@@ -107,7 +108,7 @@ class VeturaController extends Controller
         $modeli = Modeli::find($request->modeli);
         $marka = Marka::find($request->marka);
         $str = strtolower($veturalastid.' '.$marka->emri.' '.$modeli->emri. ' '.$request->viti);
-
+        dd($request->rent);
 
         $vetura = new Vetura();
         $vetura->km = $request->km;
@@ -124,6 +125,7 @@ class VeturaController extends Controller
         $vetura->slug = preg_replace('/\s+/', '-', $str);
         $vetura->marka_id = $request->marka;
         $vetura->modeli_id = $request->modeli;
+        $vetura->rent = $request->rent;
         if($user->hasRole('admin')){
             $vetura->salloni_id = $request->salloni;
         }else{

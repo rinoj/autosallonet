@@ -17,6 +17,10 @@
 
     {{ Form::open(array('route' => 'admin.veturat.store', 'enctype' => 'multipart/form-data')) }}
 
+    {{URL::previous() == url('admin/rent') ? 'yes' : 'no'}}
+    {{URL::previous()}}
+
+    {{ Form::hidden('rent', (URL::previous() == url('admin/rent') ? true : false) , array('class' => 'form-control', 'placeholder' => 'Shembull: 1995cm')) }}
     <div class="form-group">
         {{ Form::label('marka', 'Marka') }}
         <select class="form-control e1" name="marka">

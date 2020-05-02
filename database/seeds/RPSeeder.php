@@ -38,7 +38,6 @@ class RPSeeder extends Seeder
         $admin->givePermissionTo('manage-rent');
         
         $autosallon->givePermissionTo('view-admin');
-        $autosallon->givePermissionTo('manage-veturat');
         
 
         DB::table('model_has_roles')->insert([

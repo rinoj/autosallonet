@@ -17,7 +17,6 @@
 
     {{ Form::open(array('route' => 'admin.sallonet.store')) }}
 
-    
     <div class="form-group">
         {{ Form::label('emri', 'Emri i Auto Sallonit') }}
         {{ Form::text('emri', '', array('class' => 'form-control')) }}

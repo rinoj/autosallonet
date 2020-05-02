@@ -132,7 +132,7 @@ class SalloniController extends Controller
         if($salloni->lloji == 'Sallonrent'){
             $salloni->user->syncPermissions(['manage-rent', 'manage-veturat']);
         }
-        else if($salloni->lloji == 'Rent'){
+        elseif($salloni->lloji == 'Rent'){
             $salloni->user->syncPermissions(['manage-rent']);
             $salloni->user->revokePermissionTo(['manage-veturat']);
         }else{
