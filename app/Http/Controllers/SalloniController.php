@@ -69,6 +69,7 @@ class SalloniController extends Controller
         $salloni->facebook = $request->facebook;
         $salloni->slug = $request->slug;
         $salloni->metadescription = $request->metadescription;
+        $salloni->lloji = $request->lloji;
         $salloni->save();
 
         return redirect()->route('admin.sallonet')
@@ -126,8 +127,18 @@ class SalloniController extends Controller
         $salloni->facebook = $request->facebook;
         $salloni->slug = $request->slug;
         $salloni->metadescription = $request->metadescription;
+        $salloni->lloji = $request->lloji;
         $salloni->update();
-
+        if($salloni->lloji == 'Sallonrent'){
+            $salloni->user->syncPermissions(['manage-rent', 'manage-veturat']);
+        }
+        else if($salloni->lloji == 'Rent'){
+            $salloni->user->syncPermissions(['manage-rent']);
+            $salloni->user->revokePermissionTo(['manage-veturat']);
+        }else{
+            $salloni->user->syncPermissions(['manage-veturat']);
+            $salloni->user->revokePermissionTo(['manage-rent']);
+        }
         return redirect()->route('admin.sallonet')
             ->with('flash_message',
              'Salloni '.$salloni->emri. ' eshte edituar!');

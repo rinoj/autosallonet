@@ -103,7 +103,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         if(isset($request->password)){
-            $user->password = $request->password;
+            $user->password = bcrypt($request->password);
         }
         $user->update();
         //dd($roles);

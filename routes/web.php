@@ -13,6 +13,7 @@
 
 Route::get('/', 'PageController@index')->name('index');
 
+Route::get('rentacar', 'RentController@index')->name('rentacar');
 Auth::routes();
 
 Route::get('/modelet/{id}', 'ModeliController@getModelet');
@@ -21,6 +22,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['permission:view-admin']], function () {
     Route::get('admin', 'PageController@admin')->name('admin');
+    
+	Route::get('admin/veturat/show/{id}', 'VeturaController@showadmin')->name('admin.veturat.show');
+	Route::get('admin/veturat/edit/{id}', 'VeturaController@edit')->name('admin.veturat.edit');
+	Route::post('admin/veturat/edit/{id}', 'VeturaController@update')->name('admin.veturat.update');
+
+	Route::post('admin/veturat/show/{id}', 'VeturaController@uploadImage')->name('admin.veturat.uploadimage');
+	Route::get('admin/veturat/show/{id}/deleteimage', 'VeturaController@deleteImage')->name('admin.veturat.deleteimage');
+	
+	Route::get('admin/veturat/create', 'VeturaController@create')->name('admin.veturat.create');
+	Route::post('admin/veturat/store', 'VeturaController@store')->name('admin.veturat.store');
 });
 
 Route::group(['middleware' => ['permission:manage-roles-permissions']], function () {
@@ -45,15 +56,19 @@ Route::group(['middleware' => ['permission:manage-markat-modelet']], function ()
 
 Route::group(['middleware' => ['permission:manage-veturat']], function () {
 	Route::get('admin/veturat', 'VeturaController@admin')->name('admin.veturat');
-	Route::get('admin/veturat/show/{id}', 'VeturaController@showadmin')->name('admin.veturat.show');
-	Route::get('admin/veturat/edit/{id}', 'VeturaController@edit')->name('admin.veturat.edit');
-	Route::post('admin/veturat/edit/{id}', 'VeturaController@update')->name('admin.veturat.update');
+});
 
-	Route::post('admin/veturat/show/{id}', 'VeturaController@uploadImage')->name('admin.veturat.uploadimage');
-	Route::get('admin/veturat/show/{id}/deleteimage', 'VeturaController@deleteImage')->name('admin.veturat.deleteimage');
+Route::group(['middleware' => ['permission:manage-rent']], function () {
+	Route::get('admin/rent', 'RentController@admin')->name('admin.rent');
+	// Route::get('admin/veturat/show/{id}', 'VeturaController@showadmin')->name('admin.veturat.show');
+	// Route::get('admin/veturat/edit/{id}', 'VeturaController@edit')->name('admin.veturat.edit');
+	// Route::post('admin/veturat/edit/{id}', 'VeturaController@update')->name('admin.veturat.update');
+
+	// Route::post('admin/veturat/show/{id}', 'VeturaController@uploadImage')->name('admin.veturat.uploadimage');
+	// Route::get('admin/veturat/show/{id}/deleteimage', 'VeturaController@deleteImage')->name('admin.veturat.deleteimage');
 	
-	Route::get('admin/veturat/create', 'VeturaController@create')->name('admin.veturat.create');
-	Route::post('admin/veturat/store', 'VeturaController@store')->name('admin.veturat.store');
+	// Route::get('admin/veturat/create', 'VeturaController@create')->name('admin.veturat.create');
+	// Route::post('admin/veturat/store', 'VeturaController@store')->name('admin.veturat.store');
 });
 
 Route::group(['middleware' => ['permission:manage-sallonet']], function () {

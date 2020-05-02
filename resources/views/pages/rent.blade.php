@@ -2,7 +2,7 @@
 
 @section('head')
 @include('meta::manager', [
-    'title'         => 'Veturat',
+    'title'         => 'Rent a Car',
     'description'   => 'Gjej veturën tëndë të preferuar.',
 ])
 @endsection
@@ -115,47 +115,44 @@
                     </div>
                     <div class="b-filter-goods__info col-auto">Duke shfaqur veturat<strong> {{$veturat->count()*$veturat->currentPage()-9}} deri {{$veturat->count()*$veturat->currentPage()}} </strong> nga totali i<strong> {{$veturat->total()}}</strong></div>
                     <div class="btns-switch col-auto">
-                        <i class="btns-switch__item js-view-list active ic fa fa-th-list" style="padding:-125px !important"></i>
-                        <i class="btns-switch__item js-view-th ic fa fa-th"></i></div>
+                        <i class="btns-switch__item js-view-list  ic fa fa-th-list" style="padding:-125px !important"></i>
+                        <i class="btns-switch__item js-view-th active ic fa fa-th"></i></div>
                   </div>
                 </div>
                 <!-- end .b-filter-goods-->
-                <main class="b-goods-group row">
-                  @foreach($veturat as $vetura)
-                  <div class="b-goods-f col-12 b-goods-f_row">
+                 <main class="b-goods-group row">
+
+                 	@foreach($veturat as $vetura)
+                  <div class="b-goods-f col-lg-4 col-md-6">
                     <div class="b-goods-f__media">
-                      <a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->slug])}}">
-                        @if($vetura->images->count() == 0)
+                    	@if($vetura->images->count() == 0)
                         <img class="b-goods-f__img img-scale" src="{{url('theme/assets/media/content/b-goods/300x220/1.jpg')}}" alt="foto"/>
                         @else
                           <img class="b-goods-f__img img-scale" src="{{url('images/veturat/'. $vetura->images->first()['filename'])}}" style="width: 300; height: 220px;" alt="foto"/>
                         @endif
-                      </a>
-                      <span class="b-goods-f__media-inner">
-                        <span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span><span class="b-goods-f__label bg-primary">NEW</span>
-                      </span>
-                    </div>
+                    	<span class="b-goods-f__media-inner">
+                    	<span class="b-goods-f__label bg-primary">€{{number_format($vetura->cmimi)}} / ditë</span></span></div>
                     <div class="b-goods-f__main">
                       <div class="b-goods-f__descrip">
-                        <div class="b-goods-f__title"><a href="{{route('showvetura', [$vetura->salloni->slug,$vetura->slug])}}">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</a></div>
-                        <div class="b-goods-f__info"> </div>
-                        <ul class="b-goods-f__list list-unstyled">
-                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">KM :</span><span class="b-goods-f__list-info">{{number_format($vetura->km)}}km</span></li>
+                        <div class="b-goods-f__title">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</div>
+                        <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
+                         <ul class="b-goods-f__list list-unstyled">
+                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Kubikazha:</span><span class="b-goods-f__list-info"> {{number_format($vetura->kubikazha)}} cm3</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Viti :</span><span class="b-goods-f__list-info">{{$vetura->viti}}</span></li>
-                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Marshi :</span><span class="b-goods-f__list-info">{{$vetura->marshi  }}</span></li>
+                          <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Marshi :</span><span class="b-goods-f__list-info">{{$vetura->getMarshi()  }}</span></li>
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Dyer : </span><span class="b-goods-f__list-info">{{$vetura->dyer}}</span></li>
                           <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Lënda Djegëse :</span><span class="b-goods-f__list-info">{{$vetura->lenda}}</span></li>
-                          <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Kubikazha:</span><span class="b-goods-f__list-info">{{number_format($vetura->kubikazha)}}</span></li>
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Ngjyra :</span><span class="b-goods-f__list-info">{{$vetura->ngjyra}}</span></li>
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">I doganuar</span><span class="b-goods-f__list-info"></span></li>
                         </ul>
                       </div>
-                      <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="{{url('theme/assets/media/content/b-goods/auto-check.png')}}" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col">Çmimi:&nbsp;</span><span class="b-goods-f__price-numb">€{{number_format($vetura->cmimi)}}</span></span></span>
-                        <div class="b-goods-f__imprest"> </div>
+                      <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="assets/media/content/b-goods/auto-check.png" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col"></span><span class="b-goods-f__price-numb">€{{number_format($vetura->cmimi)}} në ditë</span></span></span>
+                        
                       </div>
                     </div>
                   </div>
                   @endforeach
+                
                 </main>
                 <nav aria-label="Page navigation">
                   <ul class="pagination justify-content-center">
@@ -192,8 +189,7 @@
                             var length = success.length;
                             var select = $(".modeliselect");
                             document.getElementById("modeliselect").innerHTML = "";
-                            if(length == 0)
-                              select.("refresh");
+                            // select.empty();
                             // $(".modeliselect").html('<option value="">Zgjedh Marken</option').selectpicker('refresh'); 
                                 select.prop("disabled", false);
                             for(var x = 0; x < length; x++){

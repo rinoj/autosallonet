@@ -148,9 +148,19 @@ return [
         ],
         [
             'text' => 'Veturat',
-            'url'  => 'admin/veturat',
             'icon' => 'fa fa-car',
-            'can'  => 'manage-veturat'
+            'submenu' => [
+                [
+                    'text' => 'Sallon',
+                    'url'  => 'admin/veturat',
+                    'can'  => 'manage-veturat'
+                ],
+                [
+                    'text' => 'Rent',
+                    'url'  => 'admin/rent',
+                    'can'  => 'manage-rent'
+                ],
+            ],
         ],
         [
             'text'    => 'Markat & Modelet',

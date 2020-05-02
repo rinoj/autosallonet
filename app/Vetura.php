@@ -32,4 +32,11 @@ class Vetura extends Model
     public function emri(){
         return $this->marka->emri. ' '.$this->modeli->emri;
     }
+
+    public function getMarshi(){
+        if($this->marshi == 1)
+            return 'Automatik';
+        else
+            return 'Manual';
+    }
 }

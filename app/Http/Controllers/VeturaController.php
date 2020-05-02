@@ -30,7 +30,7 @@ class VeturaController extends Controller
         $veturat = EloquentBuilder::to(
                     Vetura::class,
                     $request->all()
-                 )->paginate(10);
+                 )->where('rent',false)->paginate(10);
 
         return view('pages.veturat')
                 ->withVeturat($veturat)
@@ -45,11 +45,11 @@ class VeturaController extends Controller
     public function admin(){
         $user = Auth::user();
         if($user->hasRole('admin')){
-            $veturat = Vetura::paginate(10);
+            $veturat = Vetura::where('rent', false)->paginate(10);
         }
         else{
             if($user->salloni != null){
-                $veturat = Vetura::where('salloni_id', $user->salloni->id)->paginate(10);   
+                $veturat = Vetura::where('rent', false)->where('salloni_id', $user->salloni->id)->paginate(10);   
             }
             else{
                 return redirect()->route('admin');

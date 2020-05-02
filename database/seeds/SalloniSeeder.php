@@ -12,57 +12,41 @@ class SalloniSeeder extends Seeder
     public function run()
     {
         //markat
-    	DB::table('marka')->insert([
-            'emri' => 'Volkswagen',
-        ]);
+        $markat = [['emri' => 'Alfa Romeo'],
+['emri' => 'Audi'],
+['emri' => 'BMW'],
+['emri' => 'Bentley'],
+['emri' => 'Citroen'],
+['emri' => 'Fiat'],
+['emri' => 'Ford'],
+['emri' => 'Honda'],
+['emri' => 'Hyundai'],
+['emri' => 'Jaguar'],
+['emri' => 'Jeep'],
+['emri' => 'Kia'],
+['emri' => 'Lancia'],
+['emri' => 'Land rover'],
+['emri' => 'Mazda'],
+['emri' => 'Mercedes Benz'],
+['emri' => 'Mini'],
+['emri' => 'Mitsubishi'],
+['emri' => 'Nissan'],
+['emri' => 'Opel'],
+['emri' => 'Peugeot'],
+['emri' => 'Porsche'],
+['emri' => 'Renault'],
+['emri' => 'Rover'],
+['emri' => 'Saab'],
+['emri' => 'Seat'],
+['emri' => 'Skoda'],
+['emri' => 'Smart'],
+['emri' => 'Subaru'],
+['emri' => 'Suzuki'],
+['emri' => 'Toyota'],
+['emri' => 'Volkswagen'],
+['emri' => 'Volvo']];
 
-        DB::table('marka')->insert([
-            'emri' => 'Audi',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'BMW',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Mercedes',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Ford',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Nissan',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Skoda',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Honda',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Peugeot',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Renault',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Citroen',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Range Rover',
-        ]);
-
-        DB::table('marka')->insert([
-            'emri' => 'Opel',
-        ]);
+    	DB::table('marka')->insert($markat);
 
         //=====================================================================================
 
@@ -156,6 +140,7 @@ class SalloniSeeder extends Seeder
             'telefoni' => '+383000000',
             'adresa' => 'Ferizaj',
             'slug' => 'auto-sherreti',
+            'lloji' => 'sallon',
             'user_id' => 1
         ]);
 
@@ -164,6 +149,7 @@ class SalloniSeeder extends Seeder
             'telefoni' => '+383000000',
             'adresa' => 'Prishtine',
             'slug' => 'auto-alberti',
+            'lloji' => 'rent',
             'user_id' => 2
         ]);
 

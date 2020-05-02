@@ -16,6 +16,7 @@
         		<tr>
         			<th>ID</th>
         			<th>Emri</th>
+                    <th>Lloji</th>
         			<th>Telefoni</th>
                     <th>Adresa</th>
                     <th>Emri i Pronarit</th>
@@ -28,9 +29,10 @@
                     <tr>
                     	<td>{{$salloni->id}}</td>
                         <td>{{$salloni->emri}}</td>
+                        <td>{{$salloni->lloji}}</td>
                         <td>{{$salloni->telefoni}}</td>
                         <td>{{$salloni->adresa}}</td>
-                        <td>{{$salloni->user->name}}</td>
+                        <td><a href="{{url('admin/users', $salloni->user->id)}}/edit" class="btn btn-default btn-sm"><i class="fa fa-edit"></i> {{$salloni->user->name}}</a></td>
                         <td>{{$salloni->veturat->count()}}</td>
                         <td>
                             <a href="{{route('admin.sallonet.edit', $salloni->id)}}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edito</a>

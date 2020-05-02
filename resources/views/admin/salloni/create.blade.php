@@ -49,6 +49,15 @@
     </div>
 
     <div class="form-group">
+        {{ Form::label('lloji', 'Zgjedh llojin') }}
+         <select class="form-control" name="lloji">
+                <option value="Sallon">Sallon</option>
+                <option value="Rent">Rent</option>
+                <option value="Sallonrent">Sallon & Rent</option>
+        </select>
+    </div>
+
+    <div class="form-group">
         {{ Form::label('user', 'Zgjedh pronarin') }}
          <select id="e1" class="form-control" name="user">
          	@foreach($users as $user)
@@ -66,7 +75,7 @@
     @endsection
 
     @section('boxtitle')
-    <a href="{{ route('admin.sallonet') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> Kthehu</a>
+    <a href="{{ URL::previous() }}" class="btn btn-default"><i class="fa fa-angle-left"></i> Kthehu</a>
     @endsection
     @include('layouts.box')
     </div>
