@@ -193,7 +193,7 @@
                             var select = $(".modeliselect");
                             document.getElementById("modeliselect").innerHTML = "";
                             if(length == 0)
-                              select.("refresh");
+                              select.selectpicker('refresh');
                             // $(".modeliselect").html('<option value="">Zgjedh Marken</option').selectpicker('refresh'); 
                                 select.prop("disabled", false);
                             for(var x = 0; x < length; x++){

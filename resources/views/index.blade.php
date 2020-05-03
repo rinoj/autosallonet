@@ -9,30 +9,17 @@
 
 @section('content')
 
-<div class="main-slider slider-pro" id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="false" data-slider-buttons="false">
+<div class="main-slider slider-pro" id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="false" data-slider-buttons="false" style="">
                 <div class="sp-slides">
                     <!-- Slide 1-->
-                    <div class="main-slider__slide sp-slide"><img class="sp-image" src="{{url('theme/assets/media/content/b-main-slider/bg-1.jpg')}}" alt="slider" />
-                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
-                            <div class="main-slider__wrap">
-                                <div class="main-slider__slogan">luxury unleashed</div>
-                                <div class="main-slider__title">MAZDA<span class="main-slider__title_lg text-right">CX3<span class="main-slider__title">’19</span></span>
-                                </div>
-                                <div class="text-center">
-                                    <div class="main-slider__price"><span class="main-slider__price_up">&euro;</span>249<span class="main-slider__price_down">/m</span><span class="main-slider__price_info">për 24 muaj</span></div>
-                                </div>
-                                <div class="text-right"><a class="main-slider__link" href="blog-post.html">paguaj me këste</a></div>
-                            </div>
-                        </div>
-                    </div>
+                   
                     <!-- Slide 2-->
                     <div class="main-slider__slide-2 sp-slide"><img class="sp-image" src="{{url('theme/assets/media/content/b-main-slider/bg-2.jpg')}}" alt="slider" />
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
                             <div class="main-slider__wrap">
-                                <div class="main-slider__slogan">expert auto services</div>
-                                <div class="main-slider__title">Premium
-                                    <br>Cars Dealers</div>
-                                <div class="text-right"><a class="main-slider__link" href="blog-post.html">learn more</a></div>
+                                <div class="main-slider__slogan">Mirë se vini në</div>
+                                <div class="main-slider__title">Auto<span class="text-primary">Sallonet</span>.com
+                                    <br><span style="font-size:50%">Gjej veturën tënde</span></div>
                             </div>
                         </div>
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="1500" data-show-delay="800" data-hide-delay="400"><img class="main-slider__figure-1 img-fluid" src="{{url('theme/assets/media/content/b-main-slider/bg-2_item-1.png')}}" alt="foto" /></div>
@@ -107,20 +94,11 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="ui-title-slogan">Kjo platformë ju mundëson të gjeni veturën tuaj të preferuar</div>
-                            <h2 class="ui-title">Mirë se vini në <span class="text-primary"> AutoSallonet.com</span></h2>
+                            <h2 class="ui-title">Auto<span class="text-primary">Sallonet</span>.com</h2>
                             <p>Vetura të ndryshme nga të gjitha llojet. Të gjitha veturat që janë të postuara në platformën tonë gjenden nëpër autosallone të ndryshme nëpër çdo qytet të Kosovës. Për të parë më shumë vetura klikoni në opsionin Vetura.</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-7">
-                            <ul class="b-welcome-list list-unstyled d-sm-flex justify-content-around">
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-car"></i>Ne ofrojmë 
-                                    <br> vetura të shumta</li>
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-gearbox"></i>Shumë
-                                    <br> Autosallone</li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                 </div>
             </section>
             <!-- end .b-welcome-->
@@ -128,8 +106,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="ui-title-slogan">Gjej të preferuarën tënde</div>
                             <h2 class="ui-title">Shiko më shumë<span class="text-primary"> vetura</span></h2>
+                            <div class="ui-title-slogan">Lëviz foton majtas ose djathtas</div>
                         </div>
                     </div>
                 </div>

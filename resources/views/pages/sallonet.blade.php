@@ -11,52 +11,7 @@
 @section('content')
 
 <main>
-          <div class="section-area bg-light">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  <div class="b-find b-find_sm">
-                    <form class="b-find__form">
-                      <div class="b-find__row">
-                        <div class="b-find__main">
-                          <div class="b-find__inner">
-                            <div class="b-find__item">
-                              <div class="b-find__selector">
-                                <select class="selectpicker" data-width="100%" title="Choose Make" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                  <option>Option 1</option>
-                                  <option>Option 2</option>
-                                  <option>Option 3</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="b-find__item">
-                              <div class="b-find__selector">
-                                <select class="selectpicker" data-width="100%" title="Choose Model" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                  <option>Model 1</option>
-                                  <option>Model 2</option>
-                                  <option>Model 3</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="b-find__item">
-                              <div class="b-find__selector">
-                                <select class="selectpicker" data-width="100%" title="Choose Year" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                  <option>2019</option>
-                                  <option>2018</option>
-                                  <option>2017</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="b-find__btn btn btn-primary">find dealer</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         
           <!-- end .b-find-->
           <section class="section-dealers">
             <div class="row">
@@ -66,10 +21,18 @@
                     <div class="row align-items-center">
                       <h2 class="section-dealers__title ui-title-inner col">Sallonet</h2>
                       <div class="section-dealers__select col-auto">
-                        <select class="selectpicker" data-width="210px" title="Sort By" multiple="multiple" data-max-options="1" data-style="ui-select">
-                          <option>A-Z</option>
-                          <option>Z-A</option>
-                        </select>
+                        <div class="b-filter-slider ui-filter-slider">
+                            <div class="b-filter-slider__main">
+                              <div class="b-filter__row row" >
+                                <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
+                                  <input class="ui-select" id="input-with-keypress-0" name="kerkon" placeholder="Kërko Sallonin" />
+                                </div>
+                                <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
+                                  <button class="btn btn-primary w-100"  type="submit">Kërko</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -83,16 +46,9 @@
                         <div class="b-dealers__main col-md">
                           <div class="b-dealers__header">
                             <div class="b-dealers__title">{{$salloni->emri}}</div>
-                            <ul class="b-dealers-rating list-unstyled">
-                              <li class="b-dealers-rating__item"><i class="fas fa-star"></i></li>
-                              <li class="b-dealers-rating__item"><i class="fas fa-star"></i></li>
-                              <li class="b-dealers-rating__item"><i class="fas fa-star"></i></li>
-                              <li class="b-dealers-rating__item"><i class="fas fa-star"></i></li>
-                              <li class="b-dealers-rating__item"><i class="fas fa-star"></i></li>
-                            </ul><span class="b-dealers__rev"> </span>
+                            
                           </div>
                           <div class="b-dealers__body">
-                            <div class="b-dealers__info"><i class="ic flaticon-car-1 text-primary"></i>{{$salloni->veturat->count()}} vetura<a class="b-dealers__link" href="#"> Shiko Të Gjitha Veturat</a></div>
                             <div class="b-dealers__contacts"><span class="b-dealers__contacts-item"><i class="ic icon-location-pin"></i>{{$salloni->adresa}}</span><span class="b-dealers__contacts-item"><i class="ic icon-call-in"></i>{{$salloni->telefoni}}</span></div>
                           </div>
                         </div>

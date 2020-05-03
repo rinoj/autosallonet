@@ -16,7 +16,8 @@ Route::get('/', 'PageController@index')->name('index');
 Route::get('rentacar', 'RentController@index')->name('rentacar');
 Auth::routes();
 
-Route::get('/modelet/{id}', 'ModeliController@getModelet');
+Route::get('modelet/{id}', 'ModeliController@getModelet');
+Route::get('modeletById/{id}', 'ModeliController@getModeletById');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

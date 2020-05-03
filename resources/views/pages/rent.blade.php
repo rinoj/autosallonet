@@ -51,28 +51,7 @@
                               </select>
                             </div>
 
-                          
-                            <div class="b-filter-slider ui-filter-slider">
-                            <div class="b-filter-slider__title">Çmimi</div>
-                            <div class="b-filter-slider__main">
-                              <div id="filterPrice"></div>
-                              <div class="b-filter__row row">
-                                <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                  <input class="ui-select" id="input-with-keypress-0" name="cmimiprej" />
-                                </div>
-                                <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                  <input class="ui-select" id="input-with-keypress-1" name="cmimideri" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="b-filter__row">
-                              <select class="selectpicker" data-width="100%" title="I doganuar" multiple="multiple" data-max-options="1" data-style="ui-select" name="doganuar">
-                                <option value="1" {{request()->get('doganuar') == 'true' ? 'selected' : ''}}>Po</option>
-                                <option value="0" {{request()->get('lenda') == 'true' ? 'selected' : ''}}>Jo</option>
-                              </select>
-                            </div>
+                       
 
                           <div class="b-filter__row" style="display:none">
                              <select class="selectpicker" data-width="100%" title="Rendit sipas çmimit" multiple="multiple" data-max-options="1" data-style="ui-select" name="order" id="orderselect">

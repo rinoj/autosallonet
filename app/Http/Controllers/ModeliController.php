@@ -98,8 +98,17 @@ class ModeliController extends Controller
         //
     }
 
+
     public function getModelet($id){
         $marka = Marka::where('emri', $id)->firstOrFail();
+
+        $modelet = Modeli::where('marka_id', $marka->id)->get();
+
+        return response()->json($modelet);
+    }
+
+    public function getModeletById($id){
+        $marka = Marka::where('id', $id)->firstOrFail();
 
         $modelet = Modeli::where('marka_id', $marka->id)->get();
 

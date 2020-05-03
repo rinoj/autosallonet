@@ -3,8 +3,9 @@
 @section('head')
 @include('meta::manager', [
     'title'         => $vetura->marka->emri.' '.$vetura->modeli->emri.' - '.$vetura->salloni->emri,
-    'description'   => 'Gjej veturën tënde të preferuar.',
-    'image'         => url('images/veturat/'. ($vetura->images->count() > 0 ?$vetura->images[0]->filename : ''))
+    'description'   => $vetura->marka->emri.' '.$vetura->modeli->emri.' - '.$vetura->salloni->emri. ' - '. $vetura->description,
+    'image'         => url('images/veturat/'. ($vetura->images->count() > 0 ?$vetura->images[0]->filename : '')),
+    'keywords'      => $vetura->marka->emri.','.$vetura->modeli->emri.','.$vetura->salloni->emri.',AutoSallonet, AutoSallonet.com, Autosalloni.com, Veturat'
 ])
 @endsection
 
@@ -18,7 +19,7 @@
               
               <div class="row">
               <div class="col-lg-8">
-                <div class="ui-subtitle">new seventh-generation 3 Series sedan</div>
+                <div class="ui-subtitle"></div>
                 <h1 class="ui-title text-uppercase">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</h1>
                
               </div>
@@ -40,7 +41,7 @@
                 <div class="b-goods-f__links">
                   <a class="b-goods-f__links-item" href="#"><i class="ic fas fa-map-marker-alt text-primary"></i>{{$vetura->salloni->adresa}}</a>
                   <a class="b-goods-f__links-item" href="#"><i class="ic fab fa-facebook text-primary"></i>Faqja e AutoSallonit</a>
-                  <a class="b-goods-f__links-item" href="#"><i class="ic fas fa-car-side text-primary"></i>Më shumë vetura nga {{$vetura->salloni->emri}}</a>
+                  <a class="b-goods-f__links-item" href="{{route('sallonishowveturat', $vetura->salloni->slug)}}"><i class="ic fas fa-car-side text-primary"></i>Më shumë vetura nga {{$vetura->salloni->emri}}</a>
                 </div>
                   <div class="slider slider-for">
                  @foreach($vetura->images as $image)

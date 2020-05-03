@@ -21,7 +21,8 @@
     {{ Form::hidden('rent', (URL::previous() == url('admin/rent') ? 'rent' : 'sallon') , array('class' => 'form-control', 'placeholder' => 'Shembull: 1995cm')) }}
     <div class="form-group">
         {{ Form::label('marka', 'Marka') }}
-        <select class="form-control e1" name="marka">
+        <select class="form-control e1" name="marka" id="markaselect">
+            <option value="" selected disabled>Selekto markën</option>
         	@foreach($markat as $marka)
         	<option value="{{$marka->id}}">{{$marka->emri}}</option>
         	@endforeach
@@ -30,10 +31,8 @@
     
     <div class="form-group">
         {{ Form::label('name', 'Modeli') }}
-        <select class="form-control e1" name="modeli">
-        	@foreach($modelet as $modeli)
-        	<option value="{{$modeli->id}}">{{$modeli->emri}}</option>
-        	@endforeach
+        <select class="form-control e1 modeliselect" name="modeli" id="modeliselect">
+        	
         </select>
     </div>
 
@@ -141,7 +140,40 @@
 @section('js')
  <script>
        $(".e1").select2({
-    placeholder: "Select a State"
+    placeholder: "Selekto Markën"
 });
     </script>
+
+    <script src="{{url('theme/assets/libs/bootstrap-select.min.js')}}"></script>
+    <script type="text/javascript">
+            $('#markaselect').on('change', '', function (e) {
+                var id = $(this).children("option:selected").val();
+                getModelet(id);
+                console.log('test');
+            });
+            function getModelet(id) {
+                    $.ajax({
+                        type:'get',
+                        url:'/modeletById/'+id,
+                        success:function(success) {
+                            var length = success.length;
+                            var select = $(".modeliselect");
+                            document.getElementById("modeliselect").innerHTML = "";
+                            if(length == 0)
+                              select.selectpicker('refresh');
+                            // $(".modeliselect").html('<option value="">Zgjedh Marken</option').selectpicker('refresh'); 
+                                select.prop("disabled", false);
+                            for(var x = 0; x < length; x++){
+                                var option = document.createElement('option');
+                                option.value = success[x].id;
+                                option.text = success[x].emri;
+                                document.getElementById('modeliselect').options.add(option);
+                                console.log(document.getElementById('modeliselect').options);
+                                select.selectpicker('refresh');
+                            }
+                                
+                        }
+                    })
+                }
+            </script>
 @endsection
