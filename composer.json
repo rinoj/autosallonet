@@ -17,6 +17,7 @@
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "5.8.*",
         "mohammad-fouladgar/eloquent-builder": "^2.2",
+        "renatomarinho/laravel-page-speed": "^1.18",
         "spatie/laravel-permission": "^2.0",
         "spatie/laravel-responsecache": "^5.0",
         "yajra/laravel-disqus": "^1.1"
