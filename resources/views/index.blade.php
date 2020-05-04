@@ -131,7 +131,7 @@
                                     <ul class="b-goods-f__list list-unstyled">
                                         <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> {{$vetura->km}}km</li>
                                         <li class="b-goods-f__list-item"><i class="ic fa fa-eur" style="margin-top:5px"></i> {{$vetura->cmimi}}</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> {{$vetura->marshi}}</li>
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> {{$vetura->getMarshi()}}</li>
                                     </ul>
                                 </div>
                                 <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
@@ -192,7 +192,7 @@
                                         <ul class="b-goods-f__list list-unstyled">
                                             <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">{{$vetura->km}}km</span></li>
                                             <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">{{$vetura->viti}}</span></li>
-                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">{{$vetura->marshi}}</span></li>
+                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">{{$vetura->getMarshi()}}</span></li>
                                             <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">{{$vetura->lenda}}</span></li>
                                             <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">160 hp</span></li>
                                         </ul>

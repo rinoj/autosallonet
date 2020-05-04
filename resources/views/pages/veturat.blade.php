@@ -131,9 +131,7 @@
                           <img class="b-goods-f__img img-scale" src="{{url('images/veturat/'. $vetura->images->first()['filename'])}}" style="width: 300; height: 220px;" alt="foto"/>
                         @endif
                       </a>
-                      <span class="b-goods-f__media-inner">
-                        <span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span><span class="b-goods-f__label bg-primary">NEW</span>
-                      </span>
+                    
                     </div>
                     <div class="b-goods-f__main">
                       <div class="b-goods-f__descrip">
@@ -150,7 +148,7 @@
                           <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">I doganuar</span><span class="b-goods-f__list-info"></span></li>
                         </ul>
                       </div>
-                      <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="{{url('theme/assets/media/content/b-goods/auto-check.png')}}" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col">Çmimi:&nbsp;</span><span class="b-goods-f__price-numb">€{{number_format($vetura->cmimi)}}</span></span></span>
+                     <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr text-center" href="{{route('sallonishowveturat', $vetura->salloni->slug)}}">{{$vetura->salloni->emri}}<span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col">Çmimi:&nbsp;</span><span class="b-goods-f__price-numb">€{{number_format($vetura->cmimi)}}</span></span></span>
                         <div class="b-goods-f__imprest"> </div>
                       </div>
                     </div>
