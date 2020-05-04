@@ -18,7 +18,7 @@
               
               <div class="row">
               <div class="col-lg-8">
-                <div class="ui-subtitle">new seventh-generation 3 Series sedan</div>
+                <div class="ui-subtitle"></div>
                 <h1 class="ui-title text-uppercase">{{$vetura->marka->emri}} {{$vetura->modeli->emri}}</h1>
                
               </div>
@@ -26,7 +26,7 @@
                 <div class="b-goods-f-price">
                   <div class="b-goods-f-price__inner">
                     <div class="b-goods-f-price__msrp"><strong></strong></div>
-                    <div class="b-goods-f-price__main bg-primary">€ {{number_format($vetura->cmimi)}}</div>
+                    <div class="b-goods-f-price__main bg-primary">€ {{number_format($vetura->cmimi)}} në ditë</div>
                   </div>
                   <div class="b-goods-f-price__note"></div>
                 </div>
@@ -42,20 +42,19 @@
                   <a class="b-goods-f__links-item" href="#"><i class="ic fab fa-facebook text-primary"></i>Faqja e AutoSallonit</a>
                   <a class="b-goods-f__links-item" href="#"><i class="ic fas fa-car-side text-primary"></i>Më shumë vetura nga {{$vetura->salloni->emri}}</a>
                 </div>
-                  <div class="slider slider-for">
-                 @foreach($vetura->images as $image)
-                  <div>
-                    <img style="max-width: 100%; height: auto; " src="{{url('images/veturat/'. $image->filename)}}"/>
-                  </div>
-                  @endforeach
-                </div>
-                <div class="slider slider-nav">
-                  @foreach($vetura->images as $image)
-                  <div>
-                    <img style="max-width: 100%; height: auto; " src="{{url('images/veturat/'. $image->filename)}}"/>
-                  </div>
-                  @endforeach
-                </div>
+                  <section class="b-post b-post-full clearfix">
+                    <div class="entry-media">
+                      <div class="entry-carousel js-slider" data-slick="{}">
+                          @if($vetura->images->count() == 0)
+                          <img class="img-fluid" src="{{url('theme/assets/media/content/b-posts/830x400/1.jpg')}}" alt="Foto"/>
+                          @endif
+                          @foreach($vetura->images as $image)
+                            <img class="img-fluid" style="width: 830px;height:400px;" src="{{url('images/veturat/'. $image->filename)}}" alt="Foto"/>
+                          @endforeach
+                      </div>
+                    </div>
+                    
+                  </section>
 
                 <h2 class="b-goods-f__title">Specifikat</h2>
                 <div class="row">
@@ -65,8 +64,6 @@
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->viti}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Modeli</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->modeli->emri}}</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Ngjyra</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->ngjyra}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Lënda Djegëse</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->lenda}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Kubikazha</dt>
@@ -75,26 +72,27 @@
                   </div>
                   <div class="col-md-6">
                     <dl class="b-goods-f__descr row">
+                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Ngjyra</dt>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->ngjyra}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Dyer</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->dyer}}</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">KM</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{number_format($vetura->km)}} km</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Marshi</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->marshi}}</dd>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->getMarshi()}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Interieri</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->interier}}</dd>
-                      <dt class="b-goods-f__descr-title col-lg-5 col-md-12">I doganuar</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->doganuar ? 'Po' : 'Jo'}}</dd>
                     </dl>
                   </div>
                 </div>
                 <ul class="nav nav-tabs nav-vehicle-detail-tabs" id="myTab" role="tablist">
                   <li class="nav-item"><a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Përshkrim</a></li>
-                  <li class="nav-item"><a class="nav-link" id="features-tab" data-toggle="tab" href="#features1" role="tab" aria-controls="features" aria-selected="false">Opsionet</a></li>
+                  <li class="nav-item"><a class="nav-link" id="rezervo-tab" data-toggle="tab" href="#rezervo" role="tab" aria-controls="rezervo" aria-selected="false">Rezervo</a></li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                     <p>{{$vetura->description}}</p>
+                  </div>
+                  <div class="tab-pane fade" id="rezervo" role="tabpanel" aria-labelledby="rezervo-tab">
+                    <p>test</p>
                   </div>
                   <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
                     <h3 class="b-goods-f__title-inner">General Information</h3>

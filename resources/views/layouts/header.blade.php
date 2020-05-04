@@ -22,7 +22,7 @@
                                 <a class="navbar-brand scroll" href="{{route('index')}}"><img class="normal-logo" src="{{url('theme/assets/media/general/logo.png')}}" alt="logo"></a>
                             </div>
                             <div class="col-lg-auto col">
-                                <div class="header-contacts d-none d-md-block d-lg-none d-xl-block"><i class="ic text-primary icon-call-in"></i><span class="header-contacts__inner">Kontakto!<a class="header-contacts__number" href="tel:+17553028549">+383 49 999 999</a></span></div>
+                                <div class="header-contacts d-none d-md-block d-lg-none d-xl-block"><i class="ic text-primary icon-call-in"></i><span class="header-contacts__inner">Kontakto!<a class="header-contacts__number" href="tel:+17553028549">+383 45 377 659</a></span></div>
                                 <!-- Mobile Trigger Start-->
                                 <button class="menu-mobile-button js-toggle-mobile-slidebar toggle-menu-button d-lg-none"><i class="toggle-menu-button-icon"><span></span><span></span><span></span><span></span><span></span><span></span></i></button>
                                 <!-- Mobile Trigger End-->

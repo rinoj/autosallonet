@@ -209,6 +209,14 @@ class VeturaController extends Controller
         return view('pages.vetura')->withVetura($vetura)->withVeturat($veturat);
     }
 
+    public function showrent($autosalloni, $slug)
+    {   
+        $vehs = Vetura::take(10)->get();
+        $veturat = $vehs->random(5);
+        $vetura = Vetura::where('slug',$slug)->firstOrFail();
+        return view('pages.veturarent')->withVetura($vetura)->withVeturat($veturat);
+    }
+
     public function showadmin($id)
     {
         $user = Auth::user();

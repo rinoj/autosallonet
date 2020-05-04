@@ -21,7 +21,7 @@ Route::get('modeletById/{id}', 'ModeliController@getModeletById');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['permission:view-admin']], function () {
+Route::group(['middleware' => ['doNotCacheResponse','permission:view-admin']], function () {
     Route::get('admin', 'PageController@admin')->name('admin');
 
 	Route::get('admin/veturat/show/{id}', 'VeturaController@showadmin')->name('admin.veturat.show');
@@ -35,16 +35,16 @@ Route::group(['middleware' => ['permission:view-admin']], function () {
 	Route::post('admin/veturat/store', 'VeturaController@store')->name('admin.veturat.store');
 });
 
-Route::group(['middleware' => ['permission:manage-roles-permissions']], function () {
+Route::group(['middleware' => ['doNotCacheResponse','permission:manage-roles-permissions']], function () {
     Route::resource('admin/roles', 'RoleController');
 	Route::resource('admin/permissions', 'PermissionController');
 });
 
-Route::group(['middleware' => ['permission:manage-users']], function () {
+Route::group(['middleware' => ['doNotCacheResponse','permission:manage-users']], function () {
    Route::resource('admin/users', 'UserController');
 });
 
-Route::group(['middleware' => ['permission:manage-markat-modelet']], function () {
+Route::group(['middleware' => ['doNotCacheResponse','permission:manage-markat-modelet']], function () {
    	Route::get('admin/markat', 'MarkaController@admin')->name('admin.markat');
 	Route::get('admin/markat/create', 'MarkaController@create')->name('admin.markat.create');
 	Route::post('admin/markat/store', 'MarkaController@store')->name('admin.markat.store');
@@ -55,11 +55,11 @@ Route::group(['middleware' => ['permission:manage-markat-modelet']], function ()
 });
 
 
-Route::group(['middleware' => ['permission:manage-veturat']], function () {
+Route::group(['middleware' => ['doNotCacheResponse','permission:manage-veturat']], function () {
 	Route::get('admin/veturat', 'VeturaController@admin')->name('admin.veturat');
 });
 
-Route::group(['middleware' => ['permission:manage-rent']], function () {
+Route::group(['middleware' => ['doNotCacheResponse','permission:manage-rent']], function () {
 	Route::get('admin/rent', 'RentController@admin')->name('admin.rent');
 	// Route::get('admin/veturat/show/{id}', 'VeturaController@showadmin')->name('admin.veturat.show');
 	// Route::get('admin/veturat/edit/{id}', 'VeturaController@edit')->name('admin.veturat.edit');
@@ -72,7 +72,7 @@ Route::group(['middleware' => ['permission:manage-rent']], function () {
 	// Route::post('admin/veturat/store', 'VeturaController@store')->name('admin.veturat.store');
 });
 
-Route::group(['middleware' => ['permission:manage-sallonet']], function () {
+Route::group(['middleware' => ['doNotCacheResponse','permission:manage-sallonet']], function () {
 	Route::get('admin/sallonet', 'SalloniController@admin')->name('admin.sallonet');
 	Route::get('admin/sallonet/create', 'SalloniController@create')->name('admin.sallonet.create');
 	Route::post('admin/sallonet/create', 'SalloniController@store')->name('admin.sallonet.store');
@@ -86,6 +86,7 @@ Route::group(['middleware' => ['permission:manage-sallonet']], function () {
 Route::get('veturat', 'VeturaController@index')->name('veturat');
 Route::post('veturat', 'VeturaController@search')->name('search');
 Route::get('{autosalloni}/veturat/{vetura}', 'VeturaController@show')->name('showvetura');
+Route::get('{autosalloni}/rent/{vetura}', 'VeturaController@showrent')->name('showrent');
 Route::get('sallonet', 'SalloniController@index')->name('sallonet');
 Route::get('{autosalloni}', 'SalloniController@show')->name('salloni');
 Route::get('{autosalloni}/veturat', 'SalloniController@showveturat')->name('sallonishowveturat');

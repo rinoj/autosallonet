@@ -81,7 +81,7 @@
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">KM</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{number_format($vetura->km)}} km</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Marshi</dt>
-                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->marshi}}</dd>
+                      <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->getMarshi()}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Interieri</dt>
                       <dd class="b-goods-f__descr-info col-lg-7 col-md-12">{{$vetura->interier}}</dd>
                       <dt class="b-goods-f__descr-title col-lg-5 col-md-12">I doganuar</dt>

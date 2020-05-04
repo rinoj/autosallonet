@@ -20,7 +20,7 @@
                                 <div class="footer-contacts">
                                     <div class="footer-contacts__item"><i class="ic icon-location-pin"></i>Prishtinë, Kosovë</div>
                                     <div class="footer-contacts__item"><i class="ic icon-envelope"></i><a href="mailto:info@autosallonet.com">info@autosallonet.com</a></div>
-                                    <div class="footer-contacts__item"><i class="ic icon-earphones-alt"></i><a href="tel:+17553028549">+383 49 999 999</a>
+                                    <div class="footer-contacts__item"><i class="ic icon-earphones-alt"></i><a href="tel:+17553028549">+383 45 377 659</a>
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                                             <li><a href="{{route('index')}}">Ballina</a></li>
                                             <li><a href="{{route('veturat')}}">Vetura</a></li>
                                             <li><a href="{{route('sallonet')}}">Sallonet</a></li>
-                                            <li><a href="#">Rent a Car</a></li>
+                                            <li><a href="{{route('rentacar')}}">Rent a Car</a></li>
                                             <li><a href="#">Kontakto</a></li>
                                         </ul>
                                     </section>
