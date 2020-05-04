@@ -209,7 +209,7 @@
                     </ul>
                 </div>
             </section>
-         
+           
             <div class="section-goods-vip">
                 <a class="b-goods-vip b-goods-vip_1" href="#">
                     <div class="b-goods-vip__main"><span class="b-goods-vip__label b-goods-vip__label-1 bg-primary">NEW</span>
@@ -238,9 +238,7 @@
                     </div>
                 </a>
             </div>
-            
-           
-            
+                        
             <section class="b-bnr-3 bg-dark">
                 <div class="container">
                     <div class="row">
