@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="b-goods-f__main">
                                     <div class="b-goods-f__descrip">
-                                        <div class="b-goods-f__title"><span class="b-goods-f__label bg-primary">NEW</span><span>{{$vetura->emri()}}</span>
+                                        <div class="b-goods-f__title"><span class="b-goods-f__label bg-primary">I RI</span><span>{{$vetura->emri()}}</span>
                                         </div>
                                         <div class="b-goods-f__info"></div>
                                         <ul class="b-goods-f__list list-unstyled">
