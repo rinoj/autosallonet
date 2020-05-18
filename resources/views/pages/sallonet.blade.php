@@ -5,6 +5,7 @@
 @include('meta::manager', [
     'title'         => 'Sallonet',
     'description'   => 'Lista e Auto Salloneve.',
+    'keywords'      => 'AutoSallonet, AutoSallonet.com, Autosalloni.com, Veturat, sallonet, Rentacar kosove, Kosova Auto, Rentacar kosova, autosallonet rent'
 ])
 @endsection
 

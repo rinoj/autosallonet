@@ -36,9 +36,6 @@
                                         <li class="nav-item"><a class="nav-link" href="{{route('rentacar')}}">Rent a Car</a></li>
                                         
 
-
-                                       
-                                        <li class="nav-item"><a class="nav-link" href="contacts.html">Kontakto</a></li>
                                     </ul>
                                 </nav>
                             </div>

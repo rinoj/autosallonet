@@ -14,6 +14,8 @@
 Route::get('/', 'PageController@index')->name('index');
 
 Route::get('rentacar', 'RentController@index')->name('rentacar');
+
+Route::post('rentacar', 'RentController@search')->name('rentacarsearch');
 Auth::routes();
 
 Route::get('modelet/{id}', 'ModeliController@getModelet');

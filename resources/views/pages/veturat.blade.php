@@ -4,6 +4,8 @@
 @include('meta::manager', [
     'title'         => 'Veturat',
     'description'   => 'Gjej veturën tëndë të preferuar.',
+    'keywords'      => 'AutoSallonet, AutoSallonet.com, Autosalloni.com, Veturat, sallonet, Rentacar kosove, Kosova Auto, Rentacar kosova, autosallonet rent'
+
 ])
 @endsection
 

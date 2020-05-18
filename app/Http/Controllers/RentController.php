@@ -33,6 +33,11 @@ class RentController extends Controller
                 ->withVitet($vitet);
     }
 
+    public function search(Request $request){
+
+        dd($request);
+    }
+
     public function admin(){
         $user = Auth::user();
         if($user->hasRole('admin')){

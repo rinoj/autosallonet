@@ -10,7 +10,6 @@
                                         <li class="nav-item"><a class="nav-link" href="{{route('veturat')}}">Vetura</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{route('sallonet')}}">Sallonet</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{route('rentacar')}}">Rent a Car</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Kontakto</a></li>
             </ul>
 
         </div>

@@ -4,6 +4,7 @@
 @include('meta::manager', [
     'title'         => 'Rent a Car',
     'description'   => 'Gjej veturën tëndë të preferuar.',
+    'keywords'      => 'AutoSallonet, AutoSallonet.com, Autosalloni.com, Veturat, vetura, Rentacar kosove, Kosova Auto, Rentacar kosova, autosallonet rent'
 ])
 @endsection
 
@@ -20,7 +21,7 @@
                     <div class="widget-content">
                       <div class="widget-inner">
 
-                        <form class="b-filter bg-light" action="{{ route('search') }}" id="orderform">
+                        <form class="b-filter bg-light" action="{{ route('rentacarsearch') }}" id="orderform">
                           <div class="b-filter__main">
                             <div class="b-filter__row">
                               <select class="selectpicker" data-width="100%" title="Zgjedh Markën" multiple="multiple" data-max-options="1" data-style="ui-select" name="marka" id="markaselect">

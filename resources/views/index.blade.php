@@ -4,6 +4,7 @@
 @include('meta::manager', [
     'title'         => 'AutoSallonet.com',
     'description'   => 'AutoSallonet.com është platformë ku Autosallonet dhe Rent a Car ofrojnë veturat dhe shërbimet e tyre.',
+    'keywords'      => 'AutoSallonet, AutoSallonet.com, Autosalloni.com, Veturat, vetura, Rentacar kosove, Kosova Auto, Rentacar kosova, autosallonet rent'
 ])
 @endsection
 
