@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
 use Carbon\Carbon;
+use App\Vetura;
 
 class GenerateSitemap extends Command
 {
@@ -30,11 +31,25 @@ class GenerateSitemap extends Command
      */
     public function handle()
     {
-        SitemapGenerator::create(config('app.url'))
-        ->getSitemap()
-        ->add(Url::create('/veturat')->setPriority(0.5))
-        ->add(Url::create('/sallonet')->setPriority(0.5))
-        ->add(Url::create('/rentacar')->setPriority(0.5))
-        ->writeToFile(public_path('sitemap.xml'));
+        // SitemapGenerator::create(config('app.url'))
+        // ->getSitemap()
+        // ->add(Url::create('/veturat')->setPriority(0.5))
+        // ->add(Url::create('/sallonet')->setPriority(0.5))
+        // ->add(Url::create('/rentacar')->setPriority(0.5))
+        // ->writeToFile(public_path('sitemap.xml'));
+
+        $sitemap = SitemapGenerator::create(config('app.url'))
+            ->getSitemap()
+            ->add(Url::create('/veturat')->setPriority(0.5))
+            ->add(Url::create('/sallonet')->setPriority(0.5))
+            ->add(Url::create('/rentacar')->setPriority(0.5));
+
+        Vetura::all()->each(function (Vetura $vetura) use ($sitemap) {
+            $sitemap->add(Url::create("/vetura/{$vetura->slug}"));
+        });
+
+
+        $sitemap->writeToFile(public_path('sitemap.xml'));
+
     }
 }

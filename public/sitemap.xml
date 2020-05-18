@@ -2,25 +2,145 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>http://localhost/rentacar</loc>
-        <lastmod>2020-05-16T12:20:47+00:00</lastmod>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://localhost/sallonet</loc>
-        <lastmod>2020-05-16T12:20:47+00:00</lastmod>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>http://localhost/vetura/1-go789lf-5-2008</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-gol879f-5-2098708</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-gol897f-5-2008</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-20008</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-200258</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-200788</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-2008</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-2012008</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-202048</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-2021008</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-2028</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-2058</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-2087908</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-223008</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-2245008</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-5-2908</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-golf-6-2028</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/1-vw-5-2008</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/2-golf-5-2010</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost/vetura/3-golf-5-2018</loc>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>http://localhost/veturat</loc>
-        <lastmod>2020-05-16T12:20:47+00:00</lastmod>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://localhost/</loc>
-        <lastmod>2020-05-16T12:20:47+00:00</lastmod>
+        <lastmod>2020-05-18T09:07:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
