@@ -2,6 +2,39 @@
 
 @section('title', 'Edito Sallonin')
 
+@section('adminhead')
+    @mapstyles
+@endsection
+
+@section('adminlte_js')
+    @mapscripts
+    <script>
+	window.addEventListener('LaravelMaps:MapInitialized', function (event) {
+		var element = event.detail.element;
+		var map = event.detail.map;
+		var marker = event.detail.marker;
+		var service = event.detail.service;
+        var lat = document.getElementById("latitude").value;
+        var long = document.getElementById("longitude").value;
+		var marker2 = L.marker([lat,long]).addTo(map);
+		// 	draggable: true
+		var marker1;
+		map.on('click', function(e) {
+			map.removeLayer(marker2);
+			if (marker1) { // check
+				map.removeLayer(marker1); // remove
+			}
+			console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng);
+			document.getElementById("latitude").value = e.latlng.lat;
+			document.getElementById("longitude").value = e.latlng.lng;
+			marker1 = L.marker(e.latlng).addTo(map);
+		});
+	});
+	
+	
+</script>
+@endsection
+
 @section('content_header')
     <h1>Edito Sallonin</h1>
 @stop
@@ -64,6 +97,18 @@
 		        <option value="{{$user->id}}" {{$salloni->user_id == $user->id ? 'selected' : ''}}>{{$user->name}}</option>
 		    @endforeach
 	    </select>
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('meta', 'Lokacioni i Sallonit') }}
+            @map([
+				'lat' => 42.61898,
+				'lng' => 21.0257423,
+				'zoom' => 8,
+			])
+        
+		<input type="hidden" class="form-control" id="latitude" name="lat" value="{{$salloni->lat}}">
+		<input type="hidden" class="form-control" id="longitude" name="long" value="{{$salloni->long}}">
     </div>
 
 

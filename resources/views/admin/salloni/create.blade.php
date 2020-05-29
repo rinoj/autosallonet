@@ -2,6 +2,35 @@
 
 @section('title', 'Krijo Sallonin')
 
+@section('adminhead')
+@mapstyles
+@endsection
+
+@section('adminlte_js')
+@mapscripts
+<script>
+	window.addEventListener('LaravelMaps:MapInitialized', function (event) {
+		var element = event.detail.element;
+		var map = event.detail.map;
+		var marker = event.detail.marker;
+		var service = event.detail.service;
+		
+		// 	draggable: true
+		var marker1;
+		map.on('click', function(e) {
+			if (marker1) { // check
+				map.removeLayer(marker1); // remove
+			}
+			console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng);
+			document.getElementById("latitude").value = e.latlng.lat;
+			document.getElementById("longitude").value = e.latlng.lng;
+			marker1 = L.marker(e.latlng).addTo(map);
+		});
+	});
+	
+</script>
+@endsection
+
 @section('content_header')
     <h1>Krijo Sallonin</h1>
 @stop
@@ -46,6 +75,7 @@
         {{ Form::label('meta', 'Meta Description') }}
         {{ Form::textarea('metadescription', null, array('class' => 'form-control', 'rows' => 3, 'style' => 'resize:none')) }}
     </div>
+    
 
     <div class="form-group">
         {{ Form::label('lloji', 'Zgjedh llojin') }}
@@ -65,6 +95,17 @@
 	    </select>
     </div>
 
+    <div class="form-group">
+        {{ Form::label('meta', 'Lokacioni i Sallonit') }}
+            @map([
+				'lat' => 42.61898,
+				'lng' => 21.0257423,
+				'zoom' => 8,
+			])
+        
+		<input type="hidden" class="form-control" id="latitude" name="lat">
+		<input type="hidden" class="form-control" id="longitude" name="long">
+    </div>
 
     {{ Form::submit('Ruaj', array('class' => 'btn btn-primary')) }}
 

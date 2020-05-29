@@ -5,6 +5,30 @@
     'title'         => $salloni->emri,
     'description'   => $salloni->metadescription,
 ])
+@mapstyles
+
+<style>
+.gnw-map-service {
+    height: 750px;
+}
+</style>
+@endsection
+
+@section('homejs')
+  @mapscripts
+  <script>
+	window.addEventListener('LaravelMaps:MapInitialized', function (event) {
+		var element = event.detail.element;
+		var map = event.detail.map;
+		var marker = event.detail.marker;
+		var service = event.detail.service;
+        var lat = document.getElementById("latitude").value;
+        var long = document.getElementById("longitude").value;
+		var marker2 = L.marker([lat,long]).addTo(map);
+	});
+	
+	
+</script>
 @endsection
 
 @section('content')
@@ -79,7 +103,15 @@
                 </div>
               </div>
               <div class="col-xl">
-                <div class="b-dealers-info-map" id="map"></div>
+                <div class="b-dealers-info-map" id="map" style="height:">
+                @map([
+                  'lat' => 42.61898,
+                  'lng' => 21.0257423,
+                  'zoom' => 9,
+                ])
+                <input type="hidden" id="latitude" value="{{$salloni->lat}}">
+                <input type="hidden" id="longitude" value="{{$salloni->long}}">
+              </div>
               </div>
             </div>
             
@@ -88,3 +120,4 @@
         </main>
 
 @endsection
+

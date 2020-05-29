@@ -79,6 +79,8 @@ class SalloniController extends Controller
         $salloni->user_id = $request->user;
         $salloni->facebook = $request->facebook;
         $salloni->slug = $request->slug;
+        $salloni->lat = $request->lat;
+        $salloni->long = $request->long;
         $salloni->metadescription = $request->metadescription;
         $salloni->lloji = $request->lloji;
         $salloni->save();
@@ -160,6 +162,8 @@ class SalloniController extends Controller
         $salloni->user_id = $request->user;
         $salloni->facebook = $request->facebook;
         $salloni->slug = $request->slug;
+        $salloni->lat = $request->lat;
+        $salloni->long = $request->long;
         $salloni->metadescription = $request->metadescription;
         $salloni->lloji = $request->lloji;
         $salloni->update();

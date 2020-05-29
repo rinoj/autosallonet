@@ -22,6 +22,8 @@ class CreateSalloniTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('metadescription')->nullable();
             $table->string('user_id');
+            $table->double('lat', 10, 8)->nullable();
+            $table->double('long', 11, 8)->nullable();
             $table->string('lloji')->default('sallon');
             $table->timestamps();
         });
