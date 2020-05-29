@@ -7,16 +7,11 @@
 ])
 @mapstyles
 
-<style>
-.gnw-map-service {
-    height: 750px;
-}
-</style>
 @endsection
 
 @section('homejs')
   @mapscripts
-  <script>
+   <script>
 	window.addEventListener('LaravelMaps:MapInitialized', function (event) {
 		var element = event.detail.element;
 		var map = event.detail.map;
@@ -24,7 +19,14 @@
 		var service = event.detail.service;
         var lat = document.getElementById("latitude").value;
         var long = document.getElementById("longitude").value;
-		var marker2 = L.marker([lat,long]).addTo(map);
+    var marker2 = L.marker([lat,long]).addTo(map);
+    var southWest = L.latLng(42.0083562,22.3368271),
+    northEast = L.latLng(43.3311422,19.5759775);
+    var bounds = L.latLngBounds(southWest, northEast);
+    map.setMaxBounds(bounds);
+map.on('drag', function() {
+	map.panInsideBounds(bounds, { animate: false });
+});
 	});
 	
 	
