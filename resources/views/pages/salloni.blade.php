@@ -107,9 +107,9 @@ map.on('drag', function() {
               <div class="col-xl">
                 <div class="b-dealers-info-map" id="map" style="height:">
                 @map([
-                  'lat' => 42.61898,
-                  'lng' => 21.0257423,
-                  'zoom' => 9,
+                  'lat' => $salloni->lat,
+                  'lng' => $salloni->long,
+                  'zoom' => 16,
                 ])
                 <input type="hidden" id="latitude" value="{{$salloni->lat}}">
                 <input type="hidden" id="longitude" value="{{$salloni->long}}">

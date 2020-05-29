@@ -45,7 +45,7 @@ class GenerateSitemap extends Command
             ->add(Url::create('/rentacar')->setPriority(0.5));
 
         Vetura::all()->each(function (Vetura $vetura) use ($sitemap) {
-            $sitemap->add(Url::create("/vetura/{$vetura->slug}"));
+            $sitemap->add(Url::create("/{$vetura->salloni->slug}/veturat/{$vetura->slug}"));
         });
 
 
