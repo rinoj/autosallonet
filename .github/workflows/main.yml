@@ -1,12 +1,19 @@
-- name: validate-dependabot
-  # You may pin to the exact commit or the version.
-  # uses: marocchino/validate-dependabot@30653575251e0731f7c99bff8773e3988361597e
-  uses: marocchino/validate-dependabot@v2.1.0
-  with:
-    # path of dependabot yaml file
-    path: # default is .github/dependabot.yml
-    # display on success
-    success_message: # default is ✅dependabot config looks good 👍
-    # display on failure
-    failure_message: # default is 🚫 dependabot errors
-          
+name: dependabot validate
+
+on:
+  pull_request:
+    paths:
+      - '.github/dependabot.yml'
+      - '.github/workflows/dependabot-validate.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: marocchino/validate-dependabot@v2
+        id: validate
+      - uses: marocchino/sticky-pull-request-comment@v2
+        if: always()
+        with:
+          header: validate-dependabot
+          message: ${{ steps.validate.outputs.markdown }}
